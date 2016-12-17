@@ -91,8 +91,7 @@ def link_crawler(seed_url, link_regex, max_depth=2):
     crawl_queue = [seed_url]
     #创建一个网页地址集合
     # seen = set(crawl_queue)
-    seen = {}
-    depth = seen[url]
+    seen = {seed_url：0}
     while crawl_queue:
         url = crawl_queue.pop()
         # 检查url能不能通过robots.txt的限制
@@ -100,17 +99,26 @@ def link_crawler(seed_url, link_regex, max_depth=2):
         if not rp.can_fetch('wswp',url):
             print 'Blocked by robots.txt:', url
         else:
-            html = download(url)
+            html = download(url, headers, proxy=proxy, num_retries=num_retries)
+            links = []
+            depth = seen[url]
+
             # filter for links matching our regular expression
-            for link in get_links(html):
-                if re.match(link_regex, link):
-                    #使用urljoin链接网页路径
-                    link = urlparse.urljoin(seed_url, link)
-                    #检查是否已经遍历过这个网页
-                    if link not in seen:
-                        seen.add(link)
-                        print link
-                        crawl_queue.append(link)
+            if depth != max_depth:  #设置访问最大次数
+                for link in get_links(html):
+                    if link_regex:
+                        links.extend(link for link in get_links(html) \
+                        if re.match(link_regex, link))
+                    # if re.match(link_regex, link):
+                        #使用urljoin链接网页路径
+                        for link in links:
+                            link = urlparse.urljoin(seed_url, link)
+                        #检查是否已经遍历过这个网页
+                        if link not in seen:
+                            # seen.add(link)
+                            seen[link] = depth + 1
+                            print link
+                            crawl_queue.append(link)
 
     return crawl_queue
 def get_links(html):
