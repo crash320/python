@@ -75,3 +75,23 @@ throttle.wait(url)
 result = download(url, headers, proxy=proxy,
     num_retries=num_retries)
 ```
+7. 避免爬虫陷阱
+&emsp;&emsp;一些网站会动态生成网页内容，这样就会出现无限多的网页。
+&emsp;&emsp;避免陷入爬虫陷阱的简单方法是记录到达当前网页经过了多少个链接
+也就是深度。当到达最大深度时，爬虫就不再想队列中添加该网页中的链接了。要实现这一功能，我们需要修改seen变量。该变量原先只记录访问过的网页链接，现在修改为一个字典，增加了页面深度的记录。
+代码:
+```python
+def link_crawler(..., max_depth=2):
+    max_depth = 2
+    seen = {}
+    ...
+    depth = seen[url]
+    if depth != max_depth:
+        for link in links:
+            if link not in seen:
+                seen[link] = depth + 1
+                crawl_queue.append(link)
+```
+
+8. 最终版本
+[完整代码](http://bitbucket.org/wswp/code/src/tip/chapter01/link_crawler3.py)

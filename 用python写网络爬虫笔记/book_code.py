@@ -81,14 +81,18 @@ def crawl_sitemap(url):
         #scrape html here
 import urlparse
 #讲相对链接转化为绝对链接
-def link_crawler(seed_url, link_regex):
+def link_crawler(seed_url, link_regex, max_depth=2):
     """
     Crawl form the given seed URL following links
     matched by link_regex
     """
+    #设置最大深度为2
+    max_depth = 2
     crawl_queue = [seed_url]
     #创建一个网页地址集合
-    seen = set(crawl_queue)
+    # seen = set(crawl_queue)
+    seen = {}
+    depth = seen[url]
     while crawl_queue:
         url = crawl_queue.pop()
         # 检查url能不能通过robots.txt的限制
