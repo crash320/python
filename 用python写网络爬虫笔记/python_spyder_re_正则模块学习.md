@@ -4,10 +4,10 @@ re.match函数
 >re.match(pattern, string, flags = 0)
 
 参数说明:
- 参数 |描述  
+ 参数 |描述  |
 --      |--
-  pattern|匹配的正则表达式  
-  string|要匹配的字符串  
+  pattern|匹配的正则表达式 | 
+  string|要匹配的字符串  |
   flags|标志位，用于控制正则表达式  
 匹配成功re.match方法返回一个匹配的对象，否则返回None。
 我们可以使用group(num) 或 groups() 匹配对象函数来获取匹配表达式。
