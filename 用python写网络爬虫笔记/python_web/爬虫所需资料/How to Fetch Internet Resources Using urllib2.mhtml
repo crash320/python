@@ -1,0 +1,1874 @@
+From: <Saved by Blink>
+Subject: HOWTO Fetch Internet Resources Using urllib2 ? Python 2.7.12 documentation
+Date: Sat, 4 Nov 2016 06:51:35 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--lRO4MeQK109wF6vj5EJs2Pnvov9mQ49yim4lhw0aSU----"
+
+------MultipartBoundary--lRO4MeQK109wF6vj5EJs2Pnvov9mQ49yim4lhw0aSU----
+Content-Type: text/html
+Content-ID: <frame-29-e350ad9d-02cc-4945-a299-1b0b5a0c88b5@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://docs.python.org/2/howto/urllib2.html
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"http://www.w3.=
+org/1999/xhtml"><head><meta http-equiv=3D"Content-Type" content=3D"text/htm=
+l; charset=3DUTF-8">
+   =20
+   =20
+    <title>HOWTO Fetch Internet Resources Using urllib2 =E2=80=94 Python 2.=
+7.12 documentation</title>
+   =20
+    <link rel=3D"stylesheet" href=3D"https://docs.python.org/2/_static/clas=
+sic.css" type=3D"text/css">
+    <link rel=3D"stylesheet" href=3D"https://docs.python.org/2/_static/pygm=
+ents.css" type=3D"text/css">
+   =20
+    <style>@media print {#ghostery-purple-box {display:none !important}}</s=
+tyle>
+   =20
+   =20
+   =20
+   =20
+    <link rel=3D"search" type=3D"application/opensearchdescription+xml" tit=
+le=3D"Search within Python 2.7.12 documentation" href=3D"https://docs.pytho=
+n.org/2/_static/opensearch.xml">
+    <link rel=3D"author" title=3D"About these documents" href=3D"https://do=
+cs.python.org/2/about.html">
+    <link rel=3D"copyright" title=3D"Copyright" href=3D"https://docs.python=
+.org/2/copyright.html">
+    <link rel=3D"top" title=3D"Python 2.7.12 documentation" href=3D"https:/=
+/docs.python.org/2/contents.html">
+    <link rel=3D"up" title=3D"Python HOWTOs" href=3D"https://docs.python.or=
+g/2/howto/index.html">
+    <link rel=3D"next" title=3D"HOWTO Use Python in the web" href=3D"https:=
+//docs.python.org/2/howto/webservers.html">
+    <link rel=3D"prev" title=3D"Unicode HOWTO" href=3D"https://docs.python.=
+org/2/howto/unicode.html">
+    <link rel=3D"shortcut icon" type=3D"image/png" href=3D"https://docs.pyt=
+hon.org/2/_static/py.png">
+   =20
+   =20
+=20
+   =20
+
+  <style type=3D"text/css">* {
+ text-shadow: transparent 0px 0px 0px, rgba(0,0,0,0.2) 0px 0px 0px !importa=
+nt;=20
+}</style><style id=3D"style-1-cropbar-clipper">/* Copyright 2014 Evernote C=
+orporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+  <body role=3D"document"> =20
+    <div class=3D"related" role=3D"navigation" aria-label=3D"related naviga=
+tion">
+      <h3>Navigation</h3>
+      <ul>
+        <li class=3D"right" style=3D"margin-right: 10px">
+          <a href=3D"https://docs.python.org/2/genindex.html" title=3D"Gene=
+ral Index" accesskey=3D"I">index</a></li>
+        <li class=3D"right">
+          <a href=3D"https://docs.python.org/2/py-modindex.html" title=3D"P=
+ython Module Index">modules</a> |</li>
+        <li class=3D"right">
+          <a href=3D"https://docs.python.org/2/howto/webservers.html" title=
+=3D"HOWTO Use Python in the web" accesskey=3D"N">next</a> |</li>
+        <li class=3D"right">
+          <a href=3D"https://docs.python.org/2/howto/unicode.html" title=3D=
+"Unicode HOWTO" accesskey=3D"P">previous</a> |</li>
+        <li><img src=3D"https://docs.python.org/2/_static/py.png" alt=3D"" =
+style=3D"vertical-align: middle; margin-top: -1px"></li>
+        <li><a href=3D"https://www.python.org/">Python</a> =C2=BB</li>
+        <li>
+          <span class=3D"version_switcher_placeholder"><select><option valu=
+e=3D"3.7">dev (3.7)</option><option value=3D"3.6">3.6</option><option value=
+=3D"3.5">3.5</option><option value=3D"3.4">3.4</option><option value=3D"3.3=
+">3.3</option><option value=3D"2.7" selected=3D"selected">2.7.12</option></=
+select></span>
+          <a href=3D"https://docs.python.org/2/index.html">Documentation</a=
+> =C2=BB
+        </li>
+
+          <li class=3D"nav-item nav-item-1"><a href=3D"https://docs.python.=
+org/2/howto/index.html" accesskey=3D"U">Python HOWTOs</a> =C2=BB</li>=20
+      </ul>
+    </div>   =20
+
+    <div class=3D"document">
+      <div class=3D"documentwrapper">
+        <div class=3D"bodywrapper">
+          <div class=3D"body" role=3D"main">
+           =20
+  <div class=3D"section" id=3D"howto-fetch-internet-resources-using-urllib2=
+">
+<span id=3D"urllib-howto"></span><h1>HOWTO Fetch Internet Resources Using u=
+rllib2<a class=3D"headerlink" href=3D"https://docs.python.org/2/howto/urlli=
+b2.html#howto-fetch-internet-resources-using-urllib2" title=3D"Permalink to=
+ this headline">=C2=B6</a></h1>
+<table class=3D"docutils field-list" frame=3D"void" rules=3D"none">
+<colgroup><col class=3D"field-name">
+<col class=3D"field-body">
+</colgroup><tbody valign=3D"top">
+<tr class=3D"field-odd field"><th class=3D"field-name">Author:</th><td clas=
+s=3D"field-body"><a class=3D"reference external" href=3D"http://www.voidspa=
+ce.org.uk/python/index.shtml">Michael Foord</a></td>
+</tr>
+</tbody>
+</table>
+<div class=3D"admonition note">
+<p class=3D"first admonition-title">Note</p>
+<p class=3D"last">There is a French translation of an earlier revision of t=
+his
+HOWTO, available at <a class=3D"reference external" href=3D"http://www.void=
+space.org.uk/python/articles/urllib2_francais.shtml">urllib2 - Le Manuel ma=
+nquant</a>.</p>
+</div>
+<div class=3D"section" id=3D"introduction">
+<h2>Introduction<a class=3D"headerlink" href=3D"https://docs.python.org/2/h=
+owto/urllib2.html#introduction" title=3D"Permalink to this headline">=C2=B6=
+</a></h2>
+<div class=3D"sidebar">
+<p class=3D"first sidebar-title">Related Articles</p>
+<p>You may also find useful the following article on fetching web resources
+with Python:</p>
+<ul class=3D"last">
+<li><p class=3D"first"><a class=3D"reference external" href=3D"http://www.v=
+oidspace.org.uk/python/articles/authentication.shtml">Basic Authentication<=
+/a></p>
+<blockquote>
+<div><p>A tutorial on <em>Basic Authentication</em>, with examples in Pytho=
+n.</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<p><strong>urllib2</strong> is a Python module for fetching URLs
+(Uniform Resource Locators). It offers a very simple interface, in the form=
+ of
+the <em>urlopen</em> function. This is capable of fetching URLs using a var=
+iety of
+different protocols. It also offers a slightly more complex interface for
+handling common situations - like basic authentication, cookies, proxies an=
+d so
+on. These are provided by objects called handlers and openers.</p>
+<p>urllib2 supports fetching URLs for many =E2=80=9CURL schemes=E2=80=9D (i=
+dentified by the string
+before the =E2=80=9D:=E2=80=9D in URL - for example =E2=80=9Cftp=E2=80=9D i=
+s the URL scheme of
+=E2=80=9C<a class=3D"reference external" href=3D"ftp://python.org/">ftp://p=
+ython.org/</a>=E2=80=9D) using their associated network protocols (e.g. FTP=
+, HTTP).
+This tutorial focuses on the most common case, HTTP.</p>
+<p>For straightforward situations <em>urlopen</em> is very easy to use. But=
+ as soon as you
+encounter errors or non-trivial cases when opening HTTP URLs, you will need=
+ some
+understanding of the HyperText Transfer Protocol. The most comprehensive an=
+d
+authoritative reference to HTTP is <span class=3D"target" id=3D"index-0"></=
+span><a class=3D"rfc reference external" href=3D"https://tools.ietf.org/htm=
+l/rfc2616.html"><strong>RFC 2616</strong></a>. This is a technical document=
+ and
+not intended to be easy to read. This HOWTO aims to illustrate using <em>ur=
+llib2</em>,
+with enough detail about HTTP to help you through. It is not intended to re=
+place
+the <a class=3D"reference internal" href=3D"https://docs.python.org/2/libra=
+ry/urllib2.html#module-urllib2" title=3D"urllib2: Next generation URL openi=
+ng library."><code class=3D"xref py py-mod docutils literal"><span class=3D=
+"pre">urllib2</span></code></a> docs, but is supplementary to them.</p>
+</div>
+<div class=3D"section" id=3D"fetching-urls">
+<h2>Fetching URLs<a class=3D"headerlink" href=3D"https://docs.python.org/2/=
+howto/urllib2.html#fetching-urls" title=3D"Permalink to this headline">=C2=
+=B6</a></h2>
+<p>The simplest way to use urllib2 is as follows:</p>
+<div class=3D"highlight-python" style=3D"position: relative;"><div class=3D=
+"highlight"><pre><span></span><span class=3D"kn">import</span> <span class=
+=3D"nn">urllib2</span>
+<span class=3D"n">response</span> <span class=3D"o">=3D</span> <span class=
+=3D"n">urllib2</span><span class=3D"o">.</span><span class=3D"n">urlopen</s=
+pan><span class=3D"p">(</span><span class=3D"s1">'http://python.org/'</span=
+><span class=3D"p">)</span>
+<span class=3D"n">html</span> <span class=3D"o">=3D</span> <span class=3D"n=
+">response</span><span class=3D"o">.</span><span class=3D"n">read</span><sp=
+an class=3D"p">()</span>
+</pre></div>
+</div>
+<p>Many uses of urllib2 will be that simple (note that instead of an =E2=80=
+=98http:=E2=80=99 URL we
+could have used a URL starting with =E2=80=98ftp:=E2=80=99, =E2=80=98file:=
+=E2=80=99, etc.).  However, it=E2=80=99s the
+purpose of this tutorial to explain the more complicated cases, concentrati=
+ng on
+HTTP.</p>
+<p>HTTP is based on requests and responses - the client makes requests and =
+servers
+send responses. urllib2 mirrors this with a <code class=3D"docutils literal=
+"><span class=3D"pre">Request</span></code> object which represents
+the HTTP request you are making. In its simplest form you create a Request
+object that specifies the URL you want to fetch. Calling <code class=3D"doc=
+utils literal"><span class=3D"pre">urlopen</span></code> with this
+Request object returns a response object for the URL requested. This respon=
+se is
+a file-like object, which means you can for example call <code class=3D"doc=
+utils literal"><span class=3D"pre">.read()</span></code> on the
+response:</p>
+<div class=3D"highlight-python" style=3D"position: relative;"><div class=3D=
+"highlight"><pre><span></span><span class=3D"kn">import</span> <span class=
+=3D"nn">urllib2</span>
+
+<span class=3D"n">req</span> <span class=3D"o">=3D</span> <span class=3D"n"=
+>urllib2</span><span class=3D"o">.</span><span class=3D"n">Request</span><s=
+pan class=3D"p">(</span><span class=3D"s1">'http://www.voidspace.org.uk'</s=
+pan><span class=3D"p">)</span>
+<span class=3D"n">response</span> <span class=3D"o">=3D</span> <span class=
+=3D"n">urllib2</span><span class=3D"o">.</span><span class=3D"n">urlopen</s=
+pan><span class=3D"p">(</span><span class=3D"n">req</span><span class=3D"p"=
+>)</span>
+<span class=3D"n">the_page</span> <span class=3D"o">=3D</span> <span class=
+=3D"n">response</span><span class=3D"o">.</span><span class=3D"n">read</spa=
+n><span class=3D"p">()</span>
+</pre></div>
+</div>
+<p>Note that urllib2 makes use of the same Request interface to handle all =
+URL
+schemes.  For example, you can make an FTP request like so:</p>
+<div class=3D"highlight-python" style=3D"position: relative;"><div class=3D=
+"highlight"><pre><span></span><span class=3D"n">req</span> <span class=3D"o=
+">=3D</span> <span class=3D"n">urllib2</span><span class=3D"o">.</span><spa=
+n class=3D"n">Request</span><span class=3D"p">(</span><span class=3D"s1">'f=
+tp://example.com/'</span><span class=3D"p">)</span>
+</pre></div>
+</div>
+<p>In the case of HTTP, there are two extra things that Request objects all=
+ow you
+to do: First, you can pass data to be sent to the server.  Second, you can =
+pass
+extra information (=E2=80=9Cmetadata=E2=80=9D) <em>about</em> the data or t=
+he about request itself, to
+the server - this information is sent as HTTP =E2=80=9Cheaders=E2=80=9D.  L=
+et=E2=80=99s look at each of
+these in turn.</p>
+<div class=3D"section" id=3D"data">
+<h3>Data<a class=3D"headerlink" href=3D"https://docs.python.org/2/howto/url=
+lib2.html#data" title=3D"Permalink to this headline">=C2=B6</a></h3>
+<p>Sometimes you want to send data to a URL (often the URL will refer to a =
+CGI
+(Common Gateway Interface) script <a class=3D"footnote-reference" href=3D"h=
+ttps://docs.python.org/2/howto/urllib2.html#id9" id=3D"id1">[1]</a> or othe=
+r web application). With HTTP,
+this is often done using what=E2=80=99s known as a <strong>POST</strong> re=
+quest. This is often what
+your browser does when you submit a HTML form that you filled in on the web=
+. Not
+all POSTs have to come from forms: you can use a POST to transmit arbitrary=
+ data
+to your own application. In the common case of HTML forms, the data needs t=
+o be
+encoded in a standard way, and then passed to the Request object as the <co=
+de class=3D"docutils literal"><span class=3D"pre">data</span></code>
+argument. The encoding is done using a function from the <code class=3D"doc=
+utils literal"><span class=3D"pre">urllib</span></code> library
+<em>not</em> from <code class=3D"docutils literal"><span class=3D"pre">urll=
+ib2</span></code>.</p>
+<div class=3D"highlight-python" style=3D"position: relative;"><div class=3D=
+"highlight"><pre><span></span><span class=3D"kn">import</span> <span class=
+=3D"nn">urllib</span>
+<span class=3D"kn">import</span> <span class=3D"nn">urllib2</span>
+
+<span class=3D"n">url</span> <span class=3D"o">=3D</span> <span class=3D"s1=
+">'http://www.someserver.com/cgi-bin/register.cgi'</span>
+<span class=3D"n">values</span> <span class=3D"o">=3D</span> <span class=3D=
+"p">{</span><span class=3D"s1">'name'</span> <span class=3D"p">:</span> <sp=
+an class=3D"s1">'Michael Foord'</span><span class=3D"p">,</span>
+          <span class=3D"s1">'location'</span> <span class=3D"p">:</span> <=
+span class=3D"s1">'Northampton'</span><span class=3D"p">,</span>
+          <span class=3D"s1">'language'</span> <span class=3D"p">:</span> <=
+span class=3D"s1">'Python'</span> <span class=3D"p">}</span>
+
+<span class=3D"n">data</span> <span class=3D"o">=3D</span> <span class=3D"n=
+">urllib</span><span class=3D"o">.</span><span class=3D"n">urlencode</span>=
+<span class=3D"p">(</span><span class=3D"n">values</span><span class=3D"p">=
+)</span>
+<span class=3D"n">req</span> <span class=3D"o">=3D</span> <span class=3D"n"=
+>urllib2</span><span class=3D"o">.</span><span class=3D"n">Request</span><s=
+pan class=3D"p">(</span><span class=3D"n">url</span><span class=3D"p">,</sp=
+an> <span class=3D"n">data</span><span class=3D"p">)</span>
+<span class=3D"n">response</span> <span class=3D"o">=3D</span> <span class=
+=3D"n">urllib2</span><span class=3D"o">.</span><span class=3D"n">urlopen</s=
+pan><span class=3D"p">(</span><span class=3D"n">req</span><span class=3D"p"=
+>)</span>
+<span class=3D"n">the_page</span> <span class=3D"o">=3D</span> <span class=
+=3D"n">response</span><span class=3D"o">.</span><span class=3D"n">read</spa=
+n><span class=3D"p">()</span>
+</pre></div>
+</div>
+<p>Note that other encodings are sometimes required (e.g. for file upload f=
+rom HTML
+forms - see <a class=3D"reference external" href=3D"https://www.w3.org/TR/R=
+EC-html40/interact/forms.html#h-17.13">HTML Specification, Form Submission<=
+/a> for more
+details).</p>
+<p>If you do not pass the <code class=3D"docutils literal"><span class=3D"p=
+re">data</span></code> argument, urllib2 uses a <strong>GET</strong> reques=
+t. One
+way in which GET and POST requests differ is that POST requests often have
+=E2=80=9Cside-effects=E2=80=9D: they change the state of the system in some=
+ way (for example by
+placing an order with the website for a hundredweight of tinned spam to be
+delivered to your door).  Though the HTTP standard makes it clear that POST=
+s are
+intended to <em>always</em> cause side-effects, and GET requests <em>never<=
+/em> to cause
+side-effects, nothing prevents a GET request from having side-effects, nor =
+a
+POST requests from having no side-effects. Data can also be passed in an HT=
+TP
+GET request by encoding it in the URL itself.</p>
+<p>This is done as follows:</p>
+<div class=3D"highlight-python" style=3D"position: relative;"><div class=3D=
+"highlight"><span class=3D"copybutton" title=3D"Hide the prompts and output=
+" style=3D"cursor: pointer; position: absolute; top: 0px; right: 0px; borde=
+r-color: rgb(170, 204, 153); border-style: solid; border-width: 0.727273px;=
+ color: rgb(170, 204, 153); font-family: monospace; padding-left: 0.2em; pa=
+dding-right: 0.2em;">&gt;&gt;&gt;</span><pre><span></span><span class=3D"gp=
+">&gt;&gt;&gt; </span><span class=3D"kn">import</span> <span class=3D"nn">u=
+rllib2</span>
+<span class=3D"gp">&gt;&gt;&gt; </span><span class=3D"kn">import</span> <sp=
+an class=3D"nn">urllib</span>
+<span class=3D"gp">&gt;&gt;&gt; </span><span class=3D"n">data</span> <span =
+class=3D"o">=3D</span> <span class=3D"p">{}</span>
+<span class=3D"gp">&gt;&gt;&gt; </span><span class=3D"n">data</span><span c=
+lass=3D"p">[</span><span class=3D"s1">'name'</span><span class=3D"p">]</spa=
+n> <span class=3D"o">=3D</span> <span class=3D"s1">'Somebody Here'</span>
+<span class=3D"gp">&gt;&gt;&gt; </span><span class=3D"n">data</span><span c=
+lass=3D"p">[</span><span class=3D"s1">'location'</span><span class=3D"p">]<=
+/span> <span class=3D"o">=3D</span> <span class=3D"s1">'Northampton'</span>
+<span class=3D"gp">&gt;&gt;&gt; </span><span class=3D"n">data</span><span c=
+lass=3D"p">[</span><span class=3D"s1">'language'</span><span class=3D"p">]<=
+/span> <span class=3D"o">=3D</span> <span class=3D"s1">'Python'</span>
+<span class=3D"gp">&gt;&gt;&gt; </span><span class=3D"n">url_values</span> =
+<span class=3D"o">=3D</span> <span class=3D"n">urllib</span><span class=3D"=
+o">.</span><span class=3D"n">urlencode</span><span class=3D"p">(</span><spa=
+n class=3D"n">data</span><span class=3D"p">)</span>
+<span class=3D"gp">&gt;&gt;&gt; </span><span class=3D"k">print</span> <span=
+ class=3D"n">url_values</span>  <span class=3D"c1"># The order may differ. =
+</span>
+<span class=3D"go">name=3DSomebody+Here&amp;language=3DPython&amp;location=
+=3DNorthampton</span>
+<span class=3D"gp">&gt;&gt;&gt; </span><span class=3D"n">url</span> <span c=
+lass=3D"o">=3D</span> <span class=3D"s1">'http://www.example.com/example.cg=
+i'</span>
+<span class=3D"gp">&gt;&gt;&gt; </span><span class=3D"n">full_url</span> <s=
+pan class=3D"o">=3D</span> <span class=3D"n">url</span> <span class=3D"o">+=
+</span> <span class=3D"s1">'?'</span> <span class=3D"o">+</span> <span clas=
+s=3D"n">url_values</span>
+<span class=3D"gp">&gt;&gt;&gt; </span><span class=3D"n">data</span> <span =
+class=3D"o">=3D</span> <span class=3D"n">urllib2</span><span class=3D"o">.<=
+/span><span class=3D"n">urlopen</span><span class=3D"p">(</span><span class=
+=3D"n">full_url</span><span class=3D"p">)</span>
+</pre></div>
+</div>
+<p>Notice that the full URL is created by adding a <code class=3D"docutils =
+literal"><span class=3D"pre">?</span></code> to the URL, followed by
+the encoded values.</p>
+</div>
+<div class=3D"section" id=3D"headers">
+<h3>Headers<a class=3D"headerlink" href=3D"https://docs.python.org/2/howto/=
+urllib2.html#headers" title=3D"Permalink to this headline">=C2=B6</a></h3>
+<p>We=E2=80=99ll discuss here one particular HTTP header, to illustrate how=
+ to add headers
+to your HTTP request.</p>
+<p>Some websites <a class=3D"footnote-reference" href=3D"https://docs.pytho=
+n.org/2/howto/urllib2.html#id10" id=3D"id2">[2]</a> dislike being browsed b=
+y programs, or send different versions
+to different browsers <a class=3D"footnote-reference" href=3D"https://docs.=
+python.org/2/howto/urllib2.html#id11" id=3D"id3">[3]</a>. By default urllib=
+2 identifies itself as
+<code class=3D"docutils literal"><span class=3D"pre">Python-urllib/x.y</spa=
+n></code> (where <code class=3D"docutils literal"><span class=3D"pre">x</sp=
+an></code> and <code class=3D"docutils literal"><span class=3D"pre">y</span=
+></code> are the major and minor version
+numbers of the Python release,
+e.g. <code class=3D"docutils literal"><span class=3D"pre">Python-urllib/2.5=
+</span></code>), which may confuse the site, or just plain
+not work. The way a browser identifies itself is through the
+<code class=3D"docutils literal"><span class=3D"pre">User-Agent</span></cod=
+e> header <a class=3D"footnote-reference" href=3D"https://docs.python.org/2=
+/howto/urllib2.html#id12" id=3D"id4">[4]</a>. When you create a Request obj=
+ect you can
+pass a dictionary of headers in. The following example makes the same
+request as above, but identifies itself as a version of Internet
+Explorer <a class=3D"footnote-reference" href=3D"https://docs.python.org/2/=
+howto/urllib2.html#id13" id=3D"id5">[5]</a>.</p>
+<div class=3D"highlight-python" style=3D"position: relative;"><div class=3D=
+"highlight"><pre><span></span><span class=3D"kn">import</span> <span class=
+=3D"nn">urllib</span>
+<span class=3D"kn">import</span> <span class=3D"nn">urllib2</span>
+
+<span class=3D"n">url</span> <span class=3D"o">=3D</span> <span class=3D"s1=
+">'http://www.someserver.com/cgi-bin/register.cgi'</span>
+<span class=3D"n">user_agent</span> <span class=3D"o">=3D</span> <span clas=
+s=3D"s1">'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'</span>
+<span class=3D"n">values</span> <span class=3D"o">=3D</span> <span class=3D=
+"p">{</span><span class=3D"s1">'name'</span><span class=3D"p">:</span> <spa=
+n class=3D"s1">'Michael Foord'</span><span class=3D"p">,</span>
+          <span class=3D"s1">'location'</span><span class=3D"p">:</span> <s=
+pan class=3D"s1">'Northampton'</span><span class=3D"p">,</span>
+          <span class=3D"s1">'language'</span><span class=3D"p">:</span> <s=
+pan class=3D"s1">'Python'</span> <span class=3D"p">}</span>
+<span class=3D"n">headers</span> <span class=3D"o">=3D</span> <span class=
+=3D"p">{</span><span class=3D"s1">'User-Agent'</span><span class=3D"p">:</s=
+pan> <span class=3D"n">user_agent</span><span class=3D"p">}</span>
+
+<span class=3D"n">data</span> <span class=3D"o">=3D</span> <span class=3D"n=
+">urllib</span><span class=3D"o">.</span><span class=3D"n">urlencode</span>=
+<span class=3D"p">(</span><span class=3D"n">values</span><span class=3D"p">=
+)</span>
+<span class=3D"n">req</span> <span class=3D"o">=3D</span> <span class=3D"n"=
+>urllib2</span><span class=3D"o">.</span><span class=3D"n">Request</span><s=
+pan class=3D"p">(</span><span class=3D"n">url</span><span class=3D"p">,</sp=
+an> <span class=3D"n">data</span><span class=3D"p">,</span> <span class=3D"=
+n">headers</span><span class=3D"p">)</span>
+<span class=3D"n">response</span> <span class=3D"o">=3D</span> <span class=
+=3D"n">urllib2</span><span class=3D"o">.</span><span class=3D"n">urlopen</s=
+pan><span class=3D"p">(</span><span class=3D"n">req</span><span class=3D"p"=
+>)</span>
+<span class=3D"n">the_page</span> <span class=3D"o">=3D</span> <span class=
+=3D"n">response</span><span class=3D"o">.</span><span class=3D"n">read</spa=
+n><span class=3D"p">()</span>
+</pre></div>
+</div>
+<p>The response also has two useful methods. See the section on <a class=3D=
+"reference internal" href=3D"https://docs.python.org/2/howto/urllib2.html#i=
+nfo-and-geturl">info and geturl</a>
+which comes after we have a look at what happens when things go wrong.</p>
+</div>
+</div>
+<div class=3D"section" id=3D"handling-exceptions">
+<h2>Handling Exceptions<a class=3D"headerlink" href=3D"https://docs.python.=
+org/2/howto/urllib2.html#handling-exceptions" title=3D"Permalink to this he=
+adline">=C2=B6</a></h2>
+<p><em>urlopen</em> raises <code class=3D"xref py py-exc docutils literal">=
+<span class=3D"pre">URLError</span></code> when it cannot handle a response=
+ (though as
+usual with Python APIs, built-in exceptions such as <a class=3D"reference i=
+nternal" href=3D"https://docs.python.org/2/library/exceptions.html#exceptio=
+ns.ValueError" title=3D"exceptions.ValueError"><code class=3D"xref py py-ex=
+c docutils literal"><span class=3D"pre">ValueError</span></code></a>,
+<a class=3D"reference internal" href=3D"https://docs.python.org/2/library/e=
+xceptions.html#exceptions.TypeError" title=3D"exceptions.TypeError"><code c=
+lass=3D"xref py py-exc docutils literal"><span class=3D"pre">TypeError</spa=
+n></code></a> etc. may also be raised).</p>
+<p><code class=3D"xref py py-exc docutils literal"><span class=3D"pre">HTTP=
+Error</span></code> is the subclass of <code class=3D"xref py py-exc docuti=
+ls literal"><span class=3D"pre">URLError</span></code> raised in the specif=
+ic case of
+HTTP URLs.</p>
+<div class=3D"section" id=3D"urlerror">
+<h3>URLError<a class=3D"headerlink" href=3D"https://docs.python.org/2/howto=
+/urllib2.html#urlerror" title=3D"Permalink to this headline">=C2=B6</a></h3=
+>
+<p>Often, URLError is raised because there is no network connection (no rou=
+te to
+the specified server), or the specified server doesn=E2=80=99t exist.  In t=
+his case, the
+exception raised will have a =E2=80=98reason=E2=80=99 attribute, which is a=
+ tuple containing an
+error code and a text error message.</p>
+<p>e.g.</p>
+<div class=3D"highlight-python" style=3D"position: relative;"><div class=3D=
+"highlight"><span class=3D"copybutton" title=3D"Hide the prompts and output=
+" style=3D"cursor: pointer; position: absolute; top: 0px; right: 0px; borde=
+r-color: rgb(170, 204, 153); border-style: solid; border-width: 0.727273px;=
+ color: rgb(170, 204, 153); font-family: monospace; padding-left: 0.2em; pa=
+dding-right: 0.2em;">&gt;&gt;&gt;</span><pre><span></span><span class=3D"gp=
+">&gt;&gt;&gt; </span><span class=3D"n">req</span> <span class=3D"o">=3D</s=
+pan> <span class=3D"n">urllib2</span><span class=3D"o">.</span><span class=
+=3D"n">Request</span><span class=3D"p">(</span><span class=3D"s1">'http://w=
+ww.pretend_server.org'</span><span class=3D"p">)</span>
+<span class=3D"gp">&gt;&gt;&gt; </span><span class=3D"k">try</span><span cl=
+ass=3D"p">:</span> <span class=3D"n">urllib2</span><span class=3D"o">.</spa=
+n><span class=3D"n">urlopen</span><span class=3D"p">(</span><span class=3D"=
+n">req</span><span class=3D"p">)</span>
+<span class=3D"gp">... </span><span class=3D"k">except</span> <span class=
+=3D"n">URLError</span> <span class=3D"k">as</span> <span class=3D"n">e</spa=
+n><span class=3D"p">:</span>
+<span class=3D"gp">... </span>   <span class=3D"k">print</span> <span class=
+=3D"n">e</span><span class=3D"o">.</span><span class=3D"n">reason</span>  =
+=20
+<span class=3D"gp">...</span>
+<span class=3D"go">(4, 'getaddrinfo failed')</span>
+</pre></div>
+</div>
+</div>
+<div class=3D"section" id=3D"httperror">
+<h3>HTTPError<a class=3D"headerlink" href=3D"https://docs.python.org/2/howt=
+o/urllib2.html#httperror" title=3D"Permalink to this headline">=C2=B6</a></=
+h3>
+<p>Every HTTP response from the server contains a numeric =E2=80=9Cstatus c=
+ode=E2=80=9D. Sometimes
+the status code indicates that the server is unable to fulfil the request. =
+The
+default handlers will handle some of these responses for you (for example, =
+if
+the response is a =E2=80=9Credirection=E2=80=9D that requests the client fe=
+tch the document from
+a different URL, urllib2 will handle that for you). For those it can=E2=80=
+=99t handle,
+urlopen will raise an <code class=3D"xref py py-exc docutils literal"><span=
+ class=3D"pre">HTTPError</span></code>. Typical errors include =E2=80=98404=
+=E2=80=99 (page not
+found), =E2=80=98403=E2=80=99 (request forbidden), and =E2=80=98401=E2=80=
+=99 (authentication required).</p>
+<p>See section 10 of RFC 2616 for a reference on all the HTTP error codes.<=
+/p>
+<p>The <code class=3D"xref py py-exc docutils literal"><span class=3D"pre">=
+HTTPError</span></code> instance raised will have an integer =E2=80=98code=
+=E2=80=99 attribute, which
+corresponds to the error sent by the server.</p>
+<div class=3D"section" id=3D"error-codes">
+<h4>Error Codes<a class=3D"headerlink" href=3D"https://docs.python.org/2/ho=
+wto/urllib2.html#error-codes" title=3D"Permalink to this headline">=C2=B6</=
+a></h4>
+<p>Because the default handlers handle redirects (codes in the 300 range), =
+and
+codes in the 100-299 range indicate success, you will usually only see erro=
+r
+codes in the 400-599 range.</p>
+<p><code class=3D"docutils literal"><span class=3D"pre">BaseHTTPServer.Base=
+HTTPRequestHandler.responses</span></code> is a useful dictionary of
+response codes in that shows all the response codes used by RFC 2616. The
+dictionary is reproduced here for convenience</p>
+<div class=3D"highlight-python" style=3D"position: relative;"><div class=3D=
+"highlight"><pre><span></span><span class=3D"c1"># Table mapping response c=
+odes to messages; entries have the</span>
+<span class=3D"c1"># form {code: (shortmessage, longmessage)}.</span>
+<span class=3D"n">responses</span> <span class=3D"o">=3D</span> <span class=
+=3D"p">{</span>
+    <span class=3D"mi">100</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Continue'</span><span class=3D"p">,</span> <=
+span class=3D"s1">'Request received, please continue'</span><span class=3D"=
+p">),</span>
+    <span class=3D"mi">101</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Switching Protocols'</span><span class=3D"p"=
+>,</span>
+          <span class=3D"s1">'Switching to new protocol; obey Upgrade heade=
+r'</span><span class=3D"p">),</span>
+
+    <span class=3D"mi">200</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'OK'</span><span class=3D"p">,</span> <span c=
+lass=3D"s1">'Request fulfilled, document follows'</span><span class=3D"p">)=
+,</span>
+    <span class=3D"mi">201</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Created'</span><span class=3D"p">,</span> <s=
+pan class=3D"s1">'Document created, URL follows'</span><span class=3D"p">),=
+</span>
+    <span class=3D"mi">202</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Accepted'</span><span class=3D"p">,</span>
+          <span class=3D"s1">'Request accepted, processing continues off-li=
+ne'</span><span class=3D"p">),</span>
+    <span class=3D"mi">203</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Non-Authoritative Information'</span><span c=
+lass=3D"p">,</span> <span class=3D"s1">'Request fulfilled from cache'</span=
+><span class=3D"p">),</span>
+    <span class=3D"mi">204</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'No Content'</span><span class=3D"p">,</span>=
+ <span class=3D"s1">'Request fulfilled, nothing follows'</span><span class=
+=3D"p">),</span>
+    <span class=3D"mi">205</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Reset Content'</span><span class=3D"p">,</sp=
+an> <span class=3D"s1">'Clear input form for further input.'</span><span cl=
+ass=3D"p">),</span>
+    <span class=3D"mi">206</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Partial Content'</span><span class=3D"p">,</=
+span> <span class=3D"s1">'Partial content follows.'</span><span class=3D"p"=
+>),</span>
+
+    <span class=3D"mi">300</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Multiple Choices'</span><span class=3D"p">,<=
+/span>
+          <span class=3D"s1">'Object has several resources -- see URI list'=
+</span><span class=3D"p">),</span>
+    <span class=3D"mi">301</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Moved Permanently'</span><span class=3D"p">,=
+</span> <span class=3D"s1">'Object moved permanently -- see URI list'</span=
+><span class=3D"p">),</span>
+    <span class=3D"mi">302</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Found'</span><span class=3D"p">,</span> <spa=
+n class=3D"s1">'Object moved temporarily -- see URI list'</span><span class=
+=3D"p">),</span>
+    <span class=3D"mi">303</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'See Other'</span><span class=3D"p">,</span> =
+<span class=3D"s1">'Object moved -- see Method and URL list'</span><span cl=
+ass=3D"p">),</span>
+    <span class=3D"mi">304</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Not Modified'</span><span class=3D"p">,</spa=
+n>
+          <span class=3D"s1">'Document has not changed since given time'</s=
+pan><span class=3D"p">),</span>
+    <span class=3D"mi">305</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Use Proxy'</span><span class=3D"p">,</span>
+          <span class=3D"s1">'You must use proxy specified in Location to a=
+ccess this '</span>
+          <span class=3D"s1">'resource.'</span><span class=3D"p">),</span>
+    <span class=3D"mi">307</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Temporary Redirect'</span><span class=3D"p">=
+,</span>
+          <span class=3D"s1">'Object moved temporarily -- see URI list'</sp=
+an><span class=3D"p">),</span>
+
+    <span class=3D"mi">400</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Bad Request'</span><span class=3D"p">,</span=
+>
+          <span class=3D"s1">'Bad request syntax or unsupported method'</sp=
+an><span class=3D"p">),</span>
+    <span class=3D"mi">401</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Unauthorized'</span><span class=3D"p">,</spa=
+n>
+          <span class=3D"s1">'No permission -- see authorization schemes'</=
+span><span class=3D"p">),</span>
+    <span class=3D"mi">402</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Payment Required'</span><span class=3D"p">,<=
+/span>
+          <span class=3D"s1">'No payment -- see charging schemes'</span><sp=
+an class=3D"p">),</span>
+    <span class=3D"mi">403</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Forbidden'</span><span class=3D"p">,</span>
+          <span class=3D"s1">'Request forbidden -- authorization will not h=
+elp'</span><span class=3D"p">),</span>
+    <span class=3D"mi">404</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Not Found'</span><span class=3D"p">,</span> =
+<span class=3D"s1">'Nothing matches the given URI'</span><span class=3D"p">=
+),</span>
+    <span class=3D"mi">405</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Method Not Allowed'</span><span class=3D"p">=
+,</span>
+          <span class=3D"s1">'Specified method is invalid for this server.'=
+</span><span class=3D"p">),</span>
+    <span class=3D"mi">406</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Not Acceptable'</span><span class=3D"p">,</s=
+pan> <span class=3D"s1">'URI not available in preferred format.'</span><spa=
+n class=3D"p">),</span>
+    <span class=3D"mi">407</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Proxy Authentication Required'</span><span c=
+lass=3D"p">,</span> <span class=3D"s1">'You must authenticate with '</span>
+          <span class=3D"s1">'this proxy before proceeding.'</span><span cl=
+ass=3D"p">),</span>
+    <span class=3D"mi">408</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Request Timeout'</span><span class=3D"p">,</=
+span> <span class=3D"s1">'Request timed out; try again later.'</span><span =
+class=3D"p">),</span>
+    <span class=3D"mi">409</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Conflict'</span><span class=3D"p">,</span> <=
+span class=3D"s1">'Request conflict.'</span><span class=3D"p">),</span>
+    <span class=3D"mi">410</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Gone'</span><span class=3D"p">,</span>
+          <span class=3D"s1">'URI no longer exists and has been permanently=
+ removed.'</span><span class=3D"p">),</span>
+    <span class=3D"mi">411</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Length Required'</span><span class=3D"p">,</=
+span> <span class=3D"s1">'Client must specify Content-Length.'</span><span =
+class=3D"p">),</span>
+    <span class=3D"mi">412</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Precondition Failed'</span><span class=3D"p"=
+>,</span> <span class=3D"s1">'Precondition in headers is false.'</span><spa=
+n class=3D"p">),</span>
+    <span class=3D"mi">413</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Request Entity Too Large'</span><span class=
+=3D"p">,</span> <span class=3D"s1">'Entity is too large.'</span><span class=
+=3D"p">),</span>
+    <span class=3D"mi">414</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Request-URI Too Long'</span><span class=3D"p=
+">,</span> <span class=3D"s1">'URI is too long.'</span><span class=3D"p">),=
+</span>
+    <span class=3D"mi">415</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Unsupported Media Type'</span><span class=3D=
+"p">,</span> <span class=3D"s1">'Entity body in unsupported format.'</span>=
+<span class=3D"p">),</span>
+    <span class=3D"mi">416</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Requested Range Not Satisfiable'</span><span=
+ class=3D"p">,</span>
+          <span class=3D"s1">'Cannot satisfy request range.'</span><span cl=
+ass=3D"p">),</span>
+    <span class=3D"mi">417</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Expectation Failed'</span><span class=3D"p">=
+,</span>
+          <span class=3D"s1">'Expect condition could not be satisfied.'</sp=
+an><span class=3D"p">),</span>
+
+    <span class=3D"mi">500</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Internal Server Error'</span><span class=3D"=
+p">,</span> <span class=3D"s1">'Server got itself in trouble'</span><span c=
+lass=3D"p">),</span>
+    <span class=3D"mi">501</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Not Implemented'</span><span class=3D"p">,</=
+span>
+          <span class=3D"s1">'Server does not support this operation'</span=
+><span class=3D"p">),</span>
+    <span class=3D"mi">502</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Bad Gateway'</span><span class=3D"p">,</span=
+> <span class=3D"s1">'Invalid responses from another server/proxy.'</span><=
+span class=3D"p">),</span>
+    <span class=3D"mi">503</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Service Unavailable'</span><span class=3D"p"=
+>,</span>
+          <span class=3D"s1">'The server cannot process the request due to =
+a high load'</span><span class=3D"p">),</span>
+    <span class=3D"mi">504</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'Gateway Timeout'</span><span class=3D"p">,</=
+span>
+          <span class=3D"s1">'The gateway server did not receive a timely r=
+esponse'</span><span class=3D"p">),</span>
+    <span class=3D"mi">505</span><span class=3D"p">:</span> <span class=3D"=
+p">(</span><span class=3D"s1">'HTTP Version Not Supported'</span><span clas=
+s=3D"p">,</span> <span class=3D"s1">'Cannot fulfill request.'</span><span c=
+lass=3D"p">),</span>
+    <span class=3D"p">}</span>
+</pre></div>
+</div>
+<p>When an error is raised the server responds by returning an HTTP error c=
+ode
+<em>and</em> an error page. You can use the <code class=3D"xref py py-exc d=
+ocutils literal"><span class=3D"pre">HTTPError</span></code> instance as a =
+response on the
+page returned. This means that as well as the code attribute, it also has r=
+ead,
+geturl, and info, methods.</p>
+<div class=3D"highlight-python" style=3D"position: relative;"><div class=3D=
+"highlight"><span class=3D"copybutton" title=3D"Hide the prompts and output=
+" style=3D"cursor: pointer; position: absolute; top: 0px; right: 0px; borde=
+r-color: rgb(170, 204, 153); border-style: solid; border-width: 0.727273px;=
+ color: rgb(170, 204, 153); font-family: monospace; padding-left: 0.2em; pa=
+dding-right: 0.2em;">&gt;&gt;&gt;</span><pre><span></span><span class=3D"gp=
+">&gt;&gt;&gt; </span><span class=3D"n">req</span> <span class=3D"o">=3D</s=
+pan> <span class=3D"n">urllib2</span><span class=3D"o">.</span><span class=
+=3D"n">Request</span><span class=3D"p">(</span><span class=3D"s1">'http://w=
+ww.python.org/fish.html'</span><span class=3D"p">)</span>
+<span class=3D"gp">&gt;&gt;&gt; </span><span class=3D"k">try</span><span cl=
+ass=3D"p">:</span>
+<span class=3D"gp">... </span>    <span class=3D"n">urllib2</span><span cla=
+ss=3D"o">.</span><span class=3D"n">urlopen</span><span class=3D"p">(</span>=
+<span class=3D"n">req</span><span class=3D"p">)</span>
+<span class=3D"gp">... </span><span class=3D"k">except</span> <span class=
+=3D"n">urllib2</span><span class=3D"o">.</span><span class=3D"n">HTTPError<=
+/span> <span class=3D"k">as</span> <span class=3D"n">e</span><span class=3D=
+"p">:</span>
+<span class=3D"gp">... </span>    <span class=3D"k">print</span> <span clas=
+s=3D"n">e</span><span class=3D"o">.</span><span class=3D"n">code</span>
+<span class=3D"gp">... </span>    <span class=3D"k">print</span> <span clas=
+s=3D"n">e</span><span class=3D"o">.</span><span class=3D"n">read</span><spa=
+n class=3D"p">()</span>=20
+<span class=3D"gp">...</span>
+<span class=3D"go">404</span>
+<span class=3D"go">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transiti=
+onal//EN"</span>
+<span class=3D"go">"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd=
+"&gt;</span>
+<span class=3D"gp">...</span>
+<span class=3D"go">&lt;title&gt;Page Not Found&lt;/title&gt;</span>
+<span class=3D"gp">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class=3D"section" id=3D"wrapping-it-up">
+<h3>Wrapping it Up<a class=3D"headerlink" href=3D"https://docs.python.org/2=
+/howto/urllib2.html#wrapping-it-up" title=3D"Permalink to this headline">=
+=C2=B6</a></h3>
+<p>So if you want to be prepared for <code class=3D"xref py py-exc docutils=
+ literal"><span class=3D"pre">HTTPError</span></code> <em>or</em> <code cla=
+ss=3D"xref py py-exc docutils literal"><span class=3D"pre">URLError</span><=
+/code> there are two
+basic approaches. I prefer the second approach.</p>
+<div class=3D"section" id=3D"number-1">
+<h4>Number 1<a class=3D"headerlink" href=3D"https://docs.python.org/2/howto=
+/urllib2.html#number-1" title=3D"Permalink to this headline">=C2=B6</a></h4=
+>
+<div class=3D"highlight-python" style=3D"position: relative;"><div class=3D=
+"highlight"><pre><span></span>from urllib2 import Request, urlopen, URLErro=
+r, HTTPError
+req =3D Request(someurl)
+try:
+    response =3D urlopen(req)
+except HTTPError as e:
+    print 'The server couldn\'t fulfill the request.'
+    print 'Error code: ', e.code
+except URLError as e:
+    print 'We failed to reach a server.'
+    print 'Reason: ', e.reason
+else:
+    # everything is fine
+</pre></div>
+</div>
+<div class=3D"admonition note">
+<p class=3D"first admonition-title">Note</p>
+<p class=3D"last">The <code class=3D"docutils literal"><span class=3D"pre">=
+except</span> <span class=3D"pre">HTTPError</span></code> <em>must</em> com=
+e first, otherwise <code class=3D"docutils literal"><span class=3D"pre">exc=
+ept</span> <span class=3D"pre">URLError</span></code>
+will <em>also</em> catch an <code class=3D"xref py py-exc docutils literal"=
+><span class=3D"pre">HTTPError</span></code>.</p>
+</div>
+</div>
+<div class=3D"section" id=3D"number-2">
+<h4>Number 2<a class=3D"headerlink" href=3D"https://docs.python.org/2/howto=
+/urllib2.html#number-2" title=3D"Permalink to this headline">=C2=B6</a></h4=
+>
+<div class=3D"highlight-python" style=3D"position: relative;"><div class=3D=
+"highlight"><pre><span></span>from urllib2 import Request, urlopen, URLErro=
+r
+req =3D Request(someurl)
+try:
+    response =3D urlopen(req)
+except URLError as e:
+    if hasattr(e, 'reason'):
+        print 'We failed to reach a server.'
+        print 'Reason: ', e.reason
+    elif hasattr(e, 'code'):
+        print 'The server couldn\'t fulfill the request.'
+        print 'Error code: ', e.code
+else:
+    # everything is fine
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class=3D"section" id=3D"info-and-geturl">
+<h2>info and geturl<a class=3D"headerlink" href=3D"https://docs.python.org/=
+2/howto/urllib2.html#info-and-geturl" title=3D"Permalink to this headline">=
+=C2=B6</a></h2>
+<p>The response returned by urlopen (or the <code class=3D"xref py py-exc d=
+ocutils literal"><span class=3D"pre">HTTPError</span></code> instance) has =
+two useful
+methods <code class=3D"xref py py-meth docutils literal"><span class=3D"pre=
+">info()</span></code> and <code class=3D"xref py py-meth docutils literal"=
+><span class=3D"pre">geturl()</span></code>.</p>
+<p><strong>geturl</strong> - this returns the real URL of the page fetched.=
+ This is useful
+because <code class=3D"docutils literal"><span class=3D"pre">urlopen</span>=
+</code> (or the opener object used) may have followed a
+redirect. The URL of the page fetched may not be the same as the URL reques=
+ted.</p>
+<p><strong>info</strong> - this returns a dictionary-like object that descr=
+ibes the page
+fetched, particularly the headers sent by the server. It is currently an
+<code class=3D"docutils literal"><span class=3D"pre">httplib.HTTPMessage</s=
+pan></code> instance.</p>
+<p>Typical headers include =E2=80=98Content-length=E2=80=99, =E2=80=98Conte=
+nt-type=E2=80=99, and so on. See the
+<a class=3D"reference external" href=3D"https://www.cs.tut.fi/~jkorpela/htt=
+p.html">Quick Reference to HTTP Headers</a>
+for a useful listing of HTTP headers with brief explanations of their meani=
+ng
+and use.</p>
+</div>
+<div class=3D"section" id=3D"openers-and-handlers">
+<h2>Openers and Handlers<a class=3D"headerlink" href=3D"https://docs.python=
+.org/2/howto/urllib2.html#openers-and-handlers" title=3D"Permalink to this =
+headline">=C2=B6</a></h2>
+<p>When you fetch a URL you use an opener (an instance of the perhaps
+confusingly-named <a class=3D"reference internal" href=3D"https://docs.pyth=
+on.org/2/library/urllib2.html#urllib2.OpenerDirector" title=3D"urllib2.Open=
+erDirector"><code class=3D"xref py py-class docutils literal"><span class=
+=3D"pre">urllib2.OpenerDirector</span></code></a>). Normally we have been u=
+sing
+the default opener - via <code class=3D"docutils literal"><span class=3D"pr=
+e">urlopen</span></code> - but you can create custom
+openers. Openers use handlers. All the =E2=80=9Cheavy lifting=E2=80=9D is d=
+one by the
+handlers. Each handler knows how to open URLs for a particular URL scheme (=
+http,
+ftp, etc.), or how to handle an aspect of URL opening, for example HTTP
+redirections or HTTP cookies.</p>
+<p>You will want to create openers if you want to fetch URLs with specific =
+handlers
+installed, for example to get an opener that handles cookies, or to get an
+opener that does not handle redirections.</p>
+<p>To create an opener, instantiate an <code class=3D"docutils literal"><sp=
+an class=3D"pre">OpenerDirector</span></code>, and then call
+<code class=3D"docutils literal"><span class=3D"pre">.add_handler(some_hand=
+ler_instance)</span></code> repeatedly.</p>
+<p>Alternatively, you can use <code class=3D"docutils literal"><span class=
+=3D"pre">build_opener</span></code>, which is a convenience function for
+creating opener objects with a single function call.  <code class=3D"docuti=
+ls literal"><span class=3D"pre">build_opener</span></code> adds
+several handlers by default, but provides a quick way to add more and/or
+override the default handlers.</p>
+<p>Other sorts of handlers you might want to can handle proxies, authentica=
+tion,
+and other common but slightly specialised situations.</p>
+<p><code class=3D"docutils literal"><span class=3D"pre">install_opener</spa=
+n></code> can be used to make an <code class=3D"docutils literal"><span cla=
+ss=3D"pre">opener</span></code> object the (global) default
+opener. This means that calls to <code class=3D"docutils literal"><span cla=
+ss=3D"pre">urlopen</span></code> will use the opener you have
+installed.</p>
+<p>Opener objects have an <code class=3D"docutils literal"><span class=3D"p=
+re">open</span></code> method, which can be called directly to fetch
+urls in the same way as the <code class=3D"docutils literal"><span class=3D=
+"pre">urlopen</span></code> function: there=E2=80=99s no need to call
+<code class=3D"docutils literal"><span class=3D"pre">install_opener</span><=
+/code>, except as a convenience.</p>
+</div>
+<div class=3D"section" id=3D"id6">
+<h2>Basic Authentication<a class=3D"headerlink" href=3D"https://docs.python=
+.org/2/howto/urllib2.html#id6" title=3D"Permalink to this headline">=C2=B6<=
+/a></h2>
+<p>To illustrate creating and installing a handler we will use the
+<code class=3D"docutils literal"><span class=3D"pre">HTTPBasicAuthHandler</=
+span></code>. For a more detailed discussion of this subject =E2=80=93
+including an explanation of how Basic Authentication works - see the <a cla=
+ss=3D"reference external" href=3D"http://www.voidspace.org.uk/python/articl=
+es/authentication.shtml">Basic
+Authentication Tutorial</a>.</p>
+<p>When authentication is required, the server sends a header (as well as t=
+he 401
+error code) requesting authentication.  This specifies the authentication s=
+cheme
+and a =E2=80=98realm=E2=80=99. The header looks like: <code class=3D"docuti=
+ls literal"><span class=3D"pre">WWW-Authenticate:</span> <span class=3D"pre=
+">SCHEME</span>
+<span class=3D"pre">realm=3D"REALM"</span></code>.</p>
+<p>e.g.</p>
+<div class=3D"highlight-python" style=3D"position: relative;"><div class=3D=
+"highlight"><pre><span></span>WWW-Authenticate: Basic realm=3D"cPanel Users=
+"
+</pre></div>
+</div>
+<p>The client should then retry the request with the appropriate name and p=
+assword
+for the realm included as a header in the request. This is =E2=80=98basic
+authentication=E2=80=99. In order to simplify this process we can create an=
+ instance of
+<code class=3D"docutils literal"><span class=3D"pre">HTTPBasicAuthHandler</=
+span></code> and an opener to use this handler.</p>
+<p>The <code class=3D"docutils literal"><span class=3D"pre">HTTPBasicAuthHa=
+ndler</span></code> uses an object called a password manager to handle
+the mapping of URLs and realms to passwords and usernames. If you know what=
+ the
+realm is (from the authentication header sent by the server), then you can =
+use a
+<code class=3D"docutils literal"><span class=3D"pre">HTTPPasswordMgr</span>=
+</code>. Frequently one doesn=E2=80=99t care what the realm is. In that
+case, it is convenient to use <code class=3D"docutils literal"><span class=
+=3D"pre">HTTPPasswordMgrWithDefaultRealm</span></code>. This allows
+you to specify a default username and password for a URL. This will be supp=
+lied
+in the absence of you providing an alternative combination for a specific
+realm. We indicate this by providing <code class=3D"docutils literal"><span=
+ class=3D"pre">None</span></code> as the realm argument to the
+<code class=3D"docutils literal"><span class=3D"pre">add_password</span></c=
+ode> method.</p>
+<p>The top-level URL is the first URL that requires authentication. URLs =
+=E2=80=9Cdeeper=E2=80=9D
+than the URL you pass to .add_password() will also match.</p>
+<div class=3D"highlight-python" style=3D"position: relative;"><div class=3D=
+"highlight"><pre><span></span><span class=3D"c1"># create a password manage=
+r</span>
+<span class=3D"n">password_mgr</span> <span class=3D"o">=3D</span> <span cl=
+ass=3D"n">urllib2</span><span class=3D"o">.</span><span class=3D"n">HTTPPas=
+swordMgrWithDefaultRealm</span><span class=3D"p">()</span>
+
+<span class=3D"c1"># Add the username and password.</span>
+<span class=3D"c1"># If we knew the realm, we could use it instead of None.=
+</span>
+<span class=3D"n">top_level_url</span> <span class=3D"o">=3D</span> <span c=
+lass=3D"s2">"http://example.com/foo/"</span>
+<span class=3D"n">password_mgr</span><span class=3D"o">.</span><span class=
+=3D"n">add_password</span><span class=3D"p">(</span><span class=3D"bp">None=
+</span><span class=3D"p">,</span> <span class=3D"n">top_level_url</span><sp=
+an class=3D"p">,</span> <span class=3D"n">username</span><span class=3D"p">=
+,</span> <span class=3D"n">password</span><span class=3D"p">)</span>
+
+<span class=3D"n">handler</span> <span class=3D"o">=3D</span> <span class=
+=3D"n">urllib2</span><span class=3D"o">.</span><span class=3D"n">HTTPBasicA=
+uthHandler</span><span class=3D"p">(</span><span class=3D"n">password_mgr</=
+span><span class=3D"p">)</span>
+
+<span class=3D"c1"># create "opener" (OpenerDirector instance)</span>
+<span class=3D"n">opener</span> <span class=3D"o">=3D</span> <span class=3D=
+"n">urllib2</span><span class=3D"o">.</span><span class=3D"n">build_opener<=
+/span><span class=3D"p">(</span><span class=3D"n">handler</span><span class=
+=3D"p">)</span>
+
+<span class=3D"c1"># use the opener to fetch a URL</span>
+<span class=3D"n">opener</span><span class=3D"o">.</span><span class=3D"n">=
+open</span><span class=3D"p">(</span><span class=3D"n">a_url</span><span cl=
+ass=3D"p">)</span>
+
+<span class=3D"c1"># Install the opener.</span>
+<span class=3D"c1"># Now all calls to urllib2.urlopen use our opener.</span=
+>
+<span class=3D"n">urllib2</span><span class=3D"o">.</span><span class=3D"n"=
+>install_opener</span><span class=3D"p">(</span><span class=3D"n">opener</s=
+pan><span class=3D"p">)</span>
+</pre></div>
+</div>
+<div class=3D"admonition note">
+<p class=3D"first admonition-title">Note</p>
+<p class=3D"last">In the above example we only supplied our <code class=3D"=
+docutils literal"><span class=3D"pre">HTTPBasicAuthHandler</span></code> to
+<code class=3D"docutils literal"><span class=3D"pre">build_opener</span></c=
+ode>. By default openers have the handlers for normal situations
+=E2=80=93 <code class=3D"docutils literal"><span class=3D"pre">ProxyHandler=
+</span></code> (if a proxy setting such as an <span class=3D"target" id=3D"=
+index-1"></span><code class=3D"xref std std-envvar docutils literal"><span =
+class=3D"pre">http_proxy</span></code>
+environment variable is set), <code class=3D"docutils literal"><span class=
+=3D"pre">UnknownHandler</span></code>, <code class=3D"docutils literal"><sp=
+an class=3D"pre">HTTPHandler</span></code>,
+<code class=3D"docutils literal"><span class=3D"pre">HTTPDefaultErrorHandle=
+r</span></code>, <code class=3D"docutils literal"><span class=3D"pre">HTTPR=
+edirectHandler</span></code>, <code class=3D"docutils literal"><span class=
+=3D"pre">FTPHandler</span></code>,
+<code class=3D"docutils literal"><span class=3D"pre">FileHandler</span></co=
+de>, <code class=3D"docutils literal"><span class=3D"pre">HTTPErrorProcesso=
+r</span></code>.</p>
+</div>
+<p><code class=3D"docutils literal"><span class=3D"pre">top_level_url</span=
+></code> is in fact <em>either</em> a full URL (including the =E2=80=98http=
+:=E2=80=99 scheme
+component and the hostname and optionally the port number)
+e.g. =E2=80=9C<a class=3D"reference external" href=3D"http://example.com/">=
+http://example.com/</a>=E2=80=9D <em>or</em> an =E2=80=9Cauthority=E2=80=9D=
+ (i.e. the hostname,
+optionally including the port number) e.g. =E2=80=9Cexample.com=E2=80=9D or=
+ =E2=80=9Cexample.com:8080=E2=80=9D
+(the latter example includes a port number).  The authority, if present, mu=
+st
+NOT contain the =E2=80=9Cuserinfo=E2=80=9D component - for example =E2=80=
+=9Cjoe:password@example.com=E2=80=9D is
+not correct.</p>
+</div>
+<div class=3D"section" id=3D"proxies">
+<h2>Proxies<a class=3D"headerlink" href=3D"https://docs.python.org/2/howto/=
+urllib2.html#proxies" title=3D"Permalink to this headline">=C2=B6</a></h2>
+<p><strong>urllib2</strong> will auto-detect your proxy settings and use th=
+ose. This is through
+the <code class=3D"docutils literal"><span class=3D"pre">ProxyHandler</span=
+></code>, which is part of the normal handler chain when a proxy
+setting is detected.  Normally that=E2=80=99s a good thing, but there are o=
+ccasions
+when it may not be helpful <a class=3D"footnote-reference" href=3D"https://=
+docs.python.org/2/howto/urllib2.html#id14" id=3D"id7">[6]</a>. One way to d=
+o this is to setup our own
+<code class=3D"docutils literal"><span class=3D"pre">ProxyHandler</span></c=
+ode>, with no proxies defined. This is done using similar steps to
+setting up a <a class=3D"reference external" href=3D"http://www.voidspace.o=
+rg.uk/python/articles/authentication.shtml">Basic Authentication</a> handle=
+r:</p>
+<div class=3D"highlight-python" style=3D"position: relative;"><div class=3D=
+"highlight"><span class=3D"copybutton" title=3D"Hide the prompts and output=
+" style=3D"cursor: pointer; position: absolute; top: 0px; right: 0px; borde=
+r-color: rgb(170, 204, 153); border-style: solid; border-width: 0.727273px;=
+ color: rgb(170, 204, 153); font-family: monospace; padding-left: 0.2em; pa=
+dding-right: 0.2em;">&gt;&gt;&gt;</span><pre><span></span><span class=3D"gp=
+">&gt;&gt;&gt; </span><span class=3D"n">proxy_support</span> <span class=3D=
+"o">=3D</span> <span class=3D"n">urllib2</span><span class=3D"o">.</span><s=
+pan class=3D"n">ProxyHandler</span><span class=3D"p">({})</span>
+<span class=3D"gp">&gt;&gt;&gt; </span><span class=3D"n">opener</span> <spa=
+n class=3D"o">=3D</span> <span class=3D"n">urllib2</span><span class=3D"o">=
+.</span><span class=3D"n">build_opener</span><span class=3D"p">(</span><spa=
+n class=3D"n">proxy_support</span><span class=3D"p">)</span>
+<span class=3D"gp">&gt;&gt;&gt; </span><span class=3D"n">urllib2</span><spa=
+n class=3D"o">.</span><span class=3D"n">install_opener</span><span class=3D=
+"p">(</span><span class=3D"n">opener</span><span class=3D"p">)</span>
+</pre></div>
+</div>
+<div class=3D"admonition note">
+<p class=3D"first admonition-title">Note</p>
+<p class=3D"last">Currently <code class=3D"docutils literal"><span class=3D=
+"pre">urllib2</span></code> <em>does not</em> support fetching of <code cla=
+ss=3D"docutils literal"><span class=3D"pre">https</span></code> locations
+through a proxy.  However, this can be enabled by extending urllib2 as
+shown in the recipe <a class=3D"footnote-reference" href=3D"https://docs.py=
+thon.org/2/howto/urllib2.html#id15" id=3D"id8">[7]</a>.</p>
+</div>
+<div class=3D"admonition note">
+<p class=3D"first admonition-title">Note</p>
+<p class=3D"last"><code class=3D"docutils literal"><span class=3D"pre">HTTP=
+_PROXY</span></code> will be ignored if a variable <code class=3D"docutils =
+literal"><span class=3D"pre">REQUEST_METHOD</span></code> is set; see
+the documentation on <a class=3D"reference internal" href=3D"https://docs.p=
+ython.org/2/library/urllib.html#urllib.getproxies" title=3D"urllib.getproxi=
+es"><code class=3D"xref py py-func docutils literal"><span class=3D"pre">ge=
+tproxies()</span></code></a>.</p>
+</div>
+</div>
+<div class=3D"section" id=3D"sockets-and-layers">
+<h2>Sockets and Layers<a class=3D"headerlink" href=3D"https://docs.python.o=
+rg/2/howto/urllib2.html#sockets-and-layers" title=3D"Permalink to this head=
+line">=C2=B6</a></h2>
+<p>The Python support for fetching resources from the web is layered. urlli=
+b2 uses
+the httplib library, which in turn uses the socket library.</p>
+<p>As of Python 2.3 you can specify how long a socket should wait for a res=
+ponse
+before timing out. This can be useful in applications which have to fetch w=
+eb
+pages. By default the socket module has <em>no timeout</em> and can hang. C=
+urrently,
+the socket timeout is not exposed at the httplib or urllib2 levels.  Howeve=
+r,
+you can set the default timeout globally for all sockets using</p>
+<div class=3D"highlight-python" style=3D"position: relative;"><div class=3D=
+"highlight"><pre><span></span><span class=3D"kn">import</span> <span class=
+=3D"nn">socket</span>
+<span class=3D"kn">import</span> <span class=3D"nn">urllib2</span>
+
+<span class=3D"c1"># timeout in seconds</span>
+<span class=3D"n">timeout</span> <span class=3D"o">=3D</span> <span class=
+=3D"mi">10</span>
+<span class=3D"n">socket</span><span class=3D"o">.</span><span class=3D"n">=
+setdefaulttimeout</span><span class=3D"p">(</span><span class=3D"n">timeout=
+</span><span class=3D"p">)</span>
+
+<span class=3D"c1"># this call to urllib2.urlopen now uses the default time=
+out</span>
+<span class=3D"c1"># we have set in the socket module</span>
+<span class=3D"n">req</span> <span class=3D"o">=3D</span> <span class=3D"n"=
+>urllib2</span><span class=3D"o">.</span><span class=3D"n">Request</span><s=
+pan class=3D"p">(</span><span class=3D"s1">'http://www.voidspace.org.uk'</s=
+pan><span class=3D"p">)</span>
+<span class=3D"n">response</span> <span class=3D"o">=3D</span> <span class=
+=3D"n">urllib2</span><span class=3D"o">.</span><span class=3D"n">urlopen</s=
+pan><span class=3D"p">(</span><span class=3D"n">req</span><span class=3D"p"=
+>)</span>
+</pre></div>
+</div>
+</div>
+<hr class=3D"docutils">
+<div class=3D"section" id=3D"footnotes">
+<h2>Footnotes<a class=3D"headerlink" href=3D"https://docs.python.org/2/howt=
+o/urllib2.html#footnotes" title=3D"Permalink to this headline">=C2=B6</a></=
+h2>
+<p>This document was reviewed and revised by John Lee.</p>
+<table class=3D"docutils footnote" frame=3D"void" id=3D"id9" rules=3D"none"=
+>
+<colgroup><col class=3D"label"><col></colgroup>
+<tbody valign=3D"top">
+<tr><td class=3D"label"><a class=3D"fn-backref" href=3D"https://docs.python=
+.org/2/howto/urllib2.html#id1">[1]</a></td><td>For an introduction to the C=
+GI protocol see
+<a class=3D"reference external" href=3D"http://www.pyzine.com/Issue008/Sect=
+ion_Articles/article_CGIOne.html">Writing Web Applications in Python</a>.</=
+td></tr>
+</tbody>
+</table>
+<table class=3D"docutils footnote" frame=3D"void" id=3D"id10" rules=3D"none=
+">
+<colgroup><col class=3D"label"><col></colgroup>
+<tbody valign=3D"top">
+<tr><td class=3D"label"><a class=3D"fn-backref" href=3D"https://docs.python=
+.org/2/howto/urllib2.html#id2">[2]</a></td><td>Google for example.</td></tr=
+>
+</tbody>
+</table>
+<table class=3D"docutils footnote" frame=3D"void" id=3D"id11" rules=3D"none=
+">
+<colgroup><col class=3D"label"><col></colgroup>
+<tbody valign=3D"top">
+<tr><td class=3D"label"><a class=3D"fn-backref" href=3D"https://docs.python=
+.org/2/howto/urllib2.html#id3">[3]</a></td><td>Browser sniffing is a very b=
+ad practise for website design - building
+sites using web standards is much more sensible. Unfortunately a lot of
+sites still send different versions to different browsers.</td></tr>
+</tbody>
+</table>
+<table class=3D"docutils footnote" frame=3D"void" id=3D"id12" rules=3D"none=
+">
+<colgroup><col class=3D"label"><col></colgroup>
+<tbody valign=3D"top">
+<tr><td class=3D"label"><a class=3D"fn-backref" href=3D"https://docs.python=
+.org/2/howto/urllib2.html#id4">[4]</a></td><td>The user agent for MSIE 6 is
+<em>=E2=80=98Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET C=
+LR 1.1.4322)=E2=80=99</em></td></tr>
+</tbody>
+</table>
+<table class=3D"docutils footnote" frame=3D"void" id=3D"id13" rules=3D"none=
+">
+<colgroup><col class=3D"label"><col></colgroup>
+<tbody valign=3D"top">
+<tr><td class=3D"label"><a class=3D"fn-backref" href=3D"https://docs.python=
+.org/2/howto/urllib2.html#id5">[5]</a></td><td>For details of more HTTP req=
+uest headers, see
+<a class=3D"reference external" href=3D"https://www.cs.tut.fi/~jkorpela/htt=
+p.html">Quick Reference to HTTP Headers</a>.</td></tr>
+</tbody>
+</table>
+<table class=3D"docutils footnote" frame=3D"void" id=3D"id14" rules=3D"none=
+">
+<colgroup><col class=3D"label"><col></colgroup>
+<tbody valign=3D"top">
+<tr><td class=3D"label"><a class=3D"fn-backref" href=3D"https://docs.python=
+.org/2/howto/urllib2.html#id7">[6]</a></td><td>In my case I have to use a p=
+roxy to access the internet at work. If you
+attempt to fetch <em>localhost</em> URLs through this proxy it blocks them.=
+ IE
+is set to use the proxy, which urllib2 picks up on. In order to test
+scripts with a localhost server, I have to prevent urllib2 from using
+the proxy.</td></tr>
+</tbody>
+</table>
+<table class=3D"docutils footnote" frame=3D"void" id=3D"id15" rules=3D"none=
+">
+<colgroup><col class=3D"label"><col></colgroup>
+<tbody valign=3D"top">
+<tr><td class=3D"label"><a class=3D"fn-backref" href=3D"https://docs.python=
+.org/2/howto/urllib2.html#id8">[7]</a></td><td>urllib2 opener for SSL proxy=
+ (CONNECT method): <a class=3D"reference external" href=3D"https://code.act=
+ivestate.com/recipes/456195/">ASPN Cookbook Recipe</a>.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class=3D"sphinxsidebar" role=3D"navigation" aria-label=3D"main n=
+avigation">
+        <div class=3D"sphinxsidebarwrapper" style=3D"float: left; margin-ri=
+ght: 0px; width: 202px; top: 4381.27px;">
+  <h3><a href=3D"https://docs.python.org/2/contents.html">Table Of Contents=
+</a></h3>
+  <ul>
+<li><a class=3D"reference internal" href=3D"https://docs.python.org/2/howto=
+/urllib2.html#">HOWTO Fetch Internet Resources Using urllib2</a><ul>
+<li><a class=3D"reference internal" href=3D"https://docs.python.org/2/howto=
+/urllib2.html#introduction">Introduction</a></li>
+<li><a class=3D"reference internal" href=3D"https://docs.python.org/2/howto=
+/urllib2.html#fetching-urls">Fetching URLs</a><ul>
+<li><a class=3D"reference internal" href=3D"https://docs.python.org/2/howto=
+/urllib2.html#data">Data</a></li>
+<li><a class=3D"reference internal" href=3D"https://docs.python.org/2/howto=
+/urllib2.html#headers">Headers</a></li>
+</ul>
+</li>
+<li><a class=3D"reference internal" href=3D"https://docs.python.org/2/howto=
+/urllib2.html#handling-exceptions">Handling Exceptions</a><ul>
+<li><a class=3D"reference internal" href=3D"https://docs.python.org/2/howto=
+/urllib2.html#urlerror">URLError</a></li>
+<li><a class=3D"reference internal" href=3D"https://docs.python.org/2/howto=
+/urllib2.html#httperror">HTTPError</a><ul>
+<li><a class=3D"reference internal" href=3D"https://docs.python.org/2/howto=
+/urllib2.html#error-codes">Error Codes</a></li>
+</ul>
+</li>
+<li><a class=3D"reference internal" href=3D"https://docs.python.org/2/howto=
+/urllib2.html#wrapping-it-up">Wrapping it Up</a><ul>
+<li><a class=3D"reference internal" href=3D"https://docs.python.org/2/howto=
+/urllib2.html#number-1">Number 1</a></li>
+<li><a class=3D"reference internal" href=3D"https://docs.python.org/2/howto=
+/urllib2.html#number-2">Number 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class=3D"reference internal" href=3D"https://docs.python.org/2/howto=
+/urllib2.html#info-and-geturl">info and geturl</a></li>
+<li><a class=3D"reference internal" href=3D"https://docs.python.org/2/howto=
+/urllib2.html#openers-and-handlers">Openers and Handlers</a></li>
+<li><a class=3D"reference internal" href=3D"https://docs.python.org/2/howto=
+/urllib2.html#id6">Basic Authentication</a></li>
+<li><a class=3D"reference internal" href=3D"https://docs.python.org/2/howto=
+/urllib2.html#proxies">Proxies</a></li>
+<li><a class=3D"reference internal" href=3D"https://docs.python.org/2/howto=
+/urllib2.html#sockets-and-layers">Sockets and Layers</a></li>
+<li><a class=3D"reference internal" href=3D"https://docs.python.org/2/howto=
+/urllib2.html#footnotes">Footnotes</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class=3D"topless"><a href=3D"https://docs.python.org/2/howto/unicode.h=
+tml" title=3D"previous chapter">Unicode HOWTO</a></p>
+  <h4>Next topic</h4>
+  <p class=3D"topless"><a href=3D"https://docs.python.org/2/howto/webserver=
+s.html" title=3D"next chapter">HOWTO Use Python in the web</a></p>
+<h3>This Page</h3>
+<ul class=3D"this-page-menu">
+  <li><a href=3D"https://docs.python.org/2/bugs.html">Report a Bug</a></li>
+  <li><a href=3D"https://docs.python.org/2/_sources/howto/urllib2.txt" rel=
+=3D"nofollow" title=3D"[=E6=AD=A4=E9=93=BE=E6=8E=A5=E5=B7=B2=E7=A0=B4=E8=A7=
+=A3]
+">Show Source</a></li>
+</ul>
+
+<div id=3D"searchbox" role=3D"search">
+  <h3>Quick search</h3>
+    <form class=3D"search" action=3D"https://docs.python.org/2/search.html"=
+ method=3D"get">
+      <input type=3D"text" name=3D"q">
+      <input type=3D"submit" value=3D"Go">
+      <input type=3D"hidden" name=3D"check_keywords" value=3D"yes">
+      <input type=3D"hidden" name=3D"area" value=3D"default">
+    </form>
+    <p class=3D"searchtip" style=3D"font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+
+        </div>
+      <div id=3D"sidebarbutton" title=3D"Collapse sidebar" style=3D"color: =
+rgb(255, 255, 255); border-left: 1px solid rgb(19, 63, 82); font-size: 1.2e=
+m; cursor: pointer; height: 8250px; padding-top: 1px; margin-left: 218px;">=
+<span style=3D"display: block; margin-top: 326.591px;">=C2=AB</span></div><=
+/div>
+      <div class=3D"clearer"></div>
+    </div> =20
+    <div class=3D"related" role=3D"navigation" aria-label=3D"related naviga=
+tion">
+      <h3>Navigation</h3>
+      <ul>
+        <li class=3D"right" style=3D"margin-right: 10px">
+          <a href=3D"https://docs.python.org/2/genindex.html" title=3D"Gene=
+ral Index">index</a></li>
+        <li class=3D"right">
+          <a href=3D"https://docs.python.org/2/py-modindex.html" title=3D"P=
+ython Module Index">modules</a> |</li>
+        <li class=3D"right">
+          <a href=3D"https://docs.python.org/2/howto/webservers.html" title=
+=3D"HOWTO Use Python in the web">next</a> |</li>
+        <li class=3D"right">
+          <a href=3D"https://docs.python.org/2/howto/unicode.html" title=3D=
+"Unicode HOWTO">previous</a> |</li>
+        <li><img src=3D"https://docs.python.org/2/_static/py.png" alt=3D"" =
+style=3D"vertical-align: middle; margin-top: -1px"></li>
+        <li><a href=3D"https://www.python.org/">Python</a> =C2=BB</li>
+        <li>
+          <span class=3D"version_switcher_placeholder"><select><option valu=
+e=3D"3.7">dev (3.7)</option><option value=3D"3.6">3.6</option><option value=
+=3D"3.5">3.5</option><option value=3D"3.4">3.4</option><option value=3D"3.3=
+">3.3</option><option value=3D"2.7" selected=3D"selected">2.7.12</option></=
+select></span>
+          <a href=3D"https://docs.python.org/2/index.html">Documentation</a=
+> =C2=BB
+        </li>
+
+          <li class=3D"nav-item nav-item-1"><a href=3D"https://docs.python.=
+org/2/howto/index.html">Python HOWTOs</a> =C2=BB</li>=20
+      </ul>
+    </div> =20
+    <div class=3D"footer">
+    =C2=A9 <a href=3D"https://docs.python.org/2/copyright.html">Copyright</=
+a> 1990-2016, Python Software Foundation.
+    <br>
+    The Python Software Foundation is a non-profit corporation.
+    <a href=3D"https://www.python.org/psf/donations/">Please donate.</a>
+    <br>
+    Last updated on Sep 20, 2016.
+    <a href=3D"https://docs.python.org/2/bugs.html">Found a bug</a>?
+    <br>
+    Created using <a href=3D"http://sphinx.pocoo.org/">Sphinx</a> 1.3.3.
+    </div>
+
+ =20
+</body></html>
+------MultipartBoundary--lRO4MeQK109wF6vj5EJs2Pnvov9mQ49yim4lhw0aSU----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://docs.python.org/2/_static/basic.css
+
+@charset "utf-8";
+
+div.clearer { clear: both; }
+
+div.related { width: 100%; font-size: 90%; }
+
+div.related h3 { display: none; }
+
+div.related ul { margin: 0px; padding: 0px 0px 0px 10px; list-style: none; =
+}
+
+div.related li { display: inline; }
+
+div.related li.right { float: right; margin-right: 5px; }
+
+div.sphinxsidebarwrapper { position: relative; top: 0px; padding: 10px 5px =
+0px 10px; word-wrap: break-word; }
+
+div.sphinxsidebar { float: left; width: 230px; margin-left: -100%; font-siz=
+e: 90%; }
+
+div.sphinxsidebar ul { list-style: none; }
+
+div.sphinxsidebar ul ul, div.sphinxsidebar ul.want-points { margin-left: 20=
+px; list-style: square; }
+
+div.sphinxsidebar ul ul { margin-top: 0px; margin-bottom: 0px; }
+
+div.sphinxsidebar form { margin-top: 10px; }
+
+div.sphinxsidebar input { border: 1px solid rgb(152, 219, 204); font-family=
+: sans-serif; font-size: 1em; }
+
+img { border: 0px; }
+
+ul.search { margin: 10px 0px 0px 20px; padding: 0px; }
+
+ul.search li { padding: 5px 0px 5px 20px; background-image: url("file.png")=
+; background-repeat: no-repeat; background-position: 0px 7px; }
+
+ul.search li a { font-weight: bold; }
+
+ul.search li div.context { color: rgb(136, 136, 136); margin: 2px 0px 0px 3=
+0px; text-align: left; }
+
+ul.keywordmatches li.goodmatch a { font-weight: bold; }
+
+table.contentstable { width: 90%; }
+
+table.contentstable p.biglink { line-height: 150%; }
+
+a.biglink { font-size: 1.3em; }
+
+span.linkdescr { font-style: italic; padding-top: 5px; font-size: 90%; }
+
+table.indextable td { text-align: left; vertical-align: top; }
+
+table.indextable dl, table.indextable dd { margin-top: 0px; margin-bottom: =
+0px; }
+
+table.indextable tr.pcap { height: 10px; }
+
+table.indextable tr.cap { margin-top: 10px; background-color: rgb(242, 242,=
+ 242); }
+
+img.toggler { margin-right: 3px; margin-top: 3px; cursor: pointer; }
+
+a.headerlink { visibility: hidden; }
+
+h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, =
+h4:hover > a.headerlink, h5:hover > a.headerlink, h6:hover > a.headerlink, =
+dt:hover > a.headerlink { visibility: visible; }
+
+div.body p.caption { text-align: inherit; }
+
+div.body td { text-align: left; }
+
+.field-list ul { padding-left: 1em; }
+
+.first { margin-top: 0px !important; }
+
+p.rubric { margin-top: 30px; font-weight: bold; }
+
+div.sidebar { margin: 0px 0px 0.5em 1em; border: 1px solid rgb(221, 221, 18=
+7); padding: 7px 7px 0px; background-color: rgb(255, 255, 238); width: 40%;=
+ float: right; }
+
+p.sidebar-title { font-weight: bold; }
+
+div.topic { border: 1px solid rgb(204, 204, 204); padding: 7px 7px 0px; mar=
+gin: 10px 0px; }
+
+p.topic-title { font-size: 1.1em; font-weight: bold; margin-top: 10px; }
+
+div.admonition { margin-top: 10px; margin-bottom: 10px; padding: 7px; }
+
+div.admonition dt { font-weight: bold; }
+
+div.admonition dl { margin-bottom: 0px; }
+
+p.admonition-title { margin: 0px 10px 5px 0px; font-weight: bold; }
+
+div.body p.centered { text-align: center; margin-top: 25px; }
+
+table.docutils { border: 0px solid rgb(221, 204, 238); border-collapse: col=
+lapse; }
+
+table.docutils td, table.docutils th { padding: 2px 5px; border-left: 0px; =
+background-color: rgb(238, 238, 255); }
+
+table.docutils td p.last, table.docutils th p.last { margin-bottom: 0px; }
+
+table.field-list td, table.field-list th { border: 0px !important; }
+
+table.footnote td, table.footnote th { border: 0px !important; }
+
+table.docutils th { border-top: 1px solid rgb(204, 170, 204); background-co=
+lor: rgb(238, 221, 238); }
+
+th { text-align: left; padding-right: 5px; }
+
+th.head { text-align: center; }
+
+dl { margin-bottom: 15px; }
+
+dd p { margin-top: 0px; }
+
+dd ul, dd table { margin-bottom: 10px; }
+
+dd { margin-top: 3px; margin-bottom: 10px; margin-left: 30px; }
+
+dt:target, .highlighted { background-color: rgb(251, 229, 78); }
+
+dl.glossary dt { font-weight: bold; font-size: 1.1em; }
+
+.field-list ul { margin: 0px; padding-left: 1em; }
+
+.field-list p { margin: 0px; }
+
+.refcount { color: rgb(0, 102, 0); }
+
+.optional { font-size: 1.3em; }
+
+.versionmodified { font-style: italic; }
+
+.deprecated { background-color: rgb(255, 228, 228); border: 1px solid rgb(2=
+55, 102, 102); padding: 7px; }
+
+div.deprecated p { margin-bottom: 0px; }
+
+.system-message { background-color: rgb(255, 221, 170); padding: 5px; borde=
+r: 3px solid red; }
+
+.footnote:target { background-color: rgb(255, 255, 170); }
+
+.impl-detail { margin-top: 10px; margin-bottom: 10px; padding: 7px; border:=
+ 1px solid rgb(204, 204, 204); }
+
+.impl-detail .compound-first { margin-top: 0px; }
+
+.impl-detail .compound-last { margin-bottom: 0px; }
+
+pre { overflow-x: auto; overflow-y: hidden; }
+
+td.linenos pre { padding: 5px 0px; border: 0px; background-color: transpare=
+nt; color: rgb(170, 170, 170); }
+
+table.highlighttable { margin-left: 0.5em; }
+
+table.highlighttable td { padding: 0px 0.5em; }
+
+code.descname { background-color: transparent; font-weight: bold; font-size=
+: 1.2em; }
+
+code.descclassname { background-color: transparent; }
+
+code.xref, a code { background-color: transparent; font-weight: bold; }
+
+h1 code, h2 code, h3 code, h4 code, h5 code, h6 code { background-color: tr=
+ansparent; }
+
+.highlight { background: none !important; }
+
+img.math { vertical-align: middle; }
+
+div.body div.math p { text-align: center; }
+
+span.eqno { float: right; }
+
+@media print {=20
+  div.document, div.documentwrapper, div.bodywrapper { width: 100%; margin:=
+ 0px !important; }
+  div.sphinxsidebar, div.related, div.footer, #top-link { display: none; }
+}
+------MultipartBoundary--lRO4MeQK109wF6vj5EJs2Pnvov9mQ49yim4lhw0aSU----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://docs.python.org/2/_static/classic.css
+
+@charset "utf-8";
+
+@import url("basic.css");
+
+body { font-family: sans-serif; font-size: 100%; background-color: rgb(17, =
+48, 61); color: rgb(0, 0, 0); margin: 0px; padding: 0px; }
+
+div.document { background-color: rgb(28, 78, 99); }
+
+div.documentwrapper { float: left; width: 100%; }
+
+div.bodywrapper { margin: 0px 0px 0px 230px; }
+
+div.body { background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); paddi=
+ng: 0px 20px 30px; }
+
+div.footer { color: rgb(255, 255, 255); width: 100%; padding: 9px 0px; text=
+-align: center; font-size: 75%; }
+
+div.footer a { color: rgb(255, 255, 255); text-decoration: underline; }
+
+div.related { background-color: rgb(19, 63, 82); line-height: 30px; color: =
+rgb(255, 255, 255); }
+
+div.related a { color: rgb(255, 255, 255); }
+
+div.sphinxsidebar { }
+
+div.sphinxsidebar h3 { font-family: "Trebuchet MS", sans-serif; color: rgb(=
+255, 255, 255); font-size: 1.4em; font-weight: normal; margin: 0px; padding=
+: 0px; }
+
+div.sphinxsidebar h3 a { color: rgb(255, 255, 255); }
+
+div.sphinxsidebar h4 { font-family: "Trebuchet MS", sans-serif; color: rgb(=
+255, 255, 255); font-size: 1.3em; font-weight: normal; margin: 5px 0px 0px;=
+ padding: 0px; }
+
+div.sphinxsidebar p { color: rgb(255, 255, 255); }
+
+div.sphinxsidebar p.topless { margin: 5px 10px 10px; }
+
+div.sphinxsidebar ul { margin: 10px; padding: 0px; color: rgb(255, 255, 255=
+); }
+
+div.sphinxsidebar a { color: rgb(152, 219, 204); }
+
+div.sphinxsidebar input { border: 1px solid rgb(152, 219, 204); font-family=
+: sans-serif; font-size: 1em; }
+
+div#sidebarbutton { background-color: rgb(60, 110, 131); }
+
+a { color: rgb(53, 95, 124); text-decoration: none; }
+
+a:visited { color: rgb(53, 95, 124); text-decoration: none; }
+
+a:hover { text-decoration: underline; }
+
+div.body h1, div.body h2, div.body h3, div.body h4, div.body h5, div.body h=
+6 { font-family: "Trebuchet MS", sans-serif; background-color: rgb(242, 242=
+, 242); font-weight: normal; color: rgb(32, 67, 92); border-bottom: 1px sol=
+id rgb(204, 204, 204); margin: 20px -20px 10px; padding: 3px 0px 3px 10px; =
+}
+
+div.body h1 { margin-top: 0px; font-size: 200%; }
+
+div.body h2 { font-size: 160%; }
+
+div.body h3 { font-size: 140%; }
+
+div.body h4 { font-size: 120%; }
+
+div.body h5 { font-size: 110%; }
+
+div.body h6 { font-size: 100%; }
+
+a.headerlink { color: rgb(198, 15, 15); font-size: 0.8em; padding: 0px 4px;=
+ text-decoration: none; }
+
+a.headerlink:hover { background-color: rgb(198, 15, 15); color: white; }
+
+div.body p, div.body dd, div.body li { text-align: justify; line-height: 13=
+0%; }
+
+div.admonition p.admonition-title + p { display: inline; }
+
+div.admonition p { margin-bottom: 5px; }
+
+div.admonition pre { margin-bottom: 5px; }
+
+div.admonition ul, div.admonition ol { margin-bottom: 5px; }
+
+div.note { background-color: rgb(238, 238, 238); border: 1px solid rgb(204,=
+ 204, 204); }
+
+div.seealso { background-color: rgb(255, 255, 204); border: 1px solid rgb(2=
+55, 255, 102); }
+
+div.topic { background-color: rgb(238, 238, 238); }
+
+div.warning { background-color: rgb(255, 228, 228); border: 1px solid rgb(2=
+55, 102, 102); }
+
+p.admonition-title { display: inline; }
+
+p.admonition-title::after { content: ":"; }
+
+pre { padding: 5px; background-color: rgb(238, 255, 204); color: rgb(51, 51=
+, 51); line-height: 120%; border-top: 1px solid rgb(170, 204, 153); border-=
+bottom: 1px solid rgb(170, 204, 153); border-image: initial; border-left: n=
+one; border-right: none; }
+
+code { background-color: rgb(236, 240, 243); padding: 0px 1px; font-size: 0=
+.95em; }
+
+th { background-color: rgb(238, 221, 238); }
+
+.warning code { background: rgb(239, 194, 194); }
+
+.note code { background: rgb(214, 214, 214); }
+
+.viewcode-back { font-family: sans-serif; }
+
+div.viewcode-block:target { background-color: rgb(244, 222, 191); border-to=
+p: 1px solid rgb(170, 204, 153); border-bottom: 1px solid rgb(170, 204, 153=
+); }
+
+div.code-block-caption { color: rgb(239, 239, 239); background-color: rgb(2=
+8, 78, 99); }
+------MultipartBoundary--lRO4MeQK109wF6vj5EJs2Pnvov9mQ49yim4lhw0aSU----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://docs.python.org/2/_static/pygments.css
+
+@charset "utf-8";
+
+.highlight .hll { background-color: rgb(255, 255, 204); }
+
+.highlight { background: rgb(238, 255, 204); }
+
+.highlight .c { color: rgb(64, 128, 144); font-style: italic; }
+
+.highlight .err { border: 1px solid rgb(255, 0, 0); }
+
+.highlight .k { color: rgb(0, 112, 32); font-weight: bold; }
+
+.highlight .o { color: rgb(102, 102, 102); }
+
+.highlight .ch { color: rgb(64, 128, 144); font-style: italic; }
+
+.highlight .cm { color: rgb(64, 128, 144); font-style: italic; }
+
+.highlight .cp { color: rgb(0, 112, 32); }
+
+.highlight .cpf { color: rgb(64, 128, 144); font-style: italic; }
+
+.highlight .c1 { color: rgb(64, 128, 144); font-style: italic; }
+
+.highlight .cs { color: rgb(64, 128, 144); background-color: rgb(255, 240, =
+240); }
+
+.highlight .gd { color: rgb(160, 0, 0); }
+
+.highlight .ge { font-style: italic; }
+
+.highlight .gr { color: rgb(255, 0, 0); }
+
+.highlight .gh { color: rgb(0, 0, 128); font-weight: bold; }
+
+.highlight .gi { color: rgb(0, 160, 0); }
+
+.highlight .go { color: rgb(51, 51, 51); }
+
+.highlight .gp { color: rgb(198, 93, 9); font-weight: bold; }
+
+.highlight .gs { font-weight: bold; }
+
+.highlight .gu { color: rgb(128, 0, 128); font-weight: bold; }
+
+.highlight .gt { color: rgb(0, 68, 221); }
+
+.highlight .kc { color: rgb(0, 112, 32); font-weight: bold; }
+
+.highlight .kd { color: rgb(0, 112, 32); font-weight: bold; }
+
+.highlight .kn { color: rgb(0, 112, 32); font-weight: bold; }
+
+.highlight .kp { color: rgb(0, 112, 32); }
+
+.highlight .kr { color: rgb(0, 112, 32); font-weight: bold; }
+
+.highlight .kt { color: rgb(144, 32, 0); }
+
+.highlight .m { color: rgb(32, 128, 80); }
+
+.highlight .s { color: rgb(64, 112, 160); }
+
+.highlight .na { color: rgb(64, 112, 160); }
+
+.highlight .nb { color: rgb(0, 112, 32); }
+
+.highlight .nc { color: rgb(14, 132, 181); font-weight: bold; }
+
+.highlight .no { color: rgb(96, 173, 213); }
+
+.highlight .nd { color: rgb(85, 85, 85); font-weight: bold; }
+
+.highlight .ni { color: rgb(213, 85, 55); font-weight: bold; }
+
+.highlight .ne { color: rgb(0, 112, 32); }
+
+.highlight .nf { color: rgb(6, 40, 126); }
+
+.highlight .nl { color: rgb(0, 32, 112); font-weight: bold; }
+
+.highlight .nn { color: rgb(14, 132, 181); font-weight: bold; }
+
+.highlight .nt { color: rgb(6, 40, 115); font-weight: bold; }
+
+.highlight .nv { color: rgb(187, 96, 213); }
+
+.highlight .ow { color: rgb(0, 112, 32); font-weight: bold; }
+
+.highlight .w { color: rgb(187, 187, 187); }
+
+.highlight .mb { color: rgb(32, 128, 80); }
+
+.highlight .mf { color: rgb(32, 128, 80); }
+
+.highlight .mh { color: rgb(32, 128, 80); }
+
+.highlight .mi { color: rgb(32, 128, 80); }
+
+.highlight .mo { color: rgb(32, 128, 80); }
+
+.highlight .sb { color: rgb(64, 112, 160); }
+
+.highlight .sc { color: rgb(64, 112, 160); }
+
+.highlight .sd { color: rgb(64, 112, 160); font-style: italic; }
+
+.highlight .s2 { color: rgb(64, 112, 160); }
+
+.highlight .se { color: rgb(64, 112, 160); font-weight: bold; }
+
+.highlight .sh { color: rgb(64, 112, 160); }
+
+.highlight .si { color: rgb(112, 160, 208); font-style: italic; }
+
+.highlight .sx { color: rgb(198, 93, 9); }
+
+.highlight .sr { color: rgb(35, 83, 136); }
+
+.highlight .s1 { color: rgb(64, 112, 160); }
+
+.highlight .ss { color: rgb(81, 121, 24); }
+
+.highlight .bp { color: rgb(0, 112, 32); }
+
+.highlight .vc { color: rgb(187, 96, 213); }
+
+.highlight .vg { color: rgb(187, 96, 213); }
+
+.highlight .vi { color: rgb(187, 96, 213); }
+
+.highlight .il { color: rgb(32, 128, 80); }
+------MultipartBoundary--lRO4MeQK109wF6vj5EJs2Pnvov9mQ49yim4lhw0aSU----
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: https://docs.python.org/2/_static/py.png
+
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A
+/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9gEGxE4IQYzJ14AAAI3SURBVDjL
+ZZNPSFVBFIe/e9+zd3silBCl0SZoU4s2rVq0EB5tQip4UNvATVGu3QRBiyAi2iltWkgbF5EgRhFF
+RpiWtrWIzDIV1Pzz7p15M2fmtvDevOqBw8DM9zvnN8ycgF3R/eDtM2mac96ZdrFNxBikqbRV+vHH
+/ut9gAZczoe7C3gnF0f6au1OLM5avFi8d1Ea+JvAMSAq8nsKOGs5f2cYJ3Y7rc2PO4BqkS8DdD98
+f9tbe1ysCoxOBo1qlEXHJWcM4b5KPU19zleA0o4Clx99eO3EdqVewHsCoFRugUoVghJO7A6H6Vx9
+wdtYi27cr5x6dy/03nVtWTU7bWeZh6jNUcAiCaFTURl9A+gs56AviHzh3mnqtdPxm6knfQPLU7Ua
+okASQq/agY7yDrG16Mba6Pz48NP56VdrgAApYObGaicPtkovToFLQBKA/WUxTe3FRk4san15aGKg
+d3Dj560rrdGJS6FT0X9YYvLuiMKL1kAQOpHZ3PqfyZfP41+9PW1VfzX0RXFSECfgNEmSTgImdDru
+F2O0E8vvqZG1auQubAsKooIYYHpGvwA2g+xndQBHgWa6cG0ih5cW/w6VvEq3nChwCoBvs+bL2Z7V
+ceBHGTDAIrABpMVuhw+4OiLgLIglOLPYBTQAlfErIeCzjRVg1dtEb1kt5Omv+DTV2YssAN+zNdkz
+C42N9brV8WdvYp07seOdM2Of1F3AAknW0AJpwN6IgEPAEaANaMlcbmZdl7KRBuAfAb+v//yMAJoA
+AAAASUVORK5CYII=
+------MultipartBoundary--lRO4MeQK109wF6vj5EJs2Pnvov9mQ49yim4lhw0aSU------

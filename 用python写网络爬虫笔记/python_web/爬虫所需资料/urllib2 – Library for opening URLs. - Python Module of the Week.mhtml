@@ -1,0 +1,2374 @@
+From: <Saved by Blink>
+Subject: urllib2 ? Library for opening URLs. - Python Module of the Week
+Date: Sat, 4 Nov 2016 06:51:48 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--DroEQ1sED7bfFGbEwZyP0zXEb5bD42KfvYSFxu5yZb----"
+
+------MultipartBoundary--DroEQ1sED7bfFGbEwZyP0zXEb5bD42KfvYSFxu5yZb----
+Content-Type: text/html
+Content-ID: <frame-30-8c5271b4-3080-4e4a-83f1-9e3258bb2536@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://pymotw.com/2/urllib2/
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"http://www.w3.=
+org/1999/xhtml" xml:lang=3D"en" lang=3D"en"><head><meta http-equiv=3D"Conte=
+nt-Type" content=3D"text/html; charset=3DUTF-8">
+   =20
+    <title>urllib2 =E2=80=93 Library for opening URLs. - Python Module of t=
+he Week</title>
+
+<link rel=3D"stylesheet" href=3D"https://pymotw.com/2/_static/default.css" =
+type=3D"text/css">
+<style>
+    body {
+        margin: 8px;
+    }
+    .highlight {
+        background-color: white;
+        border: 0;
+    }
+    .highlight pre {
+        background-color: white;
+    }
+</style>
+
+<link href=3D"https://pymotw.com/2/_static/css/leaves.css" rel=3D"styleshee=
+t" type=3D"text/css">
+<link rel=3D"alternate" type=3D"application/atom+xml" title=3D"Doug Hellman=
+n" href=3D"http://feeds.feedburner.com/DougHellmann">
+<link rel=3D"alternate" type=3D"application/atom+xml" title=3D"Doug Hellman=
+n Project Releases" href=3D"http://feeds.feedburner.com/DougHellmann-Releas=
+es">
+<link rel=3D"alternate" type=3D"application/atom+xml" title=3D"Doug Hellman=
+n Links" href=3D"http://feeds.feedburner.com/DougHellmannLinkBlog">
+
+
+
+
+
+
+
+    <link rel=3D"author" title=3D"About these documents" href=3D"https://py=
+motw.com/2/about.html">
+    <link rel=3D"contents" title=3D"Global table of contents" href=3D"https=
+://pymotw.com/2/contents.html">
+    <link rel=3D"index" title=3D"Global index" href=3D"https://pymotw.com/2=
+/genindex.html">
+    <link rel=3D"top" title=3D"Python Module of the Week" href=3D"https://p=
+ymotw.com/2/index.html">
+    <link rel=3D"up" title=3D"Internet Protocols and Support" href=3D"https=
+://pymotw.com/2/internet_protocols.html">
+    <link rel=3D"next" title=3D"urlparse =E2=80=93 Split URL into component=
+ pieces." href=3D"https://pymotw.com/2/urlparse/index.html">
+    <link rel=3D"prev" title=3D"urllib =E2=80=93 simple interface for netwo=
+rk resource access" href=3D"https://pymotw.com/2/urllib/index.html">
+
+<meta name=3D"verify-v1" content=3D"5saTcOa2HLac4V85yUg3SARfun1PqT5Upu7IR/6=
+fpv4=3D">
+<style>@media print {#ghostery-purple-box {display:none !important}}</style=
+><style type=3D"text/css">* {
+ text-shadow: transparent 0px 0px 0px, rgba(0,0,0,0.2) 0px 0px 0px !importa=
+nt;=20
+}</style><style id=3D"style-1-cropbar-clipper">/* Copyright 2014 Evernote C=
+orporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+<body>
+   =20
+<div id=3D"container">
+   =20
+<div id=3D"header">
+  <a href=3D"https://pymotw.com/"><h1>PyMOTW</h1></a>
+  <p></p>
+</div>
+
+<div id=3D"sidebar_left_wrapper">
+
+<div id=3D"navigation">=20
+	<ul id=3D"navlist">
+		<li><a href=3D"https://pymotw.com/2/index.html">Home</a></li>
+		<li><a href=3D"https://doughellmann.com/" target=3D"_">Blog</a></li>
+		<li><a href=3D"https://doughellmann.com/python-standard-library-by-exampl=
+e">The Book</a></li>
+		<li><a href=3D"https://pymotw.com/2/about.html">About</a></li>
+		<li><a href=3D"https://pymotw.com/2/genindex.html">Site Index</a></li>
+	</ul>
+</div>
+
+
+  <div id=3D"sidebar_left">
+      <p>If you find this information useful, consider picking up a copy of=
+ my book,
+      <i><a href=3D"http://doughellmann.com/python-standard-library-by-exam=
+ple">The Python Standard Library By
+      Example</a></i>.</p>
+  </div>
+
+</div>
+
+
+<div id=3D"sidebar">
+  <h3>Page Contents</h3>
+  <ul>
+<li><a class=3D"reference internal" href=3D"https://pymotw.com/2/urllib2/#"=
+>urllib2 =E2=80=93 Library for opening URLs.</a><ul>
+<li><a class=3D"reference internal" href=3D"https://pymotw.com/2/urllib2/#h=
+ttp-get">HTTP GET</a><ul>
+<li><a class=3D"reference internal" href=3D"https://pymotw.com/2/urllib2/#e=
+ncoding-arguments">Encoding Arguments</a></li>
+</ul>
+</li>
+<li><a class=3D"reference internal" href=3D"https://pymotw.com/2/urllib2/#h=
+ttp-post">HTTP POST</a></li>
+<li><a class=3D"reference internal" href=3D"https://pymotw.com/2/urllib2/#w=
+orking-with-requests-directly">Working with Requests Directly</a><ul>
+<li><a class=3D"reference internal" href=3D"https://pymotw.com/2/urllib2/#a=
+dding-outgoing-headers">Adding Outgoing Headers</a></li>
+<li><a class=3D"reference internal" href=3D"https://pymotw.com/2/urllib2/#p=
+osting-form-data">Posting Form Data</a></li>
+<li><a class=3D"reference internal" href=3D"https://pymotw.com/2/urllib2/#u=
+ploading-files">Uploading Files</a></li>
+</ul>
+</li>
+<li><a class=3D"reference internal" href=3D"https://pymotw.com/2/urllib2/#c=
+ustom-protocol-handlers">Custom Protocol Handlers</a></li>
+</ul>
+</li>
+</ul>
+    <h3>Navigation</h3>
+      <p>
+    <a href=3D"https://pymotw.com/2/contents.html"><strong>Table of Content=
+s</strong></a><br>
+   =20
+          <a href=3D"https://pymotw.com/2/urllib/index.html" title=3D"previ=
+ous chapter"><strong>Previous:</strong> urllib =E2=80=93 simple interface f=
+or network resource access</a><br>
+          <a href=3D"https://pymotw.com/2/urlparse/index.html" title=3D"nex=
+t chapter"><strong>Next:</strong> urlparse =E2=80=93 Split URL into compone=
+nt pieces.</a><br>
+      </p>
+   =20
+      <h3>This Page</h3>
+      <p>
+      <a href=3D"https://pymotw.com/2/_sources/urllib2/index.txt" rel=3D"no=
+follow" title=3D"[=E6=AD=A4=E9=93=BE=E6=8E=A5=E5=B7=B2=E7=A0=B4=E8=A7=A3]
+">Show Source</a>
+      </p><h3>Examples</h3>
+
+<p>The output from all the example programs from PyMOTW has been
+generated with Python 2.7.8, unless otherwise noted. Some
+of the features described here may not be available in earlier
+versions of Python.</p>
+
+<p>If you are looking for examples that work under Python 3, please
+refer to the <a href=3D"https://pymotw.com/3/">PyMOTW-3</a> section of the =
+site.</p><p><iframe src=3D"cid:frame-35-ab111002-a676-4405-931d-23a87b63994=
+2@mhtml.blink" style=3D"width:120px;height:240px;margin:0 1em 0 1em;" scrol=
+ling=3D"no" frameborder=3D"0"></iframe></p>    <p class=3D"ads">
+   =20
+   =20
+    </p>
+</div>
+
+
+<div id=3D"content">
+
+    <div class=3D"related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class=3D"right" style=3D"margin-right: 10px">
+          <a href=3D"https://pymotw.com/2/genindex.html" title=3D"General I=
+ndex" accesskey=3D"I">index</a></li>
+        <li class=3D"right">
+          <a href=3D"https://pymotw.com/2/py-modindex.html" title=3D"Python=
+ Module Index">modules</a> |</li>
+        <li class=3D"right">
+          <a href=3D"https://pymotw.com/2/urlparse/index.html" title=3D"url=
+parse =E2=80=93 Split URL into component pieces." accesskey=3D"N">next</a> =
+|</li>
+        <li class=3D"right">
+          <a href=3D"https://pymotw.com/2/urllib/index.html" title=3D"urlli=
+b =E2=80=93 simple interface for network resource access" accesskey=3D"P">p=
+revious</a> |</li>
+        <li><a href=3D"https://pymotw.com/2/contents.html">PyMOTW</a> =C2=
+=BB</li>
+          <li><a href=3D"https://pymotw.com/2/internet_protocols.html" acce=
+sskey=3D"U">Internet Protocols and Support</a> =C2=BB</li>=20
+      </ul>
+    </div>
+
+  <div class=3D"section" id=3D"module-urllib2">
+<span id=3D"urllib2-library-for-opening-urls"></span><h1>urllib2 =E2=80=93 =
+Library for opening URLs.<a class=3D"headerlink" href=3D"https://pymotw.com=
+/2/urllib2/#module-urllib2" title=3D"Permalink to this headline">=C2=B6</a>=
+</h1>
+<table class=3D"docutils field-list" frame=3D"void" rules=3D"none">
+<colgroup><col class=3D"field-name">
+<col class=3D"field-body">
+</colgroup><tbody valign=3D"top">
+<tr class=3D"field-odd field"><th class=3D"field-name">Purpose:</th><td cla=
+ss=3D"field-body">A library for opening URLs that can be extended by defini=
+ng custom protocol handlers.</td>
+</tr>
+<tr class=3D"field-even field"><th class=3D"field-name">Available In:</th><=
+td class=3D"field-body">2.1</td>
+</tr>
+</tbody>
+</table>
+<p>The <a class=3D"reference internal" href=3D"https://pymotw.com/2/urllib2=
+/#module-urllib2" title=3D"urllib2: Library for opening URLs."><tt class=3D=
+"xref py py-mod docutils literal"><span class=3D"pre">urllib2</span></tt></=
+a> module provides an updated API for using internet
+resources identified by URLs.  It is designed to be extended by
+individual applications to support new protocols or add variations to
+existing protocols (such as handling HTTP basic authentication).</p>
+<div class=3D"section" id=3D"http-get">
+<h2>HTTP GET<a class=3D"headerlink" href=3D"https://pymotw.com/2/urllib2/#h=
+ttp-get" title=3D"Permalink to this headline">=C2=B6</a></h2>
+<div class=3D"admonition note">
+<p class=3D"first admonition-title">Note</p>
+<p class=3D"last">The test server for these examples is in BaseHTTPServer_G=
+ET.py, from the
+PyMOTW examples for <a class=3D"reference internal" href=3D"https://pymotw.=
+com/2/BaseHTTPServer/index.html#module-BaseHTTPServer" title=3D"BaseHTTPSer=
+ver: Provides base classes for implementing web servers."><tt class=3D"xref=
+ py py-mod docutils literal"><span class=3D"pre">BaseHTTPServer</span></tt>=
+</a>. Start the server in one
+terminal window, then run these examples in another.</p>
+</div>
+<p>As with <a class=3D"reference internal" href=3D"https://pymotw.com/2/url=
+lib/index.html#module-urllib" title=3D"urllib: Accessing remote resources t=
+hat don't need authentication, cookies, etc."><tt class=3D"xref py py-mod d=
+ocutils literal"><span class=3D"pre">urllib</span></tt></a>, an HTTP GET op=
+eration is the simplest use of
+<a class=3D"reference internal" href=3D"https://pymotw.com/2/urllib2/#modul=
+e-urllib2" title=3D"urllib2: Library for opening URLs."><tt class=3D"xref p=
+y py-mod docutils literal"><span class=3D"pre">urllib2</span></tt></a>. Pas=
+s the URL to <tt class=3D"xref py py-func docutils literal"><span class=3D"=
+pre">urlopen()</span></tt> to get a =E2=80=9Cfile-like=E2=80=9D
+handle to the remote data.</p>
+<div class=3D"highlight-python"><div class=3D"highlight"><pre><span class=
+=3D"kn">import</span> <span class=3D"nn">urllib2</span>
+
+<span class=3D"n">response</span> <span class=3D"o">=3D</span> <span class=
+=3D"n">urllib2</span><span class=3D"o">.</span><span class=3D"n">urlopen</s=
+pan><span class=3D"p">(</span><span class=3D"s">'http://localhost:8080/'</s=
+pan><span class=3D"p">)</span>
+<span class=3D"k">print</span> <span class=3D"s">'RESPONSE:'</span><span cl=
+ass=3D"p">,</span> <span class=3D"n">response</span>
+<span class=3D"k">print</span> <span class=3D"s">'URL     :'</span><span cl=
+ass=3D"p">,</span> <span class=3D"n">response</span><span class=3D"o">.</sp=
+an><span class=3D"n">geturl</span><span class=3D"p">()</span>
+
+<span class=3D"n">headers</span> <span class=3D"o">=3D</span> <span class=
+=3D"n">response</span><span class=3D"o">.</span><span class=3D"n">info</spa=
+n><span class=3D"p">()</span>
+<span class=3D"k">print</span> <span class=3D"s">'DATE    :'</span><span cl=
+ass=3D"p">,</span> <span class=3D"n">headers</span><span class=3D"p">[</spa=
+n><span class=3D"s">'date'</span><span class=3D"p">]</span>
+<span class=3D"k">print</span> <span class=3D"s">'HEADERS :'</span>
+<span class=3D"k">print</span> <span class=3D"s">'---------'</span>
+<span class=3D"k">print</span> <span class=3D"n">headers</span>
+
+<span class=3D"n">data</span> <span class=3D"o">=3D</span> <span class=3D"n=
+">response</span><span class=3D"o">.</span><span class=3D"n">read</span><sp=
+an class=3D"p">()</span>
+<span class=3D"k">print</span> <span class=3D"s">'LENGTH  :'</span><span cl=
+ass=3D"p">,</span> <span class=3D"nb">len</span><span class=3D"p">(</span><=
+span class=3D"n">data</span><span class=3D"p">)</span>
+<span class=3D"k">print</span> <span class=3D"s">'DATA    :'</span>
+<span class=3D"k">print</span> <span class=3D"s">'---------'</span>
+<span class=3D"k">print</span> <span class=3D"n">data</span>
+</pre></div>
+</div>
+<p>The example server accepts the incoming values and formats a plain
+text response to send back. The return value from <tt class=3D"xref py py-f=
+unc docutils literal"><span class=3D"pre">urlopen()</span></tt>
+gives access to the headers from the HTTP server through the
+<tt class=3D"xref py py-func docutils literal"><span class=3D"pre">info()</=
+span></tt> method, and the data for the remote resource via
+methods like <tt class=3D"xref py py-func docutils literal"><span class=3D"=
+pre">read()</span></tt> and <tt class=3D"xref py py-func docutils literal">=
+<span class=3D"pre">readlines()</span></tt>.</p>
+<div class=3D"highlight-python"><div class=3D"highlight"><pre>$ python urll=
+ib2_urlopen.py
+RESPONSE: &lt;addinfourl at 11940488 whose fp =3D &lt;socket._fileobject ob=
+ject at 0xb573f0&gt;&gt;
+URL     : http://localhost:8080/
+DATE    : Sun, 19 Jul 2009 14:01:31 GMT
+HEADERS :
+---------
+Server: BaseHTTP/0.3 Python/2.6.2
+Date: Sun, 19 Jul 2009 14:01:31 GMT
+
+LENGTH  : 349
+DATA    :
+---------
+CLIENT VALUES:
+client_address=3D('127.0.0.1', 55836) (localhost)
+command=3DGET
+path=3D/
+real path=3D/
+query=3D
+request_version=3DHTTP/1.1
+
+SERVER VALUES:
+server_version=3DBaseHTTP/0.3
+sys_version=3DPython/2.6.2
+protocol_version=3DHTTP/1.0
+
+HEADERS RECEIVED:
+accept-encoding=3Didentity
+connection=3Dclose
+host=3Dlocalhost:8080
+user-agent=3DPython-urllib/2.6
+</pre></div>
+</div>
+<p>The file-like object returned by <tt class=3D"xref py py-func docutils l=
+iteral"><span class=3D"pre">urlopen()</span></tt> is iterable:</p>
+<div class=3D"highlight-python"><div class=3D"highlight"><pre><span class=
+=3D"kn">import</span> <span class=3D"nn">urllib2</span>
+
+<span class=3D"n">response</span> <span class=3D"o">=3D</span> <span class=
+=3D"n">urllib2</span><span class=3D"o">.</span><span class=3D"n">urlopen</s=
+pan><span class=3D"p">(</span><span class=3D"s">'http://localhost:8080/'</s=
+pan><span class=3D"p">)</span>
+<span class=3D"k">for</span> <span class=3D"n">line</span> <span class=3D"o=
+w">in</span> <span class=3D"n">response</span><span class=3D"p">:</span>
+    <span class=3D"k">print</span> <span class=3D"n">line</span><span class=
+=3D"o">.</span><span class=3D"n">rstrip</span><span class=3D"p">()</span>
+</pre></div>
+</div>
+<p>This example strips the trailing newlines and carriage returns before
+printing the output.</p>
+<div class=3D"highlight-python"><div class=3D"highlight"><pre>$ python urll=
+ib2_urlopen_iterator.py
+CLIENT VALUES:
+client_address=3D('127.0.0.1', 55840) (localhost)
+command=3DGET
+path=3D/
+real path=3D/
+query=3D
+request_version=3DHTTP/1.1
+
+SERVER VALUES:
+server_version=3DBaseHTTP/0.3
+sys_version=3DPython/2.6.2
+protocol_version=3DHTTP/1.0
+
+HEADERS RECEIVED:
+accept-encoding=3Didentity
+connection=3Dclose
+host=3Dlocalhost:8080
+user-agent=3DPython-urllib/2.6
+</pre></div>
+</div>
+<div class=3D"section" id=3D"encoding-arguments">
+<h3>Encoding Arguments<a class=3D"headerlink" href=3D"https://pymotw.com/2/=
+urllib2/#encoding-arguments" title=3D"Permalink to this headline">=C2=B6</a=
+></h3>
+<p>Arguments can be passed to the server by encoding them with
+<a class=3D"reference internal" href=3D"https://pymotw.com/2/urllib/index.h=
+tml#urllib-urlencode"><em>urllib.urlencode()</em></a> and appending them to=
+ the
+URL.</p>
+<div class=3D"highlight-python"><div class=3D"highlight"><pre><span class=
+=3D"kn">import</span> <span class=3D"nn">urllib</span>
+<span class=3D"kn">import</span> <span class=3D"nn">urllib2</span>
+
+<span class=3D"n">query_args</span> <span class=3D"o">=3D</span> <span clas=
+s=3D"p">{</span> <span class=3D"s">'q'</span><span class=3D"p">:</span><spa=
+n class=3D"s">'query string'</span><span class=3D"p">,</span> <span class=
+=3D"s">'foo'</span><span class=3D"p">:</span><span class=3D"s">'bar'</span>=
+ <span class=3D"p">}</span>
+<span class=3D"n">encoded_args</span> <span class=3D"o">=3D</span> <span cl=
+ass=3D"n">urllib</span><span class=3D"o">.</span><span class=3D"n">urlencod=
+e</span><span class=3D"p">(</span><span class=3D"n">query_args</span><span =
+class=3D"p">)</span>
+<span class=3D"k">print</span> <span class=3D"s">'Encoded:'</span><span cla=
+ss=3D"p">,</span> <span class=3D"n">encoded_args</span>
+
+<span class=3D"n">url</span> <span class=3D"o">=3D</span> <span class=3D"s"=
+>'http://localhost:8080/?'</span> <span class=3D"o">+</span> <span class=3D=
+"n">encoded_args</span>
+<span class=3D"k">print</span> <span class=3D"n">urllib2</span><span class=
+=3D"o">.</span><span class=3D"n">urlopen</span><span class=3D"p">(</span><s=
+pan class=3D"n">url</span><span class=3D"p">)</span><span class=3D"o">.</sp=
+an><span class=3D"n">read</span><span class=3D"p">()</span>
+</pre></div>
+</div>
+<p>The list of client values returned in the example output contains the
+encoded query arguments.</p>
+<div class=3D"highlight-python"><div class=3D"highlight"><pre>$ python urll=
+ib2_http_get_args.py
+Encoded: q=3Dquery+string&amp;foo=3Dbar
+CLIENT VALUES:
+client_address=3D('127.0.0.1', 55849) (localhost)
+command=3DGET
+path=3D/?q=3Dquery+string&amp;foo=3Dbar
+real path=3D/
+query=3Dq=3Dquery+string&amp;foo=3Dbar
+request_version=3DHTTP/1.1
+
+SERVER VALUES:
+server_version=3DBaseHTTP/0.3
+sys_version=3DPython/2.6.2
+protocol_version=3DHTTP/1.0
+
+HEADERS RECEIVED:
+accept-encoding=3Didentity
+connection=3Dclose
+host=3Dlocalhost:8080
+user-agent=3DPython-urllib/2.6
+</pre></div>
+</div>
+</div>
+</div>
+<div class=3D"section" id=3D"http-post">
+<h2>HTTP POST<a class=3D"headerlink" href=3D"https://pymotw.com/2/urllib2/#=
+http-post" title=3D"Permalink to this headline">=C2=B6</a></h2>
+<div class=3D"admonition note">
+<p class=3D"first admonition-title">Note</p>
+<p class=3D"last">The test server for these examples is in BaseHTTPServer_P=
+OST.py, from the
+PyMOTW examples for the <a class=3D"reference internal" href=3D"https://pym=
+otw.com/2/BaseHTTPServer/index.html#module-BaseHTTPServer" title=3D"BaseHTT=
+PServer: Provides base classes for implementing web servers."><tt class=3D"=
+xref py py-mod docutils literal"><span class=3D"pre">BaseHTTPServer</span><=
+/tt></a>. Start the server in one
+terminal window, then run these examples in another.</p>
+</div>
+<p>To POST form-encoded data to the remote server, instead of using GET,
+pass the encoded query arguments as data to <tt class=3D"xref py py-func do=
+cutils literal"><span class=3D"pre">urlopen()</span></tt>.</p>
+<div class=3D"highlight-python"><div class=3D"highlight"><pre><span class=
+=3D"kn">import</span> <span class=3D"nn">urllib</span>
+<span class=3D"kn">import</span> <span class=3D"nn">urllib2</span>
+
+<span class=3D"n">query_args</span> <span class=3D"o">=3D</span> <span clas=
+s=3D"p">{</span> <span class=3D"s">'q'</span><span class=3D"p">:</span><spa=
+n class=3D"s">'query string'</span><span class=3D"p">,</span> <span class=
+=3D"s">'foo'</span><span class=3D"p">:</span><span class=3D"s">'bar'</span>=
+ <span class=3D"p">}</span>
+<span class=3D"n">encoded_args</span> <span class=3D"o">=3D</span> <span cl=
+ass=3D"n">urllib</span><span class=3D"o">.</span><span class=3D"n">urlencod=
+e</span><span class=3D"p">(</span><span class=3D"n">query_args</span><span =
+class=3D"p">)</span>
+<span class=3D"n">url</span> <span class=3D"o">=3D</span> <span class=3D"s"=
+>'http://localhost:8080/'</span>
+<span class=3D"k">print</span> <span class=3D"n">urllib2</span><span class=
+=3D"o">.</span><span class=3D"n">urlopen</span><span class=3D"p">(</span><s=
+pan class=3D"n">url</span><span class=3D"p">,</span> <span class=3D"n">enco=
+ded_args</span><span class=3D"p">)</span><span class=3D"o">.</span><span cl=
+ass=3D"n">read</span><span class=3D"p">()</span>
+</pre></div>
+</div>
+<p>The server can decode the form data and access the individual values
+by name.</p>
+<div class=3D"highlight-python"><div class=3D"highlight"><pre>$ python urll=
+ib2_urlopen_post.py
+Client: ('127.0.0.1', 55943)
+User-agent: Python-urllib/2.6
+Path: /
+Form data:
+    q=3Dquery string
+    foo=3Dbar
+</pre></div>
+</div>
+</div>
+<div class=3D"section" id=3D"working-with-requests-directly">
+<h2>Working with Requests Directly<a class=3D"headerlink" href=3D"https://p=
+ymotw.com/2/urllib2/#working-with-requests-directly" title=3D"Permalink to =
+this headline">=C2=B6</a></h2>
+<p><tt class=3D"xref py py-func docutils literal"><span class=3D"pre">urlop=
+en()</span></tt> is a convenience function that hides some of the
+details of how the request is made and handled for you. For more
+precise control, you may want to instantiate and use a
+<tt class=3D"xref py py-class docutils literal"><span class=3D"pre">Request=
+</span></tt> object directly.</p>
+<div class=3D"section" id=3D"adding-outgoing-headers">
+<h3>Adding Outgoing Headers<a class=3D"headerlink" href=3D"https://pymotw.c=
+om/2/urllib2/#adding-outgoing-headers" title=3D"Permalink to this headline"=
+>=C2=B6</a></h3>
+<p>As the examples above illustrate, the default <em>User-agent</em> header
+value is made up of the constant <tt class=3D"docutils literal"><span class=
+=3D"pre">Python-urllib</span></tt>, followed by the
+Python interpreter version. If you are creating an application that
+will access other people=E2=80=99s web resources, it is courteous to includ=
+e
+real user agent information in your requests, so they can identify the
+source of the hits more easily. Using a custom agent also allows them
+to control crawlers using a <tt class=3D"docutils literal"><span class=3D"p=
+re">robots.txt</span></tt> file (see
+<a class=3D"reference internal" href=3D"https://pymotw.com/2/robotparser/in=
+dex.html#module-robotparser" title=3D"robotparser: Internet spider access c=
+ontrol"><tt class=3D"xref py py-mod docutils literal"><span class=3D"pre">r=
+obotparser</span></tt></a>).</p>
+<div class=3D"highlight-python"><div class=3D"highlight"><pre><span class=
+=3D"kn">import</span> <span class=3D"nn">urllib2</span>
+
+<span class=3D"n">request</span> <span class=3D"o">=3D</span> <span class=
+=3D"n">urllib2</span><span class=3D"o">.</span><span class=3D"n">Request</s=
+pan><span class=3D"p">(</span><span class=3D"s">'http://localhost:8080/'</s=
+pan><span class=3D"p">)</span>
+<span class=3D"n">request</span><span class=3D"o">.</span><span class=3D"n"=
+>add_header</span><span class=3D"p">(</span><span class=3D"s">'User-agent'<=
+/span><span class=3D"p">,</span> <span class=3D"s">'PyMOTW (http://www.doug=
+hellmann.com/PyMOTW/)'</span><span class=3D"p">)</span>
+
+<span class=3D"n">response</span> <span class=3D"o">=3D</span> <span class=
+=3D"n">urllib2</span><span class=3D"o">.</span><span class=3D"n">urlopen</s=
+pan><span class=3D"p">(</span><span class=3D"n">request</span><span class=
+=3D"p">)</span>
+<span class=3D"n">data</span> <span class=3D"o">=3D</span> <span class=3D"n=
+">response</span><span class=3D"o">.</span><span class=3D"n">read</span><sp=
+an class=3D"p">()</span>
+<span class=3D"k">print</span> <span class=3D"n">data</span>
+</pre></div>
+</div>
+<p>After creating a <tt class=3D"xref py py-class docutils literal"><span c=
+lass=3D"pre">Request</span></tt> object, use <tt class=3D"xref py py-func d=
+ocutils literal"><span class=3D"pre">add_header()</span></tt> to
+set the user agent value before opening the request.  The last line of
+the output shows our custom value.</p>
+<div class=3D"highlight-python"><div class=3D"highlight"><pre>$ python urll=
+ib2_request_header.py
+CLIENT VALUES:
+client_address=3D('127.0.0.1', 55876) (localhost)
+command=3DGET
+path=3D/
+real path=3D/
+query=3D
+request_version=3DHTTP/1.1
+
+SERVER VALUES:
+server_version=3DBaseHTTP/0.3
+sys_version=3DPython/2.6.2
+protocol_version=3DHTTP/1.0
+
+HEADERS RECEIVED:
+accept-encoding=3Didentity
+connection=3Dclose
+host=3Dlocalhost:8080
+user-agent=3DPyMOTW (http://www.doughellmann.com/PyMOTW/)
+</pre></div>
+</div>
+</div>
+<div class=3D"section" id=3D"posting-form-data">
+<h3>Posting Form Data<a class=3D"headerlink" href=3D"https://pymotw.com/2/u=
+rllib2/#posting-form-data" title=3D"Permalink to this headline">=C2=B6</a><=
+/h3>
+<p>You can set the outgoing data on the <tt class=3D"xref py py-class docut=
+ils literal"><span class=3D"pre">Request</span></tt> to post it to
+the server.</p>
+<div class=3D"highlight-python"><div class=3D"highlight"><pre><span class=
+=3D"kn">import</span> <span class=3D"nn">urllib</span>
+<span class=3D"kn">import</span> <span class=3D"nn">urllib2</span>
+
+<span class=3D"n">query_args</span> <span class=3D"o">=3D</span> <span clas=
+s=3D"p">{</span> <span class=3D"s">'q'</span><span class=3D"p">:</span><spa=
+n class=3D"s">'query string'</span><span class=3D"p">,</span> <span class=
+=3D"s">'foo'</span><span class=3D"p">:</span><span class=3D"s">'bar'</span>=
+ <span class=3D"p">}</span>
+
+<span class=3D"n">request</span> <span class=3D"o">=3D</span> <span class=
+=3D"n">urllib2</span><span class=3D"o">.</span><span class=3D"n">Request</s=
+pan><span class=3D"p">(</span><span class=3D"s">'http://localhost:8080/'</s=
+pan><span class=3D"p">)</span>
+<span class=3D"k">print</span> <span class=3D"s">'Request method before dat=
+a:'</span><span class=3D"p">,</span> <span class=3D"n">request</span><span =
+class=3D"o">.</span><span class=3D"n">get_method</span><span class=3D"p">()=
+</span>
+
+<span class=3D"n">request</span><span class=3D"o">.</span><span class=3D"n"=
+>add_data</span><span class=3D"p">(</span><span class=3D"n">urllib</span><s=
+pan class=3D"o">.</span><span class=3D"n">urlencode</span><span class=3D"p"=
+>(</span><span class=3D"n">query_args</span><span class=3D"p">))</span>
+<span class=3D"k">print</span> <span class=3D"s">'Request method after data=
+ :'</span><span class=3D"p">,</span> <span class=3D"n">request</span><span =
+class=3D"o">.</span><span class=3D"n">get_method</span><span class=3D"p">()=
+</span>
+<span class=3D"n">request</span><span class=3D"o">.</span><span class=3D"n"=
+>add_header</span><span class=3D"p">(</span><span class=3D"s">'User-agent'<=
+/span><span class=3D"p">,</span> <span class=3D"s">'PyMOTW (http://www.doug=
+hellmann.com/PyMOTW/)'</span><span class=3D"p">)</span>
+
+<span class=3D"k">print</span>
+<span class=3D"k">print</span> <span class=3D"s">'OUTGOING DATA:'</span>
+<span class=3D"k">print</span> <span class=3D"n">request</span><span class=
+=3D"o">.</span><span class=3D"n">get_data</span><span class=3D"p">()</span>
+
+<span class=3D"k">print</span>
+<span class=3D"k">print</span> <span class=3D"s">'SERVER RESPONSE:'</span>
+<span class=3D"k">print</span> <span class=3D"n">urllib2</span><span class=
+=3D"o">.</span><span class=3D"n">urlopen</span><span class=3D"p">(</span><s=
+pan class=3D"n">request</span><span class=3D"p">)</span><span class=3D"o">.=
+</span><span class=3D"n">read</span><span class=3D"p">()</span>
+</pre></div>
+</div>
+<p>The HTTP method used by the <tt class=3D"xref py py-class docutils liter=
+al"><span class=3D"pre">Request</span></tt> changes from GET to POST
+automatically after the data is added.</p>
+<div class=3D"highlight-python"><div class=3D"highlight"><pre>$ python urll=
+ib2_request_post.py
+Request method before data: GET
+Request method after data : POST
+
+OUTGOING DATA:
+q=3Dquery+string&amp;foo=3Dbar
+
+SERVER RESPONSE:
+Client: ('127.0.0.1', 56044)
+User-agent: PyMOTW (http://www.doughellmann.com/PyMOTW/)
+Path: /
+Form data:
+    q=3Dquery string
+    foo=3Dbar
+</pre></div>
+</div>
+<div class=3D"admonition note">
+<p class=3D"first admonition-title">Note</p>
+<p class=3D"last">Although the method is <tt class=3D"xref py py-func docut=
+ils literal"><span class=3D"pre">add_data()</span></tt>, its effect is <em>=
+not</em>
+cumulative.  Each call replaces the previous data.</p>
+</div>
+</div>
+<div class=3D"section" id=3D"uploading-files">
+<h3>Uploading Files<a class=3D"headerlink" href=3D"https://pymotw.com/2/url=
+lib2/#uploading-files" title=3D"Permalink to this headline">=C2=B6</a></h3>
+<p>Encoding files for upload requires a little more work than simple forms.=
+  A complete MIME
+message needs to be constructed in the body of the request, so that the ser=
+ver can
+distinguish incoming form fields from uploaded files.</p>
+<div class=3D"highlight-python"><div class=3D"highlight"><pre><span class=
+=3D"kn">import</span> <span class=3D"nn">itertools</span>
+<span class=3D"kn">import</span> <span class=3D"nn">mimetools</span>
+<span class=3D"kn">import</span> <span class=3D"nn">mimetypes</span>
+<span class=3D"kn">from</span> <span class=3D"nn">cStringIO</span> <span cl=
+ass=3D"kn">import</span> <span class=3D"n">StringIO</span>
+<span class=3D"kn">import</span> <span class=3D"nn">urllib</span>
+<span class=3D"kn">import</span> <span class=3D"nn">urllib2</span>
+
+<span class=3D"k">class</span> <span class=3D"nc">MultiPartForm</span><span=
+ class=3D"p">(</span><span class=3D"nb">object</span><span class=3D"p">):</=
+span>
+    <span class=3D"sd">"""Accumulate the data to be used when posting a for=
+m."""</span>
+
+    <span class=3D"k">def</span> <span class=3D"nf">__init__</span><span cl=
+ass=3D"p">(</span><span class=3D"bp">self</span><span class=3D"p">):</span>
+        <span class=3D"bp">self</span><span class=3D"o">.</span><span class=
+=3D"n">form_fields</span> <span class=3D"o">=3D</span> <span class=3D"p">[]=
+</span>
+        <span class=3D"bp">self</span><span class=3D"o">.</span><span class=
+=3D"n">files</span> <span class=3D"o">=3D</span> <span class=3D"p">[]</span=
+>
+        <span class=3D"bp">self</span><span class=3D"o">.</span><span class=
+=3D"n">boundary</span> <span class=3D"o">=3D</span> <span class=3D"n">mimet=
+ools</span><span class=3D"o">.</span><span class=3D"n">choose_boundary</spa=
+n><span class=3D"p">()</span>
+        <span class=3D"k">return</span>
+   =20
+    <span class=3D"k">def</span> <span class=3D"nf">get_content_type</span>=
+<span class=3D"p">(</span><span class=3D"bp">self</span><span class=3D"p">)=
+:</span>
+        <span class=3D"k">return</span> <span class=3D"s">'multipart/form-d=
+ata; boundary=3D</span><span class=3D"si">%s</span><span class=3D"s">'</spa=
+n> <span class=3D"o">%</span> <span class=3D"bp">self</span><span class=3D"=
+o">.</span><span class=3D"n">boundary</span>
+
+    <span class=3D"k">def</span> <span class=3D"nf">add_field</span><span c=
+lass=3D"p">(</span><span class=3D"bp">self</span><span class=3D"p">,</span>=
+ <span class=3D"n">name</span><span class=3D"p">,</span> <span class=3D"n">=
+value</span><span class=3D"p">):</span>
+        <span class=3D"sd">"""Add a simple field to the form data."""</span=
+>
+        <span class=3D"bp">self</span><span class=3D"o">.</span><span class=
+=3D"n">form_fields</span><span class=3D"o">.</span><span class=3D"n">append=
+</span><span class=3D"p">((</span><span class=3D"n">name</span><span class=
+=3D"p">,</span> <span class=3D"n">value</span><span class=3D"p">))</span>
+        <span class=3D"k">return</span>
+
+    <span class=3D"k">def</span> <span class=3D"nf">add_file</span><span cl=
+ass=3D"p">(</span><span class=3D"bp">self</span><span class=3D"p">,</span> =
+<span class=3D"n">fieldname</span><span class=3D"p">,</span> <span class=3D=
+"n">filename</span><span class=3D"p">,</span> <span class=3D"n">fileHandle<=
+/span><span class=3D"p">,</span> <span class=3D"n">mimetype</span><span cla=
+ss=3D"o">=3D</span><span class=3D"bp">None</span><span class=3D"p">):</span=
+>
+        <span class=3D"sd">"""Add a file to be uploaded."""</span>
+        <span class=3D"n">body</span> <span class=3D"o">=3D</span> <span cl=
+ass=3D"n">fileHandle</span><span class=3D"o">.</span><span class=3D"n">read=
+</span><span class=3D"p">()</span>
+        <span class=3D"k">if</span> <span class=3D"n">mimetype</span> <span=
+ class=3D"ow">is</span> <span class=3D"bp">None</span><span class=3D"p">:</=
+span>
+            <span class=3D"n">mimetype</span> <span class=3D"o">=3D</span> =
+<span class=3D"n">mimetypes</span><span class=3D"o">.</span><span class=3D"=
+n">guess_type</span><span class=3D"p">(</span><span class=3D"n">filename</s=
+pan><span class=3D"p">)[</span><span class=3D"mi">0</span><span class=3D"p"=
+>]</span> <span class=3D"ow">or</span> <span class=3D"s">'application/octet=
+-stream'</span>
+        <span class=3D"bp">self</span><span class=3D"o">.</span><span class=
+=3D"n">files</span><span class=3D"o">.</span><span class=3D"n">append</span=
+><span class=3D"p">((</span><span class=3D"n">fieldname</span><span class=
+=3D"p">,</span> <span class=3D"n">filename</span><span class=3D"p">,</span>=
+ <span class=3D"n">mimetype</span><span class=3D"p">,</span> <span class=3D=
+"n">body</span><span class=3D"p">))</span>
+        <span class=3D"k">return</span>
+   =20
+    <span class=3D"k">def</span> <span class=3D"nf">__str__</span><span cla=
+ss=3D"p">(</span><span class=3D"bp">self</span><span class=3D"p">):</span>
+        <span class=3D"sd">"""Return a string representing the form data, i=
+ncluding attached files."""</span>
+        <span class=3D"c"># Build a list of lists, each containing "lines" =
+of the</span>
+        <span class=3D"c"># request.  Each part is separated by a boundary =
+string.</span>
+        <span class=3D"c"># Once the list is built, return a string where e=
+ach</span>
+        <span class=3D"c"># line is separated by '\r\n'.  </span>
+        <span class=3D"n">parts</span> <span class=3D"o">=3D</span> <span c=
+lass=3D"p">[]</span>
+        <span class=3D"n">part_boundary</span> <span class=3D"o">=3D</span>=
+ <span class=3D"s">'--'</span> <span class=3D"o">+</span> <span class=3D"bp=
+">self</span><span class=3D"o">.</span><span class=3D"n">boundary</span>
+       =20
+        <span class=3D"c"># Add the form fields</span>
+        <span class=3D"n">parts</span><span class=3D"o">.</span><span class=
+=3D"n">extend</span><span class=3D"p">(</span>
+            <span class=3D"p">[</span> <span class=3D"n">part_boundary</spa=
+n><span class=3D"p">,</span>
+              <span class=3D"s">'Content-Disposition: form-data; name=3D"</=
+span><span class=3D"si">%s</span><span class=3D"s">"'</span> <span class=3D=
+"o">%</span> <span class=3D"n">name</span><span class=3D"p">,</span>
+              <span class=3D"s">''</span><span class=3D"p">,</span>
+              <span class=3D"n">value</span><span class=3D"p">,</span>
+            <span class=3D"p">]</span>
+            <span class=3D"k">for</span> <span class=3D"n">name</span><span=
+ class=3D"p">,</span> <span class=3D"n">value</span> <span class=3D"ow">in<=
+/span> <span class=3D"bp">self</span><span class=3D"o">.</span><span class=
+=3D"n">form_fields</span>
+            <span class=3D"p">)</span>
+       =20
+        <span class=3D"c"># Add the files to upload</span>
+        <span class=3D"n">parts</span><span class=3D"o">.</span><span class=
+=3D"n">extend</span><span class=3D"p">(</span>
+            <span class=3D"p">[</span> <span class=3D"n">part_boundary</spa=
+n><span class=3D"p">,</span>
+              <span class=3D"s">'Content-Disposition: file; name=3D"</span>=
+<span class=3D"si">%s</span><span class=3D"s">"; filename=3D"</span><span c=
+lass=3D"si">%s</span><span class=3D"s">"'</span> <span class=3D"o">%</span>=
+ \
+                 <span class=3D"p">(</span><span class=3D"n">field_name</sp=
+an><span class=3D"p">,</span> <span class=3D"n">filename</span><span class=
+=3D"p">),</span>
+              <span class=3D"s">'Content-Type: </span><span class=3D"si">%s=
+</span><span class=3D"s">'</span> <span class=3D"o">%</span> <span class=3D=
+"n">content_type</span><span class=3D"p">,</span>
+              <span class=3D"s">''</span><span class=3D"p">,</span>
+              <span class=3D"n">body</span><span class=3D"p">,</span>
+            <span class=3D"p">]</span>
+            <span class=3D"k">for</span> <span class=3D"n">field_name</span=
+><span class=3D"p">,</span> <span class=3D"n">filename</span><span class=3D=
+"p">,</span> <span class=3D"n">content_type</span><span class=3D"p">,</span=
+> <span class=3D"n">body</span> <span class=3D"ow">in</span> <span class=3D=
+"bp">self</span><span class=3D"o">.</span><span class=3D"n">files</span>
+            <span class=3D"p">)</span>
+       =20
+        <span class=3D"c"># Flatten the list and add closing boundary marke=
+r,</span>
+        <span class=3D"c"># then return CR+LF separated data</span>
+        <span class=3D"n">flattened</span> <span class=3D"o">=3D</span> <sp=
+an class=3D"nb">list</span><span class=3D"p">(</span><span class=3D"n">iter=
+tools</span><span class=3D"o">.</span><span class=3D"n">chain</span><span c=
+lass=3D"p">(</span><span class=3D"o">*</span><span class=3D"n">parts</span>=
+<span class=3D"p">))</span>
+        <span class=3D"n">flattened</span><span class=3D"o">.</span><span c=
+lass=3D"n">append</span><span class=3D"p">(</span><span class=3D"s">'--'</s=
+pan> <span class=3D"o">+</span> <span class=3D"bp">self</span><span class=
+=3D"o">.</span><span class=3D"n">boundary</span> <span class=3D"o">+</span>=
+ <span class=3D"s">'--'</span><span class=3D"p">)</span>
+        <span class=3D"n">flattened</span><span class=3D"o">.</span><span c=
+lass=3D"n">append</span><span class=3D"p">(</span><span class=3D"s">''</spa=
+n><span class=3D"p">)</span>
+        <span class=3D"k">return</span> <span class=3D"s">'</span><span cla=
+ss=3D"se">\r\n</span><span class=3D"s">'</span><span class=3D"o">.</span><s=
+pan class=3D"n">join</span><span class=3D"p">(</span><span class=3D"n">flat=
+tened</span><span class=3D"p">)</span>
+
+<span class=3D"k">if</span> <span class=3D"n">__name__</span> <span class=
+=3D"o">=3D=3D</span> <span class=3D"s">'__main__'</span><span class=3D"p">:=
+</span>
+    <span class=3D"c"># Create the form with simple fields</span>
+    <span class=3D"n">form</span> <span class=3D"o">=3D</span> <span class=
+=3D"n">MultiPartForm</span><span class=3D"p">()</span>
+    <span class=3D"n">form</span><span class=3D"o">.</span><span class=3D"n=
+">add_field</span><span class=3D"p">(</span><span class=3D"s">'firstname'</=
+span><span class=3D"p">,</span> <span class=3D"s">'Doug'</span><span class=
+=3D"p">)</span>
+    <span class=3D"n">form</span><span class=3D"o">.</span><span class=3D"n=
+">add_field</span><span class=3D"p">(</span><span class=3D"s">'lastname'</s=
+pan><span class=3D"p">,</span> <span class=3D"s">'Hellmann'</span><span cla=
+ss=3D"p">)</span>
+   =20
+    <span class=3D"c"># Add a fake file</span>
+    <span class=3D"n">form</span><span class=3D"o">.</span><span class=3D"n=
+">add_file</span><span class=3D"p">(</span><span class=3D"s">'biography'</s=
+pan><span class=3D"p">,</span> <span class=3D"s">'bio.txt'</span><span clas=
+s=3D"p">,</span>=20
+                  <span class=3D"n">fileHandle</span><span class=3D"o">=3D<=
+/span><span class=3D"n">StringIO</span><span class=3D"p">(</span><span clas=
+s=3D"s">'Python developer and blogger.'</span><span class=3D"p">))</span>
+
+    <span class=3D"c"># Build the request</span>
+    <span class=3D"n">request</span> <span class=3D"o">=3D</span> <span cla=
+ss=3D"n">urllib2</span><span class=3D"o">.</span><span class=3D"n">Request<=
+/span><span class=3D"p">(</span><span class=3D"s">'http://localhost:8080/'<=
+/span><span class=3D"p">)</span>
+    <span class=3D"n">request</span><span class=3D"o">.</span><span class=
+=3D"n">add_header</span><span class=3D"p">(</span><span class=3D"s">'User-a=
+gent'</span><span class=3D"p">,</span> <span class=3D"s">'PyMOTW (http://ww=
+w.doughellmann.com/PyMOTW/)'</span><span class=3D"p">)</span>
+    <span class=3D"n">body</span> <span class=3D"o">=3D</span> <span class=
+=3D"nb">str</span><span class=3D"p">(</span><span class=3D"n">form</span><s=
+pan class=3D"p">)</span>
+    <span class=3D"n">request</span><span class=3D"o">.</span><span class=
+=3D"n">add_header</span><span class=3D"p">(</span><span class=3D"s">'Conten=
+t-type'</span><span class=3D"p">,</span> <span class=3D"n">form</span><span=
+ class=3D"o">.</span><span class=3D"n">get_content_type</span><span class=
+=3D"p">())</span>
+    <span class=3D"n">request</span><span class=3D"o">.</span><span class=
+=3D"n">add_header</span><span class=3D"p">(</span><span class=3D"s">'Conten=
+t-length'</span><span class=3D"p">,</span> <span class=3D"nb">len</span><sp=
+an class=3D"p">(</span><span class=3D"n">body</span><span class=3D"p">))</s=
+pan>
+    <span class=3D"n">request</span><span class=3D"o">.</span><span class=
+=3D"n">add_data</span><span class=3D"p">(</span><span class=3D"n">body</spa=
+n><span class=3D"p">)</span>
+
+    <span class=3D"k">print</span>
+    <span class=3D"k">print</span> <span class=3D"s">'OUTGOING DATA:'</span=
+>
+    <span class=3D"k">print</span> <span class=3D"n">request</span><span cl=
+ass=3D"o">.</span><span class=3D"n">get_data</span><span class=3D"p">()</sp=
+an>
+
+    <span class=3D"k">print</span>
+    <span class=3D"k">print</span> <span class=3D"s">'SERVER RESPONSE:'</sp=
+an>
+    <span class=3D"k">print</span> <span class=3D"n">urllib2</span><span cl=
+ass=3D"o">.</span><span class=3D"n">urlopen</span><span class=3D"p">(</span=
+><span class=3D"n">request</span><span class=3D"p">)</span><span class=3D"o=
+">.</span><span class=3D"n">read</span><span class=3D"p">()</span>
+</pre></div>
+</div>
+<p>The <tt class=3D"xref py py-class docutils literal"><span class=3D"pre">=
+MultiPartForm</span></tt> class can represent an arbitrary form as a
+multi-part MIME message with attached files.</p>
+<div class=3D"highlight-python"><div class=3D"highlight"><pre>$ python urll=
+ib2_upload_files.py
+
+OUTGOING DATA:
+--192.168.1.17.527.30074.1248020372.206.1
+Content-Disposition: form-data; name=3D"firstname"
+
+Doug
+--192.168.1.17.527.30074.1248020372.206.1
+Content-Disposition: form-data; name=3D"lastname"
+
+Hellmann
+--192.168.1.17.527.30074.1248020372.206.1
+Content-Disposition: file; name=3D"biography"; filename=3D"bio.txt"
+Content-Type: text/plain
+
+Python developer and blogger.
+--192.168.1.17.527.30074.1248020372.206.1--
+
+
+SERVER RESPONSE:
+Client: ('127.0.0.1', 57126)
+User-agent: PyMOTW (http://www.doughellmann.com/PyMOTW/)
+Path: /
+Form data:
+    lastname=3DHellmann
+    Uploaded biography as "bio.txt" (29 bytes)
+    firstname=3DDoug
+</pre></div>
+</div>
+</div>
+</div>
+<div class=3D"section" id=3D"custom-protocol-handlers">
+<h2>Custom Protocol Handlers<a class=3D"headerlink" href=3D"https://pymotw.=
+com/2/urllib2/#custom-protocol-handlers" title=3D"Permalink to this headlin=
+e">=C2=B6</a></h2>
+<p><a class=3D"reference internal" href=3D"https://pymotw.com/2/urllib2/#mo=
+dule-urllib2" title=3D"urllib2: Library for opening URLs."><tt class=3D"xre=
+f py py-mod docutils literal"><span class=3D"pre">urllib2</span></tt></a> h=
+as built-in support for HTTP(S), FTP, and local file
+access. If you need to add support for other URL types, you can
+register your own protocol handler to be invoked as needed. For
+example, if you want to support URLs pointing to arbitrary files on
+remote NFS servers, without requiring your users to mount the path
+manually, would create a class derived from <tt class=3D"xref py py-class d=
+ocutils literal"><span class=3D"pre">BaseHandler</span></tt> and
+with a method <tt class=3D"xref py py-func docutils literal"><span class=3D=
+"pre">nfs_open()</span></tt>.</p>
+<p>The protocol <tt class=3D"xref py py-func docutils literal"><span class=
+=3D"pre">open()</span></tt> method takes a single argument, the
+<tt class=3D"xref py py-class docutils literal"><span class=3D"pre">Request=
+</span></tt> instance, and it should return an object with a
+<tt class=3D"xref py py-func docutils literal"><span class=3D"pre">read()</=
+span></tt> method that can be used to read the data, an
+<tt class=3D"xref py py-func docutils literal"><span class=3D"pre">info()</=
+span></tt> method to return the response headers, and
+<tt class=3D"xref py py-func docutils literal"><span class=3D"pre">geturl()=
+</span></tt> to return the actual URL of the file being read. A
+simple way to achieve that is to create an instance of
+<tt class=3D"xref py py-class docutils literal"><span class=3D"pre">urllib.=
+addurlinfo</span></tt>, passing the headers, URL, and open file
+handle in to the constructor.</p>
+<div class=3D"highlight-python"><div class=3D"highlight"><pre><span class=
+=3D"kn">import</span> <span class=3D"nn">mimetypes</span>
+<span class=3D"kn">import</span> <span class=3D"nn">os</span>
+<span class=3D"kn">import</span> <span class=3D"nn">tempfile</span>
+<span class=3D"kn">import</span> <span class=3D"nn">urllib</span>
+<span class=3D"kn">import</span> <span class=3D"nn">urllib2</span>
+
+<span class=3D"k">class</span> <span class=3D"nc">NFSFile</span><span class=
+=3D"p">(</span><span class=3D"nb">file</span><span class=3D"p">):</span>
+    <span class=3D"k">def</span> <span class=3D"nf">__init__</span><span cl=
+ass=3D"p">(</span><span class=3D"bp">self</span><span class=3D"p">,</span> =
+<span class=3D"n">tempdir</span><span class=3D"p">,</span> <span class=3D"n=
+">filename</span><span class=3D"p">):</span>
+        <span class=3D"bp">self</span><span class=3D"o">.</span><span class=
+=3D"n">tempdir</span> <span class=3D"o">=3D</span> <span class=3D"n">tempdi=
+r</span>
+        <span class=3D"nb">file</span><span class=3D"o">.</span><span class=
+=3D"n">__init__</span><span class=3D"p">(</span><span class=3D"bp">self</sp=
+an><span class=3D"p">,</span> <span class=3D"n">filename</span><span class=
+=3D"p">,</span> <span class=3D"s">'rb'</span><span class=3D"p">)</span>
+    <span class=3D"k">def</span> <span class=3D"nf">close</span><span class=
+=3D"p">(</span><span class=3D"bp">self</span><span class=3D"p">):</span>
+        <span class=3D"k">print</span>
+        <span class=3D"k">print</span> <span class=3D"s">'NFSFile:'</span>
+        <span class=3D"k">print</span> <span class=3D"s">'  unmounting </sp=
+an><span class=3D"si">%s</span><span class=3D"s">'</span> <span class=3D"o"=
+>%</span> <span class=3D"bp">self</span><span class=3D"o">.</span><span cla=
+ss=3D"n">tempdir</span>
+        <span class=3D"k">print</span> <span class=3D"s">'  when </span><sp=
+an class=3D"si">%s</span><span class=3D"s"> is closed'</span> <span class=
+=3D"o">%</span> <span class=3D"n">os</span><span class=3D"o">.</span><span =
+class=3D"n">path</span><span class=3D"o">.</span><span class=3D"n">basename=
+</span><span class=3D"p">(</span><span class=3D"bp">self</span><span class=
+=3D"o">.</span><span class=3D"n">name</span><span class=3D"p">)</span>
+        <span class=3D"k">return</span> <span class=3D"nb">file</span><span=
+ class=3D"o">.</span><span class=3D"n">close</span><span class=3D"p">(</spa=
+n><span class=3D"bp">self</span><span class=3D"p">)</span>
+
+<span class=3D"k">class</span> <span class=3D"nc">FauxNFSHandler</span><spa=
+n class=3D"p">(</span><span class=3D"n">urllib2</span><span class=3D"o">.</=
+span><span class=3D"n">BaseHandler</span><span class=3D"p">):</span>
+   =20
+    <span class=3D"k">def</span> <span class=3D"nf">__init__</span><span cl=
+ass=3D"p">(</span><span class=3D"bp">self</span><span class=3D"p">,</span> =
+<span class=3D"n">tempdir</span><span class=3D"p">):</span>
+        <span class=3D"bp">self</span><span class=3D"o">.</span><span class=
+=3D"n">tempdir</span> <span class=3D"o">=3D</span> <span class=3D"n">tempdi=
+r</span>
+   =20
+    <span class=3D"k">def</span> <span class=3D"nf">nfs_open</span><span cl=
+ass=3D"p">(</span><span class=3D"bp">self</span><span class=3D"p">,</span> =
+<span class=3D"n">req</span><span class=3D"p">):</span>
+        <span class=3D"n">url</span> <span class=3D"o">=3D</span> <span cla=
+ss=3D"n">req</span><span class=3D"o">.</span><span class=3D"n">get_selector=
+</span><span class=3D"p">()</span>
+        <span class=3D"n">directory_name</span><span class=3D"p">,</span> <=
+span class=3D"n">file_name</span> <span class=3D"o">=3D</span> <span class=
+=3D"n">os</span><span class=3D"o">.</span><span class=3D"n">path</span><spa=
+n class=3D"o">.</span><span class=3D"n">split</span><span class=3D"p">(</sp=
+an><span class=3D"n">url</span><span class=3D"p">)</span>
+        <span class=3D"n">server_name</span> <span class=3D"o">=3D</span> <=
+span class=3D"n">req</span><span class=3D"o">.</span><span class=3D"n">get_=
+host</span><span class=3D"p">()</span>
+        <span class=3D"k">print</span>
+        <span class=3D"k">print</span> <span class=3D"s">'FauxNFSHandler si=
+mulating mount:'</span>
+        <span class=3D"k">print</span> <span class=3D"s">'  Remote path: </=
+span><span class=3D"si">%s</span><span class=3D"s">'</span> <span class=3D"=
+o">%</span> <span class=3D"n">directory_name</span>
+        <span class=3D"k">print</span> <span class=3D"s">'  Server     : </=
+span><span class=3D"si">%s</span><span class=3D"s">'</span> <span class=3D"=
+o">%</span> <span class=3D"n">server_name</span>
+        <span class=3D"k">print</span> <span class=3D"s">'  Local path : </=
+span><span class=3D"si">%s</span><span class=3D"s">'</span> <span class=3D"=
+o">%</span> <span class=3D"n">tempdir</span>
+        <span class=3D"k">print</span> <span class=3D"s">'  File name  : </=
+span><span class=3D"si">%s</span><span class=3D"s">'</span> <span class=3D"=
+o">%</span> <span class=3D"n">file_name</span>
+        <span class=3D"n">local_file</span> <span class=3D"o">=3D</span> <s=
+pan class=3D"n">os</span><span class=3D"o">.</span><span class=3D"n">path</=
+span><span class=3D"o">.</span><span class=3D"n">join</span><span class=3D"=
+p">(</span><span class=3D"n">tempdir</span><span class=3D"p">,</span> <span=
+ class=3D"n">file_name</span><span class=3D"p">)</span>
+        <span class=3D"n">fp</span> <span class=3D"o">=3D</span> <span clas=
+s=3D"n">NFSFile</span><span class=3D"p">(</span><span class=3D"n">tempdir</=
+span><span class=3D"p">,</span> <span class=3D"n">local_file</span><span cl=
+ass=3D"p">)</span>
+        <span class=3D"n">content_type</span> <span class=3D"o">=3D</span> =
+<span class=3D"n">mimetypes</span><span class=3D"o">.</span><span class=3D"=
+n">guess_type</span><span class=3D"p">(</span><span class=3D"n">file_name</=
+span><span class=3D"p">)[</span><span class=3D"mi">0</span><span class=3D"p=
+">]</span> <span class=3D"ow">or</span> <span class=3D"s">'application/octe=
+t-stream'</span>
+        <span class=3D"n">stats</span> <span class=3D"o">=3D</span> <span c=
+lass=3D"n">os</span><span class=3D"o">.</span><span class=3D"n">stat</span>=
+<span class=3D"p">(</span><span class=3D"n">local_file</span><span class=3D=
+"p">)</span>
+        <span class=3D"n">size</span> <span class=3D"o">=3D</span> <span cl=
+ass=3D"n">stats</span><span class=3D"o">.</span><span class=3D"n">st_size</=
+span>
+        <span class=3D"n">headers</span> <span class=3D"o">=3D</span> <span=
+ class=3D"p">{</span> <span class=3D"s">'Content-type'</span><span class=3D=
+"p">:</span> <span class=3D"n">content_type</span><span class=3D"p">,</span=
+>
+                    <span class=3D"s">'Content-length'</span><span class=3D=
+"p">:</span> <span class=3D"n">size</span><span class=3D"p">,</span>
+                  <span class=3D"p">}</span>
+        <span class=3D"k">return</span> <span class=3D"n">urllib</span><spa=
+n class=3D"o">.</span><span class=3D"n">addinfourl</span><span class=3D"p">=
+(</span><span class=3D"n">fp</span><span class=3D"p">,</span> <span class=
+=3D"n">headers</span><span class=3D"p">,</span> <span class=3D"n">req</span=
+><span class=3D"o">.</span><span class=3D"n">get_full_url</span><span class=
+=3D"p">())</span>
+
+<span class=3D"k">if</span> <span class=3D"n">__name__</span> <span class=
+=3D"o">=3D=3D</span> <span class=3D"s">'__main__'</span><span class=3D"p">:=
+</span>
+    <span class=3D"n">tempdir</span> <span class=3D"o">=3D</span> <span cla=
+ss=3D"n">tempfile</span><span class=3D"o">.</span><span class=3D"n">mkdtemp=
+</span><span class=3D"p">()</span>
+    <span class=3D"k">try</span><span class=3D"p">:</span>
+        <span class=3D"c"># Populate the temporary file for the simulation<=
+/span>
+        <span class=3D"k">with</span> <span class=3D"nb">open</span><span c=
+lass=3D"p">(</span><span class=3D"n">os</span><span class=3D"o">.</span><sp=
+an class=3D"n">path</span><span class=3D"o">.</span><span class=3D"n">join<=
+/span><span class=3D"p">(</span><span class=3D"n">tempdir</span><span class=
+=3D"p">,</span> <span class=3D"s">'file.txt'</span><span class=3D"p">),</sp=
+an> <span class=3D"s">'wt'</span><span class=3D"p">)</span> <span class=3D"=
+k">as</span> <span class=3D"n">f</span><span class=3D"p">:</span>
+            <span class=3D"n">f</span><span class=3D"o">.</span><span class=
+=3D"n">write</span><span class=3D"p">(</span><span class=3D"s">'Contents of=
+ file.txt'</span><span class=3D"p">)</span>
+       =20
+        <span class=3D"c"># Construct an opener with our NFS handler</span>
+        <span class=3D"c"># and register it as the default opener.</span>
+        <span class=3D"n">opener</span> <span class=3D"o">=3D</span> <span =
+class=3D"n">urllib2</span><span class=3D"o">.</span><span class=3D"n">build=
+_opener</span><span class=3D"p">(</span><span class=3D"n">FauxNFSHandler</s=
+pan><span class=3D"p">(</span><span class=3D"n">tempdir</span><span class=
+=3D"p">))</span>
+        <span class=3D"n">urllib2</span><span class=3D"o">.</span><span cla=
+ss=3D"n">install_opener</span><span class=3D"p">(</span><span class=3D"n">o=
+pener</span><span class=3D"p">)</span>
+
+        <span class=3D"c"># Open the file through a URL.</span>
+        <span class=3D"n">response</span> <span class=3D"o">=3D</span> <spa=
+n class=3D"n">urllib2</span><span class=3D"o">.</span><span class=3D"n">url=
+open</span><span class=3D"p">(</span><span class=3D"s">'nfs://remote_server=
+/path/to/the/file.txt'</span><span class=3D"p">)</span>
+        <span class=3D"k">print</span>
+        <span class=3D"k">print</span> <span class=3D"s">'READ CONTENTS:'</=
+span><span class=3D"p">,</span> <span class=3D"n">response</span><span clas=
+s=3D"o">.</span><span class=3D"n">read</span><span class=3D"p">()</span>
+        <span class=3D"k">print</span> <span class=3D"s">'URL          :'</=
+span><span class=3D"p">,</span> <span class=3D"n">response</span><span clas=
+s=3D"o">.</span><span class=3D"n">geturl</span><span class=3D"p">()</span>
+        <span class=3D"k">print</span> <span class=3D"s">'HEADERS:'</span>
+        <span class=3D"k">for</span> <span class=3D"n">name</span><span cla=
+ss=3D"p">,</span> <span class=3D"n">value</span> <span class=3D"ow">in</spa=
+n> <span class=3D"nb">sorted</span><span class=3D"p">(</span><span class=3D=
+"n">response</span><span class=3D"o">.</span><span class=3D"n">info</span><=
+span class=3D"p">()</span><span class=3D"o">.</span><span class=3D"n">items=
+</span><span class=3D"p">()):</span>
+            <span class=3D"k">print</span> <span class=3D"s">'  </span><spa=
+n class=3D"si">%-15s</span><span class=3D"s"> =3D </span><span class=3D"si"=
+>%s</span><span class=3D"s">'</span> <span class=3D"o">%</span> <span class=
+=3D"p">(</span><span class=3D"n">name</span><span class=3D"p">,</span> <spa=
+n class=3D"n">value</span><span class=3D"p">)</span>
+        <span class=3D"n">response</span><span class=3D"o">.</span><span cl=
+ass=3D"n">close</span><span class=3D"p">()</span>
+    <span class=3D"k">finally</span><span class=3D"p">:</span>
+        <span class=3D"n">os</span><span class=3D"o">.</span><span class=3D=
+"n">remove</span><span class=3D"p">(</span><span class=3D"n">os</span><span=
+ class=3D"o">.</span><span class=3D"n">path</span><span class=3D"o">.</span=
+><span class=3D"n">join</span><span class=3D"p">(</span><span class=3D"n">t=
+empdir</span><span class=3D"p">,</span> <span class=3D"s">'file.txt'</span>=
+<span class=3D"p">))</span>
+        <span class=3D"n">os</span><span class=3D"o">.</span><span class=3D=
+"n">removedirs</span><span class=3D"p">(</span><span class=3D"n">tempdir</s=
+pan><span class=3D"p">)</span>
+</pre></div>
+</div>
+<p>The <tt class=3D"xref py py-class docutils literal"><span class=3D"pre">=
+FauxNFSHandler</span></tt> and <tt class=3D"xref py py-class docutils liter=
+al"><span class=3D"pre">NFSFile</span></tt> classes print
+messages to illustrate where a real implementation would add mount and
+unmount calls. Since this is just a simulation,
+<tt class=3D"xref py py-class docutils literal"><span class=3D"pre">FauxNFS=
+Handler</span></tt> is primed with the name of a temporary
+directory where it should look for all of its files.</p>
+<div class=3D"highlight-python"><div class=3D"highlight"><pre>$ python urll=
+ib2_nfs_handler.py
+
+FauxNFSHandler simulating mount:
+  Remote path: /path/to/the
+  Server     : remote_server
+  Local path : /var/folders/9R/9R1t+tR02Raxzk+F71Q50U+++Uw/-Tmp-/tmppv5Efn
+  File name  : file.txt
+
+READ CONTENTS: Contents of file.txt
+URL          : nfs://remote_server/path/to/the/file.txt
+HEADERS:
+  Content-length  =3D 20
+  Content-type    =3D text/plain
+
+NFSFile:
+  unmounting /var/folders/9R/9R1t+tR02Raxzk+F71Q50U+++Uw/-Tmp-/tmppv5Efn
+  when file.txt is closed
+</pre></div>
+</div>
+<div class=3D"admonition seealso">
+<p class=3D"first admonition-title">See also</p>
+<dl class=3D"last docutils">
+<dt><a class=3D"reference external" href=3D"http://docs.python.org/library/=
+urllib2.html">urllib2</a></dt>
+<dd>The standard library documentation for this module.</dd>
+<dt><a class=3D"reference internal" href=3D"https://pymotw.com/2/urllib/ind=
+ex.html#module-urllib" title=3D"urllib: Accessing remote resources that don=
+'t need authentication, cookies, etc."><tt class=3D"xref py py-mod docutils=
+ literal"><span class=3D"pre">urllib</span></tt></a></dt>
+<dd>Original URL handling library.</dd>
+<dt><a class=3D"reference internal" href=3D"https://pymotw.com/2/urlparse/i=
+ndex.html#module-urlparse" title=3D"urlparse: Split URL into component piec=
+es."><tt class=3D"xref py py-mod docutils literal"><span class=3D"pre">urlp=
+arse</span></tt></a></dt>
+<dd>Work with the URL string itself.</dd>
+<dt><a class=3D"reference external" href=3D"http://www.voidspace.org.uk/pyt=
+hon/articles/urllib2.shtml">urllib2 =E2=80=93 The Missing Manual</a></dt>
+<dd>Michael Foord=E2=80=99s write-up on using urllib2.</dd>
+<dt><a class=3D"reference external" href=3D"http://www.voidspace.org.uk/pyt=
+hon/cgi.shtml#upload">Upload Scripts</a></dt>
+<dd>Example scripts from Michael Foord that illustrate how to upload a file
+using HTTP and then receive the data on the server.</dd>
+<dt><a class=3D"reference external" href=3D"http://code.activestate.com/rec=
+ipes/146306/">HTTP client to POST using multipart/form-data</a></dt>
+<dd>Python cookbook recipe showing how to encode and post data, including f=
+iles,
+over HTTP.</dd>
+<dt><a class=3D"reference external" href=3D"http://www.w3.org/TR/REC-html40=
+/interact/forms.html#h-17.13.4">Form content types</a></dt>
+<dd>W3C specification for posting files or large amounts of data via HTTP f=
+orms.</dd>
+<dt><tt class=3D"xref py py-mod docutils literal"><span class=3D"pre">mimet=
+ypes</span></tt></dt>
+<dd>Map filenames to mimetype.</dd>
+<dt><tt class=3D"xref py py-mod docutils literal"><span class=3D"pre">mimet=
+ools</span></tt></dt>
+<dd>Tools for parsing MIME messages.</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+    <div class=3D"related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class=3D"right" style=3D"margin-right: 10px">
+          <a href=3D"https://pymotw.com/2/genindex.html" title=3D"General I=
+ndex">index</a></li>
+        <li class=3D"right">
+          <a href=3D"https://pymotw.com/2/py-modindex.html" title=3D"Python=
+ Module Index">modules</a> |</li>
+        <li class=3D"right">
+          <a href=3D"https://pymotw.com/2/urlparse/index.html" title=3D"url=
+parse =E2=80=93 Split URL into component pieces.">next</a> |</li>
+        <li class=3D"right">
+          <a href=3D"https://pymotw.com/2/urllib/index.html" title=3D"urlli=
+b =E2=80=93 simple interface for network resource access">previous</a> |</l=
+i>
+        <li><a href=3D"https://pymotw.com/2/contents.html">PyMOTW</a> =C2=
+=BB</li>
+          <li><a href=3D"https://pymotw.com/2/internet_protocols.html">Inte=
+rnet Protocols and Support</a> =C2=BB</li>=20
+      </ul>
+    </div>
+
+
+
+<!-- Disqus -->
+<div id=3D"disqus_wrapper">
+<div id=3D"disqus_thread" style=3D"display: inline-block;"><iframe style=3D=
+"display: inline-block;"></iframe></div><a href=3D"https://disqus.com/" cla=
+ss=3D"dsq-brlink">blog comments powered by <span class=3D"logo-disqus">Disq=
+us</span></a>
+</div>
+
+</div>
+
+<div id=3D"footer_ads">
+
+    <p>
+    </p>
+</div>
+
+<div id=3D"footer">
+=20
+<p>
+    =C2=A9 Copyright <a rel=3D"author" href=3D"https://pymotw.com/about/ind=
+ex.html">Doug Hellmann</a>.
+    | <a href=3D"http://creativecommons.org/licenses/by-nc-sa/3.0/us/" rel=
+=3D"license"><img alt=3D"Creative Commons License" style=3D"border-width:0;=
+ align: center;" width=3D"80" height=3D"15" src=3D"http://i.creativecommons=
+.org/l/by-nc-sa/3.0/us/80x15.png"></a>
+    | Last updated on Sep 10, 2016.
+   | Created using <a href=3D"http://sphinx.pocoo.org/">Sphinx</a>.
+   | Design based on "Leaves" by <a href=3D"http://smallpark.org/">SmallPar=
+k</a>
+   | <a href=3D"http://www.dreamhost.com/r.cgi?1246820/green.cgi?pymotw.com=
+">
+<img border=3D"0" alt=3D"Green Web Hosting! This site hosted by DreamHost."=
+ src=3D"https://secure.newdream.net/green4.gif" height=3D"15" width=3D"80">=
+</a></p>
+
+
+
+
+</div>
+
+</div>
+
+
+<div id=3D"disqus_thread" style=3D"display: inline-block;"><iframe style=3D=
+"display: inline-block; width: 100%; border: 1px solid rgb(204, 204, 204); =
+height: 80px; background: rgb(255, 255, 255);"></iframe></div>
+
+
+
+
+</body></html>
+------MultipartBoundary--DroEQ1sED7bfFGbEwZyP0zXEb5bD42KfvYSFxu5yZb----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://pymotw.com/2/_static/basic.css
+
+@charset "utf-8";
+
+div.clearer { clear: both; }
+
+div.related { width: 100%; font-size: 90%; }
+
+div.related h3 { display: none; }
+
+div.related ul { margin: 0px; padding: 0px 0px 0px 10px; list-style: none; =
+}
+
+div.related li { display: inline; }
+
+div.related li.right { float: right; margin-right: 5px; }
+
+div.sphinxsidebarwrapper { padding: 10px 5px 0px 10px; }
+
+div.sphinxsidebar { float: left; width: 230px; margin-left: -100%; font-siz=
+e: 90%; }
+
+div.sphinxsidebar ul { list-style: none; }
+
+div.sphinxsidebar ul ul, div.sphinxsidebar ul.want-points { margin-left: 20=
+px; list-style: square; }
+
+div.sphinxsidebar ul ul { margin-top: 0px; margin-bottom: 0px; }
+
+div.sphinxsidebar form { margin-top: 10px; }
+
+div.sphinxsidebar input { border: 1px solid rgb(152, 219, 204); font-family=
+: sans-serif; font-size: 1em; }
+
+div.sphinxsidebar #searchbox input[type=3D"text"] { width: 170px; }
+
+div.sphinxsidebar #searchbox input[type=3D"submit"] { width: 30px; }
+
+img { border: 0px; max-width: 100%; }
+
+ul.search { margin: 10px 0px 0px 20px; padding: 0px; }
+
+ul.search li { padding: 5px 0px 5px 20px; background-image: url("file.png")=
+; background-repeat: no-repeat; background-position: 0px 7px; }
+
+ul.search li a { font-weight: bold; }
+
+ul.search li div.context { color: rgb(136, 136, 136); margin: 2px 0px 0px 3=
+0px; text-align: left; }
+
+ul.keywordmatches li.goodmatch a { font-weight: bold; }
+
+table.contentstable { width: 90%; }
+
+table.contentstable p.biglink { line-height: 150%; }
+
+a.biglink { font-size: 1.3em; }
+
+span.linkdescr { font-style: italic; padding-top: 5px; font-size: 90%; }
+
+table.indextable { width: 100%; }
+
+table.indextable td { text-align: left; vertical-align: top; }
+
+table.indextable dl, table.indextable dd { margin-top: 0px; margin-bottom: =
+0px; }
+
+table.indextable tr.pcap { height: 10px; }
+
+table.indextable tr.cap { margin-top: 10px; background-color: rgb(242, 242,=
+ 242); }
+
+img.toggler { margin-right: 3px; margin-top: 3px; cursor: pointer; }
+
+div.modindex-jumpbox { border-top: 1px solid rgb(221, 221, 221); border-bot=
+tom: 1px solid rgb(221, 221, 221); margin: 1em 0px; padding: 0.4em; }
+
+div.genindex-jumpbox { border-top: 1px solid rgb(221, 221, 221); border-bot=
+tom: 1px solid rgb(221, 221, 221); margin: 1em 0px; padding: 0.4em; }
+
+a.headerlink { visibility: hidden; }
+
+h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, =
+h4:hover > a.headerlink, h5:hover > a.headerlink, h6:hover > a.headerlink, =
+dt:hover > a.headerlink { visibility: visible; }
+
+div.body p.caption { text-align: inherit; }
+
+div.body td { text-align: left; }
+
+.field-list ul { padding-left: 1em; }
+
+.first { margin-top: 0px !important; }
+
+p.rubric { margin-top: 30px; font-weight: bold; }
+
+img.align-left, .figure.align-left, object.align-left { clear: left; float:=
+ left; margin-right: 1em; }
+
+img.align-right, .figure.align-right, object.align-right { clear: right; fl=
+oat: right; margin-left: 1em; }
+
+img.align-center, .figure.align-center, object.align-center { display: bloc=
+k; margin-left: auto; margin-right: auto; }
+
+.align-left { text-align: left; }
+
+.align-center { text-align: center; }
+
+.align-right { text-align: right; }
+
+div.sidebar { margin: 0px 0px 0.5em 1em; border: 1px solid rgb(221, 221, 18=
+7); padding: 7px 7px 0px; background-color: rgb(255, 255, 238); width: 40%;=
+ float: right; }
+
+p.sidebar-title { font-weight: bold; }
+
+div.topic { border: 1px solid rgb(204, 204, 204); padding: 7px 7px 0px; mar=
+gin: 10px 0px; }
+
+p.topic-title { font-size: 1.1em; font-weight: bold; margin-top: 10px; }
+
+div.admonition { margin-top: 10px; margin-bottom: 10px; padding: 7px; }
+
+div.admonition dt { font-weight: bold; }
+
+div.admonition dl { margin-bottom: 0px; }
+
+p.admonition-title { margin: 0px 10px 5px 0px; font-weight: bold; }
+
+div.body p.centered { text-align: center; margin-top: 25px; }
+
+table.docutils { border: 0px; border-collapse: collapse; }
+
+table.docutils td, table.docutils th { padding: 1px 8px 1px 5px; border-wid=
+th: 0px 0px 1px; border-top-style: initial; border-top-color: initial; bord=
+er-left-style: initial; border-left-color: initial; border-right-style: ini=
+tial; border-right-color: initial; border-bottom-style: solid; border-botto=
+m-color: rgb(170, 170, 170); }
+
+table.field-list td, table.field-list th { border: 0px !important; }
+
+table.footnote td, table.footnote th { border: 0px !important; }
+
+th { text-align: left; padding-right: 5px; }
+
+table.citation { border-left: 1px solid gray; margin-left: 1px; }
+
+table.citation td { border-bottom: none; }
+
+ol.arabic { list-style: decimal; }
+
+ol.loweralpha { list-style: lower-alpha; }
+
+ol.upperalpha { list-style: upper-alpha; }
+
+ol.lowerroman { list-style: lower-roman; }
+
+ol.upperroman { list-style: upper-roman; }
+
+dl { margin-bottom: 15px; }
+
+dd p { margin-top: 0px; }
+
+dd ul, dd table { margin-bottom: 10px; }
+
+dd { margin-top: 3px; margin-bottom: 10px; margin-left: 30px; }
+
+dt:target, .highlighted { background-color: rgb(251, 229, 78); }
+
+dl.glossary dt { font-weight: bold; font-size: 1.1em; }
+
+.field-list ul { margin: 0px; padding-left: 1em; }
+
+.field-list p { margin: 0px; }
+
+.optional { font-size: 1.3em; }
+
+.versionmodified { font-style: italic; }
+
+.system-message { background-color: rgb(255, 221, 170); padding: 5px; borde=
+r: 3px solid red; }
+
+.footnote:target { background-color: rgb(255, 255, 170); }
+
+.line-block { display: block; margin-top: 1em; margin-bottom: 1em; }
+
+.line-block .line-block { margin-top: 0px; margin-bottom: 0px; margin-left:=
+ 1.5em; }
+
+.guilabel, .menuselection { font-family: sans-serif; }
+
+.accelerator { text-decoration: underline; }
+
+.classifier { font-style: oblique; }
+
+abbr, acronym { border-bottom: 1px dotted; cursor: help; }
+
+pre { overflow-x: auto; overflow-y: hidden; }
+
+td.linenos pre { padding: 5px 0px; border: 0px; background-color: transpare=
+nt; color: rgb(170, 170, 170); }
+
+table.highlighttable { margin-left: 0.5em; }
+
+table.highlighttable td { padding: 0px 0.5em; }
+
+tt.descname { background-color: transparent; font-weight: bold; font-size: =
+1.2em; }
+
+tt.descclassname { background-color: transparent; }
+
+tt.xref, a tt { background-color: transparent; font-weight: bold; }
+
+h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt { background-color: transparent; }
+
+.viewcode-link { float: right; }
+
+.viewcode-back { float: right; font-family: sans-serif; }
+
+div.viewcode-block:target { margin: -1px -10px; padding: 0px 10px; }
+
+img.math { vertical-align: middle; }
+
+div.body div.math p { text-align: center; }
+
+span.eqno { float: right; }
+
+@media print {=20
+  div.document, div.documentwrapper, div.bodywrapper { width: 100%; margin:=
+ 0px !important; }
+  div.sphinxsidebar, div.related, div.footer, #top-link { display: none; }
+}
+------MultipartBoundary--DroEQ1sED7bfFGbEwZyP0zXEb5bD42KfvYSFxu5yZb----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://pymotw.com/2/_static/default.css
+
+@charset "utf-8";
+
+@import url("basic.css");
+
+body { font-family: sans-serif; font-size: 100%; background-color: rgb(17, =
+48, 61); color: rgb(0, 0, 0); margin: 0px; padding: 0px; }
+
+div.document { background-color: rgb(28, 78, 99); }
+
+div.documentwrapper { float: left; width: 100%; }
+
+div.bodywrapper { margin: 0px 0px 0px 230px; }
+
+div.body { background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); paddi=
+ng: 0px 20px 30px; }
+
+div.footer { color: rgb(255, 255, 255); width: 100%; padding: 9px 0px; text=
+-align: center; font-size: 75%; }
+
+div.footer a { color: rgb(255, 255, 255); text-decoration: underline; }
+
+div.related { background-color: rgb(19, 63, 82); line-height: 30px; color: =
+rgb(255, 255, 255); }
+
+div.related a { color: rgb(255, 255, 255); }
+
+div.sphinxsidebar { }
+
+div.sphinxsidebar h3 { font-family: "Trebuchet MS", sans-serif; color: rgb(=
+255, 255, 255); font-size: 1.4em; font-weight: normal; margin: 0px; padding=
+: 0px; }
+
+div.sphinxsidebar h3 a { color: rgb(255, 255, 255); }
+
+div.sphinxsidebar h4 { font-family: "Trebuchet MS", sans-serif; color: rgb(=
+255, 255, 255); font-size: 1.3em; font-weight: normal; margin: 5px 0px 0px;=
+ padding: 0px; }
+
+div.sphinxsidebar p { color: rgb(255, 255, 255); }
+
+div.sphinxsidebar p.topless { margin: 5px 10px 10px; }
+
+div.sphinxsidebar ul { margin: 10px; padding: 0px; color: rgb(255, 255, 255=
+); }
+
+div.sphinxsidebar a { color: rgb(152, 219, 204); }
+
+div.sphinxsidebar input { border: 1px solid rgb(152, 219, 204); font-family=
+: sans-serif; font-size: 1em; }
+
+a { color: rgb(53, 95, 124); text-decoration: none; }
+
+a:visited { color: rgb(53, 95, 124); text-decoration: none; }
+
+a:hover { text-decoration: underline; }
+
+div.body h1, div.body h2, div.body h3, div.body h4, div.body h5, div.body h=
+6 { font-family: "Trebuchet MS", sans-serif; background-color: rgb(242, 242=
+, 242); font-weight: normal; color: rgb(32, 67, 92); border-bottom: 1px sol=
+id rgb(204, 204, 204); margin: 20px -20px 10px; padding: 3px 0px 3px 10px; =
+}
+
+div.body h1 { margin-top: 0px; font-size: 200%; }
+
+div.body h2 { font-size: 160%; }
+
+div.body h3 { font-size: 140%; }
+
+div.body h4 { font-size: 120%; }
+
+div.body h5 { font-size: 110%; }
+
+div.body h6 { font-size: 100%; }
+
+a.headerlink { color: rgb(198, 15, 15); font-size: 0.8em; padding: 0px 4px;=
+ text-decoration: none; }
+
+a.headerlink:hover { background-color: rgb(198, 15, 15); color: white; }
+
+div.body p, div.body dd, div.body li { text-align: justify; line-height: 13=
+0%; }
+
+div.admonition p.admonition-title + p { display: inline; }
+
+div.admonition p { margin-bottom: 5px; }
+
+div.admonition pre { margin-bottom: 5px; }
+
+div.admonition ul, div.admonition ol { margin-bottom: 5px; }
+
+div.note { background-color: rgb(238, 238, 238); border: 1px solid rgb(204,=
+ 204, 204); }
+
+div.seealso { background-color: rgb(255, 255, 204); border: 1px solid rgb(2=
+55, 255, 102); }
+
+div.topic { background-color: rgb(238, 238, 238); }
+
+div.warning { background-color: rgb(255, 228, 228); border: 1px solid rgb(2=
+55, 102, 102); }
+
+p.admonition-title { display: inline; }
+
+p.admonition-title::after { content: ":"; }
+
+pre { padding: 5px; background-color: rgb(238, 255, 204); color: rgb(51, 51=
+, 51); line-height: 120%; border-top: 1px solid rgb(170, 204, 153); border-=
+bottom: 1px solid rgb(170, 204, 153); border-image: initial; border-left: n=
+one; border-right: none; }
+
+tt { background-color: rgb(236, 240, 243); padding: 0px 1px; font-size: 0.9=
+5em; }
+
+th { background-color: rgb(238, 221, 238); }
+
+.warning tt { background: rgb(239, 194, 194); }
+
+.note tt { background: rgb(214, 214, 214); }
+
+.viewcode-back { font-family: sans-serif; }
+
+div.viewcode-block:target { background-color: rgb(244, 222, 191); border-to=
+p: 1px solid rgb(170, 204, 153); border-bottom: 1px solid rgb(170, 204, 153=
+); }
+------MultipartBoundary--DroEQ1sED7bfFGbEwZyP0zXEb5bD42KfvYSFxu5yZb----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://pymotw.com/2/_static/css/leaves.css
+
+@charset "utf-8";
+
+body { background-color: white; text-align: left; border: none; }
+
+#container { margin: 0px auto; font-family: "Lucida Grande", Verdana, Arial=
+, Helvetica, sans-serif; font-size: 12px; line-height: 1.6em; background-co=
+lor: rgb(255, 255, 255); }
+
+h1 { font-family: Arial, Helvetica, sans-serif; font-weight: normal; font-s=
+ize: 28px; line-height: 1.25em; color: rgb(204, 102, 51); margin-bottom: 0p=
+x; background-color: rgb(255, 255, 255); }
+
+h2 { color: rgb(102, 102, 102); font-size: 18px; font-family: Arial, Helvet=
+ica, sans-serif; background-color: rgb(255, 255, 255); }
+
+h3 { color: rgb(68, 68, 68); }
+
+a { color: rgb(204, 103, 20); text-decoration: none; }
+
+a:hover { color: rgb(204, 103, 20); background-color: rgb(245, 245, 245); }
+
+a:visited { color: rgb(204, 103, 20); }
+
+form { float: right; margin-top: -45px; font-size: 9px; }
+
+input { background-color: rgb(255, 255, 255); color: rgb(153, 153, 153); bo=
+rder: 1px solid rgb(204, 204, 204); font-size: 11px; padding: 3px; }
+
+.button { padding: 2px; }
+
+#header { border-bottom: 4px solid rgb(148, 137, 121); clear: both; margin-=
+bottom: 10px; }
+
+#header p { margin-top: -20px; margin-left: 30px; color: rgb(153, 153, 153)=
+; }
+
+#navigation ul { margin-left: 0px; padding-left: 0px; list-style-type: none=
+; float: left; width: 140px; }
+
+#navigation a { display: block; padding: 5px; width: 140px; border-bottom: =
+1px solid rgb(204, 204, 204); }
+
+#navigation a:link, #navlist a:visited { color: rgb(204, 103, 20); text-dec=
+oration: none; }
+
+#navigation a:hover { background: url("/static/images/arrow.gif") 96% 50% n=
+o-repeat rgb(245, 245, 245); color: rgb(204, 103, 20); }
+
+div.related { background-color: rgb(245, 245, 245); line-height: 30px; colo=
+r: rgb(204, 103, 20); margin-bottom: 1em; }
+
+div.related ul { border: none; }
+
+div.related ul li a { color: rgb(204, 103, 20); }
+
+#navigation p { margin-top: 40px; padding: 5px; border-bottom: 1px dotted r=
+gb(204, 204, 204); border-top: 1px dotted rgb(204, 204, 204); }
+
+#sidebar_left_wrapper { float: left; width: 140px; color: rgb(102, 102, 102=
+); }
+
+#sidebar_left { margin-left: 0px; padding-left: 1em; list-style-type: none;=
+ border-bottom: 1px dotted rgb(204, 204, 204); border-top: 1px dotted rgb(2=
+04, 204, 204); }
+
+#content { margin-left: 180px; margin-right: 250px; }
+
+#content p { padding-bottom: 10px; }
+
+#content p.date { border-bottom: 0px; padding-bottom: 0px; margin-bottom: 0=
+px; margin-top: 0px; display: inline; padding-left: 1em; color: rgb(170, 17=
+0, 170); }
+
+#content div.article p { border-bottom: 0px; padding-bottom: 0px; }
+
+#content div.article h3 { border-bottom: 1px solid rgb(221, 221, 221); }
+
+#content div.article div.byline { font-size: 80%; }
+
+#content div.section p.deck { background-color: rgb(221, 221, 221); color: =
+rgb(68, 68, 68); font-size: 120%; padding: 1.5em; }
+
+#content p.article-reprint-disclaimer { color: rgb(170, 170, 170); font-siz=
+e: 80%; }
+
+#content p.reprint-disclaimer { color: rgb(170, 170, 170); font-size: 80%; =
+}
+
+#content p.review-disclaimer { color: rgb(170, 170, 170); font-size: 90%; }
+
+#content p.pub-date { color: rgb(170, 170, 170); font-size: 90%; }
+
+#content div.section p.callout { background-color: rgb(238, 137, 54); color=
+: rgb(51, 51, 51); font-size: 150%; font-style: italic; padding: 1em; margi=
+n: 2em; }
+
+#content p.caption { font-style: italic; text-align: center; font-size: 90%=
+; }
+
+#content div.section p.project-description { background-color: rgb(221, 221=
+, 221); color: rgb(68, 68, 68); font-size: 120%; padding: 1.5em; }
+
+#content div.section p { border-bottom: 0px; padding-bottom: 0px; }
+
+#content h1 { color: rgb(102, 102, 102); font-size: 24px; font-family: Aria=
+l, Helvetica, sans-serif; background-color: rgb(255, 255, 255); }
+
+#content h2 { border-bottom: 1px solid rgb(221, 221, 221); }
+
+#content pre { background-color: white; display: block; border: 0px; }
+
+#content div.highlight-python { margin-left: 2em; margin-right: 2em; }
+
+#content div.admonition dl { margin-left: 1em; }
+
+#content div.highlight-python pre { border: 1px solid rgb(221, 221, 221); p=
+adding-left: 1em; padding-right: 1em; }
+
+div.topic { background: rgb(255, 255, 255); margin-left: 2em; margin-right:=
+ 2em; }
+
+#content div.topic div.highlight-python pre { border: 0px; }
+
+#content div.highlight-python td.linenos pre { border-width: 0px 1px 0px 0p=
+x; border-top-style: initial; border-bottom-style: initial; border-left-sty=
+le: initial; border-top-color: initial; border-bottom-color: initial; borde=
+r-left-color: initial; border-image: initial; padding-left: 0px; padding-ri=
+ght: 5px; border-right-style: solid; border-right-color: rgb(221, 221, 221)=
+; }
+
+#content div.highlight-python table.highlightable td.code { border: 1px sol=
+id rgb(221, 221, 221); padding: 1em; }
+
+.coverimage { float: right; }
+
+#disqus_wrapper { border-top: 1px solid rgb(221, 221, 221); border-bottom: =
+1px solid rgb(221, 221, 221); padding: 1em; }
+
+#addthis { padding-bottom: 1em; }
+
+#content table.docutils { border-collapse: separate; }
+
+table.docutils td, table.docutils th { padding: 1px 8px; border-color: rgb(=
+204, 204, 204); border-width: 1px; border-style: none none solid; }
+
+table.docutils thead td, table.docutils thead th { padding: 1px 8px; border=
+-color: rgb(204, 204, 204); border-width: 3px; border-style: none none soli=
+d; }
+
+table.docutils th { background-color: rgb(245, 245, 245); }
+
+table.manual { padding: 1em; }
+
+table.manual tbody tr { padding: 2em; }
+
+table.manual tbody tr td { padding: 1em; }
+
+blockquote { background: url("/static/images/quotes.gif") left top no-repea=
+t rgb(245, 245, 245); padding-left: 35px; border-radius: 3px; }
+
+p.attribution { font-style: italic; }
+
+#sidebar { float: right; width: 225px; }
+
+#sidebar p { padding-bottom: 10px; border-bottom: 1px solid rgb(221, 221, 2=
+21); }
+
+#sidebar h3 { color: rgb(102, 102, 102); }
+
+#sidebar ul { margin-left: 1em; padding-left: 1em; }
+
+#sidebar ul li ul { margin-left: 1em; padding-left: 0px; }
+
+#content p.fbsubscribelink { border-bottom: 0px; }
+
+a.booklink { padding: 5px; }
+
+a.booklink img { border: 0px; }
+
+#footer_ads { margin-top: 20px; clear: both; padding: 0px 5px; border-top: =
+10px solid rgb(87, 83, 82); }
+
+#footer { clear: both; background-color: rgb(87, 83, 82); padding: 0px 5px;=
+ font-size: 11px; }
+
+#footer p { color: rgb(137, 129, 127); padding: 5px; }
+
+#footer p a { color: rgb(137, 129, 127); border-bottom: 1px dotted rgb(137,=
+ 129, 127); }
+
+#footer p a:hover { color: rgb(255, 255, 255); background-color: rgb(87, 83=
+, 82); }
+
+.highlight .c { color: rgb(64, 128, 128); font-style: italic; }
+
+.highlight .err { border: 1px solid rgb(255, 0, 0); }
+
+.highlight .k { color: rgb(0, 128, 0); font-weight: bold; }
+
+.highlight .o { color: rgb(102, 102, 102); }
+
+.highlight .cm { color: rgb(64, 128, 128); font-style: italic; }
+
+.highlight .cp { color: rgb(188, 122, 0); }
+
+.highlight .c1 { color: rgb(64, 128, 128); font-style: italic; }
+
+.highlight .cs { color: rgb(64, 128, 128); font-style: italic; }
+
+.highlight .gd { color: rgb(160, 0, 0); }
+
+.highlight .ge { font-style: italic; }
+
+.highlight .gr { color: rgb(255, 0, 0); }
+
+.highlight .gh { color: rgb(0, 0, 128); font-weight: bold; }
+
+.highlight .gi { color: rgb(0, 160, 0); }
+
+.highlight .go { color: rgb(128, 128, 128); }
+
+.highlight .gp { color: rgb(0, 0, 128); font-weight: bold; }
+
+.highlight .gs { font-weight: bold; }
+
+.highlight .gu { color: rgb(128, 0, 128); font-weight: bold; }
+
+.highlight .gt { color: rgb(0, 64, 208); }
+
+.highlight .kc { color: rgb(0, 128, 0); font-weight: bold; }
+
+.highlight .kd { color: rgb(0, 128, 0); font-weight: bold; }
+
+.highlight .kp { color: rgb(0, 128, 0); }
+
+.highlight .kr { color: rgb(0, 128, 0); font-weight: bold; }
+
+.highlight .kt { color: rgb(0, 128, 0); font-weight: bold; }
+
+.highlight .m { color: rgb(102, 102, 102); }
+
+.highlight .s { color: rgb(186, 33, 33); }
+
+.highlight .na { color: rgb(125, 144, 41); }
+
+.highlight .nb { color: rgb(0, 128, 0); }
+
+.highlight .nc { color: rgb(0, 0, 255); font-weight: bold; }
+
+.highlight .no { color: rgb(136, 0, 0); }
+
+.highlight .nd { color: rgb(170, 34, 255); }
+
+.highlight .ni { color: rgb(153, 153, 153); font-weight: bold; }
+
+.highlight .ne { color: rgb(210, 65, 58); font-weight: bold; }
+
+.highlight .nf { color: rgb(0, 0, 255); }
+
+.highlight .nl { color: rgb(160, 160, 0); }
+
+.highlight .nn { color: rgb(0, 0, 255); font-weight: bold; }
+
+.highlight .nt { color: rgb(0, 128, 0); font-weight: bold; }
+
+.highlight .nv { color: rgb(25, 23, 124); }
+
+.highlight .ow { color: rgb(170, 34, 255); font-weight: bold; }
+
+.highlight .mf { color: rgb(102, 102, 102); }
+
+.highlight .mh { color: rgb(102, 102, 102); }
+
+.highlight .mi { color: rgb(102, 102, 102); }
+
+.highlight .mo { color: rgb(102, 102, 102); }
+
+.highlight .sb { color: rgb(186, 33, 33); }
+
+.highlight .sc { color: rgb(186, 33, 33); }
+
+.highlight .sd { color: rgb(186, 33, 33); font-style: italic; }
+
+.highlight .s2 { color: rgb(186, 33, 33); }
+
+.highlight .se { color: rgb(187, 102, 34); font-weight: bold; }
+
+.highlight .sh { color: rgb(186, 33, 33); }
+
+.highlight .si { color: rgb(187, 102, 136); font-weight: bold; }
+
+.highlight .sx { color: rgb(0, 128, 0); }
+
+.highlight .sr { color: rgb(187, 102, 136); }
+
+.highlight .s1 { color: rgb(186, 33, 33); }
+
+.highlight .ss { color: rgb(25, 23, 124); }
+
+.highlight .bp { color: rgb(0, 128, 0); }
+
+.highlight .vc { color: rgb(25, 23, 124); }
+
+.highlight .vg { color: rgb(25, 23, 124); }
+
+.highlight .vi { color: rgb(25, 23, 124); }
+
+.highlight .il { color: rgb(102, 102, 102); }
+------MultipartBoundary--DroEQ1sED7bfFGbEwZyP0zXEb5bD42KfvYSFxu5yZb----
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: https://secure.newdream.net/green4.gif
+
+R0lGODlhUAAPAMQAAHW4SXOLSyJObbTDQzpnleXqlCOVV8bRVdzjRqu7QZmsU+fs8eHnZI6nZgQu
+YKHMQYKbUqW2bVBxb6m4QK/ARdvi6miGpLrJS0anhITErUmlUMLi1uLoNmZmZv///wiJWyH/C05F
+VFNDQVBFMi4wAwEAAAAh+QQE9AEAACwAAAAAUAAPAAAFymAnjmRpnmiqruzovXAsz3Rt33guel/v
+/8Cg8Od5GI/IpHLJXHp2w6gU6AFYr9isdsvdPju8qXjo0ZjP6LR6zV5/wx9YTz5/1cPwvGHv4e8N
+L3+AgYN9gH6IhX9vc1SNcUREeD55j5OQjpaXcJRQkHZxoKF4oDymlJR0l6GRlp+NooyYk5WotrG3
+rq2Ys3W6cTuLhofEMHyEw8m5vne7q3mcb23T1GacY9hib13c3VbX2eFCb03l5kbg4upzOznu7/Dx
+NC309fb3JiEAIfkEBAoAAAAsAgACAEwACwAABY3gJ45kaZ6kB6xs675wDKN0XXparu987/8+m5Dm
+MRiPyKRyyVyONlARdPOMfqbS58ijvVZJ2KuV6s1Krd0umWw+t7nmddzEXsvLdPG5Ph572XBifnho
+hFlUcoVliWl4i4Bqc2Bpd4NsX5JhmmmBd3p7k5KEl02lpkaBQ6pDQK2uOamrsigytbYrsbO6IyEA
+IfkEBAoAAAAsAgACAEwACwAABYLgJ45kaZ6kp61s675wDKN0XXpGru987/8+m5DmGRqPpIxSpMyM
+mszlx8kcFavTJzVKhWa/YO+z1MWap2XR9ZtOJ8do7JYcR2+9+Ox23Wxr33J6VVJwZXeAcnuFgYiH
+bH5kjl1SeWZ8ZoRiYZh/SJ5qn6EmQKSlOWuiojKrrCuoqZ8hACH5BAQKAAAALAIAAgBMAAsAAAV5
+4CeOZGmepGesbOu+cAyjdF16dq7vfI33wBxmKBpiRsYi8XMsjn5Mp5KUZC6bzagyK0VKuWDs06sV
+a6nka7d0vC6tWHV7vDVn32fxPIovO+9oaVlQdmt5aVN+bIBlbmZnhF1vVZKViUE9UJibnDmanUAy
+oqMrn6A8IQAh+QQECgAAACwCAAIATAALAAAFMOAnjmRpmt6prmzrvmUKz3Ttynau0/ju/yigcNgb
+Gm3Fo/KVXDpVzad0FJ1Kq1ZSCAAh+QQECgAAACwYAAIABgALAAAFEaD3jaNIfiaZlifaru4Jz20I
+ACH5BAQKAAAALBMAAgAGAAsAAAURoPeNo0h+JpmWJ9qu7gnPbQgAIfkEBAoAAAAsAgACABIACwAA
+BR8gII5k6X1fqZJnuq7tC6OyGtcsjY/3DvQ7IE5Ya4UAACH5BAQKAAAALAIAAgAPAAsAAAUPICeO
+ZGmeaKqubOu+cMyGACH5BAQKAAAALAUAAwBHAAkAAAWaIHINJHkhXOp9bOu+cCzPdHtNCUXl05By
+q5pwSIwNEpfk5HJI/IKYKAvTok6ln6hVe51Ws96sVUzVDihJypJBeYa34C8YPqaXy176i3q+7CYH
+DD4qV2NxcndbUlp4jVxwYl9HE5QUDGxucXV7eZqIh3hzYW8ffUyXTZlcclVYdqGhopqKmzeBqD2Z
+Rbu8MghHFGcJAyiEvcfIIQAh+QQECgAAACwFAAMARwAJAAAFkCCiQCSpIFzqfWzrvnAsz3SrBAGZ
+5ym31sCgMAYJNI7GSKD3yzhZmVYU+vw4p1cqVGrdWqff6JV0LDYKEKYX2+V22WC4WLyFv6LkYiCC
+VoddYGt/f1d0hllsX1x6OBAFfSqCXm6Gk3Z1mG2CZA18BUp+WW5SVXJ0b1yJpVVdN56fPJFDs7Qz
+CEUlOSiytb29IQAh+QQELAEAACwFAAMARwAJAAAFlSAjCSQpMVzqfWzrvnAsz3QrOQ6Z5ym31sCg
+MCZwEI5Gi6P38zhZv0/U2XxKrdjWqgmdPqmkY5FQETChaKlai+ZO29tte+5ahYsOi8es6kbXbGpU
+fldfgoVya1ZqeDgCFQt8PmlvdXNclICJm5aMAkcWFR5KZ4WdWlmChod0VYRoN6EeFUqSf0O4uTAM
+RSU5B6W6wsIhACH5BAQKAAAALAUAAwBHAAkAAAU2ICeOpOh9aKqubOu+cFrO3BnfeN7Spa3/QBeP
+5Asag8NR8cjEJU3NqPO5lFpVz9p1u8pWudIQACH5BAQKAAAALAIAAgAPAAsAAAUPICCOZGmeaKqu
+bOu+cMyGACH5BAQKAAAALAIAAgASAAsAAAUa4CeOZCl6Zkqiqsq25guvc1yX8p3X+9zDnhAAIfkE
+BAoAAAAsEwACAAYACwAABRHgJ4reSJpfaaoje66om8ZxCAAh+QQECgAAACwYAAIABgALAAAFEeAn
+it5Iml9pqiN7rqibxnEIADs=
+------MultipartBoundary--DroEQ1sED7bfFGbEwZyP0zXEb5bD42KfvYSFxu5yZb----
+Content-Type: text/html
+Content-ID: <frame-35-ab111002-a676-4405-931d-23a87b639942@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3DUTF-8"></head><body></body></html>
+------MultipartBoundary--DroEQ1sED7bfFGbEwZyP0zXEb5bD42KfvYSFxu5yZb----
+Content-Type: text/html
+Content-ID: <frame-41-1749e231-6e8e-41c4-a767-5826e41129ca@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3DUTF-8"></head><body></body></html>
+------MultipartBoundary--DroEQ1sED7bfFGbEwZyP0zXEb5bD42KfvYSFxu5yZb----
+Content-Type: text/html
+Content-ID: <frame-42-197ef7d9-1491-4e20-a55b-5e3dbd2525c8@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3DUTF-8">
+=09
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		p {
+			margin: 3px;
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: 13px;
+		}
+		table {
+			border-spacing: 0;
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			vertical-align: middle;
+		}
+		td {
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<tbody><tr>
+			<td>
+
+			=09
+
+				=09
+						<p id=3D"text">Ghostery =E6=8B=A6=E6=88=AA=E4=BA=86=E7=94=B1 Disqus =
+=E6=8F=90=E4=BE=9B=E6=94=AF=E6=8C=81=E7=9A=84=E8=AF=84=E8=AE=BA=E3=80=82</p=
+>
+				=09
+
+					<img id=3D"ghostery-blocked" src=3D"data:image/png;base64,iVBORw0KGgoA=
+AAANSUhEUgAAAB0AAAAgCAYAAADud3N8AAAACXBIWXMAAAsTAAALEwEAmpwYAAA51WlUWHRYTUw=
+6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSH=
+pyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4b=
+XB0az0iQWRvYmUgWE1QIENvcmUgNS41LWMwMjEgNzkuMTU0OTExLCAyMDEzLzEwLzI5LTExOjQ3=
+OjE2ICAgICAgICAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE=
+5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm=
+91dD0iIgogICAgICAgICAgICB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuM=
+C8iCiAgICAgICAgICAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4x=
+LyIKICAgICAgICAgICAgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3R=
+vc2hvcC8xLjAvIgogICAgICAgICAgICB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS=
+94YXAvMS4wL21tLyIKICAgICAgICAgICAgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb=
+20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIKICAgICAgICAgICAgeG1sbnM6dGlmZj0i=
+aHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOmV4aWY9Imh=
+0dHA6Ly9ucy5hZG9iZS5jb20vZXhpZi8xLjAvIj4KICAgICAgICAgPHhtcDpDcmVhdG9yVG9vbD=
+5BZG9iZSBQaG90b3Nob3AgQ0MgKE1hY2ludG9zaCk8L3htcDpDcmVhdG9yVG9vbD4KICAgICAgI=
+CAgPHhtcDpDcmVhdGVEYXRlPjIwMTQtMDMtMzFUMTc6MTU6MzgtMDQ6MDA8L3htcDpDcmVhdGVE=
+YXRlPgogICAgICAgICA8eG1wOk1vZGlmeURhdGU+MjAxNC0wNC0wM1QxNDoyMjo1NC0wNDowMDw=
+veG1wOk1vZGlmeURhdGU+CiAgICAgICAgIDx4bXA6TWV0YWRhdGFEYXRlPjIwMTQtMDQtMDNUMT=
+Q6MjI6NTQtMDQ6MDA8L3htcDpNZXRhZGF0YURhdGU+CiAgICAgICAgIDxkYzpmb3JtYXQ+aW1hZ=
+2UvcG5nPC9kYzpmb3JtYXQ+CiAgICAgICAgIDxwaG90b3Nob3A6Q29sb3JNb2RlPjM8L3Bob3Rv=
+c2hvcDpDb2xvck1vZGU+CiAgICAgICAgIDx4bXBNTTpJbnN0YW5jZUlEPnhtcC5paWQ6NTBjZWJ=
+hOTMtNGM5MS00MmRmLWFkMDYtOTEyZjY0ODUwNzVjPC94bXBNTTpJbnN0YW5jZUlEPgogICAgIC=
+AgICA8eG1wTU06RG9jdW1lbnRJRD54bXAuZGlkOmE5YWFhZmNkLWUwYWEtNDBmNy1iY2RiLWQwZ=
+ThjMDU0YWI2NTwveG1wTU06RG9jdW1lbnRJRD4KICAgICAgICAgPHhtcE1NOk9yaWdpbmFsRG9j=
+dW1lbnRJRD54bXAuZGlkOmE5YWFhZmNkLWUwYWEtNDBmNy1iY2RiLWQwZThjMDU0YWI2NTwveG1=
+wTU06T3JpZ2luYWxEb2N1bWVudElEPgogICAgICAgICA8eG1wTU06SGlzdG9yeT4KICAgICAgIC=
+AgICAgPHJkZjpTZXE+CiAgICAgICAgICAgICAgIDxyZGY6bGkgcmRmOnBhcnNlVHlwZT0iUmVzb=
+3VyY2UiPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6YWN0aW9uPmNyZWF0ZWQ8L3N0RXZ0OmFj=
+dGlvbj4KICAgICAgICAgICAgICAgICAgPHN0RXZ0Omluc3RhbmNlSUQ+eG1wLmlpZDphOWFhYWZ=
+jZC1lMGFhLTQwZjctYmNkYi1kMGU4YzA1NGFiNjU8L3N0RXZ0Omluc3RhbmNlSUQ+CiAgICAgIC=
+AgICAgICAgICAgIDxzdEV2dDp3aGVuPjIwMTQtMDMtMzFUMTc6MTU6MzgtMDQ6MDA8L3N0RXZ0O=
+ndoZW4+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDpzb2Z0d2FyZUFnZW50PkFkb2JlIFBob3Rv=
+c2hvcCBDQyAoTWFjaW50b3NoKTwvc3RFdnQ6c29mdHdhcmVBZ2VudD4KICAgICAgICAgICAgICA=
+gPC9yZGY6bGk+CiAgICAgICAgICAgICAgIDxyZGY6bGkgcmRmOnBhcnNlVHlwZT0iUmVzb3VyY2=
+UiPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6YWN0aW9uPnNhdmVkPC9zdEV2dDphY3Rpb24+C=
+iAgICAgICAgICAgICAgICAgIDxzdEV2dDppbnN0YW5jZUlEPnhtcC5paWQ6NTBjZWJhOTMtNGM5=
+MS00MmRmLWFkMDYtOTEyZjY0ODUwNzVjPC9zdEV2dDppbnN0YW5jZUlEPgogICAgICAgICAgICA=
+gICAgICA8c3RFdnQ6d2hlbj4yMDE0LTA0LTAzVDE0OjIyOjU0LTA0OjAwPC9zdEV2dDp3aGVuPg=
+ogICAgICAgICAgICAgICAgICA8c3RFdnQ6c29mdHdhcmVBZ2VudD5BZG9iZSBQaG90b3Nob3AgQ=
+0MgKE1hY2ludG9zaCk8L3N0RXZ0OnNvZnR3YXJlQWdlbnQ+CiAgICAgICAgICAgICAgICAgIDxz=
+dEV2dDpjaGFuZ2VkPi88L3N0RXZ0OmNoYW5nZWQ+CiAgICAgICAgICAgICAgIDwvcmRmOmxpPgo=
+gICAgICAgICAgICA8L3JkZjpTZXE+CiAgICAgICAgIDwveG1wTU06SGlzdG9yeT4KICAgICAgIC=
+AgPHRpZmY6T3JpZW50YXRpb24+MTwvdGlmZjpPcmllbnRhdGlvbj4KICAgICAgICAgPHRpZmY6W=
+FJlc29sdXRpb24+NzIwMDAwLzEwMDAwPC90aWZmOlhSZXNvbHV0aW9uPgogICAgICAgICA8dGlm=
+ZjpZUmVzb2x1dGlvbj43MjAwMDAvMTAwMDA8L3RpZmY6WVJlc29sdXRpb24+CiAgICAgICAgIDx=
+0aWZmOlJlc29sdXRpb25Vbml0PjI8L3RpZmY6UmVzb2x1dGlvblVuaXQ+CiAgICAgICAgIDxleG=
+lmOkNvbG9yU3BhY2U+NjU1MzU8L2V4aWY6Q29sb3JTcGFjZT4KICAgICAgICAgPGV4aWY6UGl4Z=
+WxYRGltZW5zaW9uPjI5PC9leGlmOlBpeGVsWERpbWVuc2lvbj4KICAgICAgICAgPGV4aWY6UGl4=
+ZWxZRGltZW5zaW9uPjMyPC9leGlmOlBpeGVsWURpbWVuc2lvbj4KICAgICAgPC9yZGY6RGVzY3J=
+pcHRpb24+CiAgIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+CiAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgC=
+iAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAog=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIA=
+ogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+IAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCi=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg=
+ICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAg=
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=
+gICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgIC=
+AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI=
+CAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgCjw/eHBhY2tldCBl=
+bmQ9InciPz7Y7/D2AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUY=
+AAAOqSURBVHjavJdvTBNnHMc/LS2jKt0JLtiCsW+Kicky2r1YSVDqXnIvxhvnkkWEZb5wiym+Wk=
+a2DPXV9mKZMdEXGoyQJdsr0OTM9srCiO2WSNmWvQASLam0NgHpoFqwg9sL7s5ruf45JX5fPXfPc=
+8/nvr/n93ueO4ssy7xu2QAsFkvZQQEpKQC9QCfQBniUrmkgDtwCxqKiO1MN1CLLckmoAusHQoBQ=
+Ya4McCkqugd1z1ujonuzamhASrYBNxRnZjQNHAP+jXS55PY7KUtUdMsVoQEp6QFiVbgrBz4LzAB=
+LxW5tJR4afQUgSnQuRkX3MaNOq0FYB18ipEYKBqRkb0Wokjih4kFep53hjn2c8OzeNkH/YSfDHf=
+vwOu1G839TjdNuo7B+++5evE47/Yed+Btrtftii4MTnt1an4E8SkKWhXYWD/A31uJy1Ly4bnhDa=
+/t0bX9D4bgiI2WhHjOL5tpVU/Za0TsVE6lYqWcbBder+RfZP7eS19rZ/CZTS8+NphDMQ3MbTKTX=
+tImlhZzW9/PDp2SVl9Dfr2rvraQv7i8jtjiYWnquQdQX6plcxN9Yi/Roh6FAyUlTuQ1TwKrCC7D=
+Hbt2RMaagYrOjVPFrZSU2O3Y2vNJCjtHgW4yn14k9WSeV28pol6OGrpZduBw19Ewu4puf4sjMON=
+707Fbi1dXzd8vbwmT7AcEWSWQMT5mAlLwLBI3AXqedK+81bAtjNr/JxV//4fiPX+Obnyp31vbZI=
+omxqsOr1mTP5KKWNNn8JtKjHD2/PGDg+48KgHNNrcQO+snW1etrdfS/9gPdRk5NfzBdHjlTABw6=
+epqho59uJdfaKifvDWc+vjcs6Bz7rEUnjCl507PbQvrJxDW6/pK0Nb36/ucCcE7nOGQtOnhN6cj=
+MhNbuOz3CXFMrAAO3L2hggI6vfg8rH3AA3XroB2ahvvn72hrONbVy9uSVUuAgcFM9VKzljiCzyt=
+bVlwKf2rY5BKRk0OyxpjpU13bP2moB+LHg0oPbVhxOFRxXnYZexlnsoF+XQNcLHH95/DutZAZuX=
+8CZW1FNha2vEtrfDnVqbj/846cCsLrGulpVdd4iyzLtd1J3lRu3gHBUdE8rJRSrFHZvepbLI59p=
+4X0suKjNr481PH3yZ3Jvc8i9vKAvxfO2SGKw0m9Ft/INrFdcycQ3lQh5isEldM4WSfxQ8V9GAfc=
+q2RcHbkZFd9jgxU4Jz5aF60N94/szqU7d/j0NhIFLtkgiXrDhv279PwCLX3RxE3VHHAAAAABJRU=
+5ErkJggg=3D=3D" title=3D"Ghostery =E6=8B=A6=E6=88=AA=E4=BA=86 Disqus=E3=80=
+=82">
+
+					<a id=3D"action-once" href=3D"https://pymotw.com/2/urllib2/#" onclick=
+=3D"return false"><img src=3D"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgA=
+AABQAAAAWCAYAAADAQbwGAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAX=
+ZJREFUeNpiYMABLLY+MwBiAQYSARMuw4DUeSC+D2QnUGwgEAgg0fOBhu4HYgVKDEQHDlDXNlDLQ=
+BioBxoKMtiBWgaCAMjroCCYjy3SyDEQBhKwRRolBmKNNEoNRI608yBDqWUgbi9DE7U/ieYcAGLD=
+E95SDxiRDdIWYF0fKMetYCTMxvDl9z+GW5/+MMy9/Znh+fe/uAz6AMSFQIMWwAQYYYYFyHHtL9f=
+hx0gGIIMnXP/EsPXJd3SpBVDDPmBYk3z09f3/SODzr7//s068+X/r4y84P3Dfy/9Ai/8TSthg12=
+15/A1uGMgQmOazb3/CxVfc/wIS6ycmUhxAYQYDkpzMDDX6mKWWKh8riNpIcizzsDIxGAmxUZRsD=
+px7+4ugwtuffoOoB0SZGnLgFUqkgAB6pEQefLWfaGeCIqbj8of3/7EAkGEgOWiCJwhQErYiD0t/=
+tBKPgyQXM9ybGx99O3D/yx9QertAkoFoWQ8WzR+INQgGAAIMAEDRCE4JKrVEAAAAAElFTkSuQmC=
+C" title=3D"=E5=8F=AA=E5=85=81=E8=AE=B8=E4=B8=80=E6=AC=A1=EF=BC=8C=E5=B9=B6=
+=E9=87=8D=E6=96=B0=E5=8A=A0=E8=BD=BD=E3=80=82"></a>
+
+				=09
+						<a id=3D"action-always" href=3D"https://pymotw.com/2/urllib2/#" oncli=
+ck=3D"return false"><img src=3D"data:image/png;base64,iVBORw0KGgoAAAANSUhEU=
+gAAABQAAAAWCAYAAADAQbwGAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAA=
+AgFJREFUeNpiYMABLLY+MwBiAQYSARMuw4DUeSC+D2QXUGwgEAgg0f1AQ89DLSHbQHQAdjHQ0H5=
+CwcBEYhAVQA0OoJaBIKAAxOuBhoKwAjUMhIEAqGsLqGUg1kij1ED0SDOgloFwwIKWoAWgYWNPoj=
+kXgLjwhLfUBUYkwxKcJDn6E5R5BFT5WMFitz/9Zlj54CvDwZc/Gb78/ofNoA9APBFoUANMgBFqW=
+ECBFt96IyE2huk3Pz84/vrnAaBwAsjgWj1+BklOZoask+/AFiABkJpEoGEPMGLZVIR9PsiwotPv=
+F/SbCSsChRaCxJ9//wtWxMPKBDYUyVWBQIMc0Q0DhyHIdSHyXAJL7319sMVFPBFZkpeFEexlSU4=
+WBl5WsGcmAHEj0KAP+CJFYOez7wf2Pf+xEV0S5MKtT77DAr0R5E18hsG8/ABq2AWkjP8BiW5U5G=
+H5AMT5xCYbgRo9gX5JLmaG829/MfDtevHg0+9/hkBxEAaFUUC0Ek/9sdc/Piy3F/tATPEFDlhQp=
+Dz//ocBaBgowD+A0hQoBwTIcfWr8bEwAH0xkRgXgkN6zq3P/w2F2cACax9+BbniAjDZCdiLcxiA=
+DMs99e7Cx1//HAmFH3I63A+kDgITdr67FKcAKJmAwKEXPxj2v/gx4dWPv43EGIZsoABMA5DtgJy=
+liDUIBgACDAA4LtiR9/edvQAAAABJRU5ErkJggg=3D=3D" title=3D"=E5=85=81=E8=AE=B8=
+=E5=B9=B6=E9=87=8D=E6=96=B0=E5=8A=A0=E8=BD=BD=E3=80=82"></a>
+				=09
+
+			=09
+
+			</td>
+		</tr>
+	</tbody></table>
+
+
+</body></html>
+------MultipartBoundary--DroEQ1sED7bfFGbEwZyP0zXEb5bD42KfvYSFxu5yZb------

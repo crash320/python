@@ -95,3 +95,7 @@ def link_crawler(..., max_depth=2):
 
 8. 最终版本
 [完整代码](http://bitbucket.org/wswp/code/src/tip/chapter01/link_crawler3.py)
+
+
+- [ ] a task list item
+- [x] complete
