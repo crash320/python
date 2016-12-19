@@ -15,43 +15,116 @@ import urllib
 import re
 import urlparse
 
-url = "http://tieba.baidu.com/dota2"
-base_url = "http://tieba.baidu.com"
+# url = "http://tieba.baidu.com/dota2"
+# seed_url = "http://tieba.baidu.com"
+seed_url = 'http://www.smartisan.com/'
 data = {'a':'b', 'c':'d'}
 data_encode = urllib.urlencode(data)
 print data_encode
 user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.100 Safari/537.36'
 headers = {'User-agent':'user_agent'}
-request = urllib2.Request(url, data=None, headers=headers)
+# request = urllib2.Request(url, data=None, headers=headers)
+# print request.get_full_url()
 # 设置proxy
-enable_proxy = False
 proxy_handler = urllib2.ProxyHandler({"http":"www.some.host:8080"})
 null_proxy_handler = urllib2.ProxyHandler({})
+enable_proxy = False
 if enable_proxy:
-    opener = urllib2.build_opener(proxy_handler)
+    proxy = proxy_handler
 else:
-    opener = urllib2.build_opener(null_proxy_handler)
+    proxy = null_proxy_handler
 
-response = opener.open(request)
-html = response.read()
+# request = urllib2.Request(url)
+# # opener = urllib2.build_opener(proxy_handler)
+# response = opener.open(request)
+# html = response.read()
 # print html
+#
+# import sys
+# sys.exit()
+# response = opener.open(request)
+# html = response.read()
+# # print html
 # html_header_info = response.info()
 # print html_header_info
 # html_url = response.geturl()
 # print html_url
-href_regx = re.compile('<a[^>]+href=["\'](.*?)["\']', re.IGNORECASE)
-link_list = re.findall(href_regx, html)
-i = 0
-for link in link_list:
-    i += 1
-    link, _ = urlparse.urldefrag(link) # remove hash to avoid duplicates
-    valid_link = urlparse.urljoin(base_url, link)
-    if i % 100:
-        print "origin_link:", link
-        print "change_link:", valid_link
-        print "\n"
+# href_regx = re.compile('<a[^>]+href=["\'](.*?)["\']', re.IGNORECASE)
+# link_list = re.findall(href_regx, html)
+# i = 0
+# for link in link_list:
+#     i += 1
+#     link, _ = urlparse.urldefrag(link) # remove hash to avoid duplicates
+#     valid_link = urlparse.urljoin(seed_url, link)
+#     if i % 100:
+#         print "origin_link:", link
+#         print "change_link:", valid_link
+#         print "\n"
 
+def download(url, user_agent="test_agent", data=None, proxy=None, num_retries=2):
+    headers = {}
+    if user_agent:
+        headers['User-agent'] = user_agent
+    if data:
+        data_encode  = urllib.urlencode(data)
+    request = urllib2.Request(url, data, headers=headers)
+    opener = urllib2.build_opener(proxy)
+    try:
+        # response = opener.open(request)
+        response = opener.open(request)
+        html = response.read()
+        # print "ok"
+    except urllib2.URLError as e:
+        html = '' #为了防止出错而设置的,为了后面的变量可以顺利返回
+        if hasattr(e, 'reason'):
+            print "Error reason:", e.reason
+        if hasattr(e, 'code'):
+            if num_retries > 0 and (500 <= e.code < 600):
+                print "Error code:", e.code
+                download(url, user_agent, data, proxy, num_retries-1)
+    return html
+def get_links(html):
+    webpage_regex = re.compile('<a[^>]+href=["\'](.*?)["\']', re.IGNORECASE)
+    return re.findall(webpage_regex, html)
 
+def intack_link(seed_url, link):
+    # link, _ = urlparse.urldefrag(link)
+    return urlparse.urljoin(seed_url, link)
+
+def crawl_queue(seed_url, max_urls, max_depth = -1, headers = None, user_agent="wswp", \
+                proxy = None, num_retries = 3):
+    crawl_queue = [seed_url]
+    seen = {seed_url:0}
+    headers = headers or {}
+    num_urls = 0  #设置获取的最大链接数
+    if user_agent:
+        headers['User-agent'] = user_agent
+    if proxy:
+        proxy = proxy
+    while crawl_queue:
+        # depth = seen[seed_url]
+        url = crawl_queue.pop()
+        html = download(url, user_agent, data=None, proxy=proxy, num_retries=2)
+        depth = seen[url]
+        # print html
+        if depth != max_depth:
+            link_list = set(get_links(html))
+            i = 0
+            for link in link_list:
+                i += 1
+                # print "origin_link:", link
+                link = intack_link(seed_url, link)
+                if i % 10 == 0:
+                    print "change_link:", link
+                    print "\n"
+                if link not in seen:
+                    seen[link] = depth + 1
+                    crawl_queue.append(link)
+        num_urls += 1
+        if num_urls == max_urls:
+            break
+if __name__ == '__main__':
+    crawl_queue(seed_url, max_urls=-1, max_depth=2, user_agent=user_agent, proxy=proxy, num_retries=2)
 # # def download(url, headers, proxy, num_retries = 2, data=None):
 # #     print "Downloading:", url
 # #     headers = {'User-agent':user_agent}

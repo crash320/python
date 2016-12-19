@@ -102,7 +102,7 @@ def download(url, headers, proxy, num_retries, data=None):
 def normalize(seed_url, link):
     """Normalize this URL by removing hash and adding domain
     """
-    link, _ = urlparse.urldefrag(link)  # remove hash to avoid duplicates
+    link, _ = urlparse.urldefrag(link) # remove hash to avoid duplicates
     return urlparse.urljoin(seed_url, link)
 
 
