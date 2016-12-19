@@ -144,7 +144,7 @@ css选择器表示选择元素所使用的模式。下面是一些常用的选�
 选择<a\>标签内部的所有<span\>标签|a span
 选择title属性为"Home"的所有<a\>标签|a[title=Home]
 
-```
+
 W3C已提出CSS3规范，其网址为http://www.w3.org/TR/2011/REC-css3-selectors3-20110929
 ##### 三种抓取方式的比较
 
@@ -154,3 +154,53 @@ W3C已提出CSS3规范，其网址为http://www.w3.org/TR/2011/REC-css3-selector
 Beautiful Soup|慢|简单|简单(纯python)
 Lxml|快|简单|相对困难
 通过比较可知，最优的抽取数据的方式是Lxml
+
+##### 为链接爬虫添加抓取回调
+要想复用这段抓取代码，需要添加一个callback参数处理抓取行为。callback是一个函数，在发生某个特定事件之后会调用该函数(在本例中，会在网页下载完成后调用。
+这个抓取回调函数包含url和html两个参数，并且可以返回一个待爬取的URL列表。
+```python
+def link_crawler(..., scrape_callback=None):
+    ...
+    links = []
+    if scrape_callback:
+        links.extend(scrape_callback(url, html) or [])
+        ...
+```
+链接爬虫的完整代码在[此](https://bitbucket.org/wswp/code/src/tip/chapter02/link_crawler.py)
+现在，只需要对传入的scrape_callback函数定制化处理，就能使用爬虫抓取其他网站了。
+下面对lxml抓取示例的代码进行了修改，使其能够在callback函数中使用。
+```python
+def scrape_callback(url, html):
+    if re.search('/view/', url):
+        tree = lxml.html.fromstring(html)
+        row = [tree.cssselect('table > tr#places_%s__row > td.w2p_fw' % filed)[0].text_content() for filed in FILEDS]
+        print url, row
+```
+上面这个回调函数会去抓取国家数据，然后将其显示出来。不过，通常情况下，在抓取网站时，希望可以复用这些数据，所以进行如下扩展，将得到的结果数据保存到CSV表格镇南关，代码如下。
+```python
+import csv
+class ScrapeCallback():
+    """docstring for ScrapeCallback"""
+    def __init__(self):
+        self.writer = csv.writer(open('countries.csv'), 'w')
+        self.fields = ('area', 'population', 'iso', 'country', 'capital',
+          'continent', 'tld', 'currency_code', 'currency_name', 'phone',
+          'postal_code_format', 'postal_code_regex', 'languages',
+          'neighbours')
+        self.writer.writerow(self.fields)
+
+    def __call__(self, url, html):
+        if re.search('/view/', url):
+            tree = lxml.html.fromstring(html)
+            row = []
+            for filed in  self.fields；
+                row = [tree.cssselect('table > tr#places_%s__row > td.w2p_fw' % filed)[0].text_content() for filed in FILEDS]
+            self.writer.writerow(row)
+```
+为了实现callback，这里使用了回调类，而不是回调函数，以便保持csv中writer属性中的状态。csv的writer属性在构造方法中进行了实例化处理，然后再`__call__`方法中执行了多次写操作。这里需要注意,`__call__`是一个特殊方法，在对象作为函数被调用时会调用该方法，这也是链接爬虫中cache_callback的调用方法。也就是说，scrape_callback(url, html)和调用`scrape_callback.__call__(url, html)`是等价的。
+[python中更多特殊用法](https://docs.python.org/2/reference/datamodel.html#special-method-names)
+下面是向链接爬虫传入回调的代码写法。
+```python
+link_crawler('http://example.webscraping.com/', '(index/view)', \
+            max_depth = -1, scrape_callback = ScrpeCallback())
+```
