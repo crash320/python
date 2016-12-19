@@ -22,7 +22,7 @@ if depth < max_depth:
 2016/12/19 16:32:41
 #### 第二章:数据抓取
 ##### 三种抓取网页抓取的方法
-1. 正则表达式方式
+1. 正则表达式方式  
 使用正则表达式需要re包
 ```python
 import re
@@ -31,7 +31,7 @@ regex = re.compile('...') #其中是正则的一些模式
 # 2. 使用findall()函数找出来
 find_list = re.findall(regex, html) #html表示得到的网页内容
 ```
-2. Beautiful Soup
+2. Beautiful Soup  
 使用Beautiful Soup的第一步是将已下载的HTML内容解析为soup文档。
 但是由于大多数网页都不具有良好的HTML格式，因此Beautiful Soup需要对其实际格式进行确定。
 对于一个确实的网页
@@ -107,7 +107,7 @@ print "td:", td
 area = td.text
 print area
 ```
-3. Lxml
+3. Lxml  
 Lxml是基于libxml2这一XML解析库的python封装。该模块使用C语言编写，
 解析速度比Beautiful Soup快，不过安装过程也更为复杂。最新的安装说明可以参考
 [http://Lxml.de/installation.html](http://Lxml.de/installation.html)
@@ -132,14 +132,25 @@ print area
 cssselect需要使用pip单独安装这个模块
 CSS选择器
 css选择器表示选择元素所使用的模式。下面是一些常用的选择器示例。
-```python
-选择所有标签 ：*
-选择<a>标 签：a
-选择所有class = "link"的元素：.link
-选择class = "link"的 <a>标签： a.link
-选择 id = " home ” 的 <a>标 签： a Jfhome
-选择父元素为<a>标签的所有<span>子标 签： a > span
-选择<a>标签内部的所有<span>标签：a span
-选择title属性为"Home"的所有<a>标签：a[title=Home]
+
+操作          |符号
+ --  |   --
+选择所有标签| * 
+选择<a\>标签| a 
+选择所有class = "link"的元素|.link
+选择class = "link"的<a\>标签| a.link
+选择 id = " home"的<a\>标 签| a Jfhome
+选择父元素为<a\>标签的所有<span\>子标签| a > span
+选择<a\>标签内部的所有<span\>标签|a span
+选择title属性为"Home"的所有<a\>标签|a[title=Home]
+
 ```
 W3C已提出CSS3规范，其网址为http://www.w3.org/TR/2011/REC-css3-selectors3-20110929
+##### 三种抓取方式的比较
+
+抓取方法|性能|使用难度|安装难度
+--|--|--|--
+正则表达式|快|困难|简单(内置模块)
+Beautiful Soup|慢|简单|简单(纯python)
+Lxml|快|简单|相对困难
+通过比较可知，最优的抽取数据的方式是Lxml
